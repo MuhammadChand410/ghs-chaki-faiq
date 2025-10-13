@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Chakki Faiq</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        dropdownButtons.forEach(btn => {
+            const dropdown = btn.nextElementSibling;
+            const arrow = btn.querySelector('svg');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-180');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+            document.querySelectorAll('.dropdown-btn svg').forEach(a => a.classList.remove('rotate-180'));
+        });
+    });
+</script>
+
+<body>    
+    <header class="py-4 sticky top-0 bg-white shadow z-50">
+        <div class="container">
+            <nav class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <a href="/">
+                        <img src="assets/images/logo.png" alt="logo" width="56" height="56">
+                    </a>
+                    <div>
+                        <p class="text-2xl text-[#101828] font-normal">Government High School</p>
+                        <span class="text-sm text-[#155DFC] font-normal">Chaki Faiq</span>
+                    </div>
+                </div>
+    
+                <button id="nav-toggle" class="block md:hidden text-[#155DFC] focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+    
+                <ul id="nav-menu"
+                    class="hidden flex-col md:flex md:flex-row md:items-center gap-4 md:gap-8 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none p-5 md:p-0 transition-all duration-300">
+                    <li>
+                        <a href="/"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Home</a>
+                    </li>
+    
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            About
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</a>
+                            <a href="faculity.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Faculty</a>
+                            <a href="achievements.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Achievements</a>
+                            <a href="student.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Student Life</a>
+                        </div>
+                    </li>
+    
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            Academics
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="academic.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Curriculum</a>
+                            <a href="download.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Downloads</a>
+                            <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Gallery</a>
+                        </div>
+                    </li>
+    
+                    <li>
+                        <a href="admission.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Admissions</a>
+                    </li>
+                    <li>
+                        <a href="contact-us.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/"
+                            class="px-6 py-2 rounded-lg bg-[#155DFC] text-white text-sm font-normal inline-block hover:bg-[#0D4ED8]">Apply
+                            Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="my-16">
+            <div class="container">
+                <div class="flex justify-center">
+                    <div class="max-w-[850px] grid gap-8">
+                        <h2 class="text-center text-4xl sm:text-6xl text-[#101828] font-normal">About Our School</h2>
+                        <p class="sm:text-xl text-base font-normal text-center text-[#4A5565]">Government High School
+                            Chaki Faiq has
+                            been a beacon of educational excellence for over two decades, shaping young minds and
+                            building future leaders of our community.</p>
+                    </div>
+                </div>
+                <div class="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-12">
+                    <div class="grid gap-4">
+                        <h3 class="text-xl sm:text-3xl font-normal text-[#1C398E] pb-2">Our Story</h3>
+                        <p class="text-sm sm:text-base font-normal text-[#4A5565]">Established in 1999, Government High
+                            School
+                            Chaki Faiq began with a vision to provide quality education to the children of our local
+                            community. What started as a small institution with just 150 students has grown into a
+                            thriving educational center serving over 1,200 students.</p>
+                        <p class="text-sm sm:text-base font-normal text-[#4A5565]">Our school is committed to academic
+                            excellence
+                            while nurturing the overall development of each student. We believe in creating an
+                            environment where students can explore their potential, develop critical thinking skills,
+                            and prepare for the challenges of tomorrow.</p>
+                        <p class="text-sm sm:text-base font-normal text-[#4A5565]">Located in the heart of Chaki Faiq,
+                            our school
+                            serves as a cornerstone of the community, fostering not just academic growth but also social
+                            responsibility and civic engagement.</p>
+                    </div>
+                    <div>
+                        <img src="assets/images/about.jpeg" alt="about" class="w-[520px] h-[400px] object-cover rounded-[10px]" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-20">
+            <div class="container">
+                <div class="grid sm:grid-cols-3 grid-cols-1 gap-8">
+                    <div
+                        class="py-6 grid place-items-center shadow-xl px-6 bg-white rounded-2xl border-1 border-gray-300">
+                        <div class="flex items-center justify-center px-4 py-4 rounded-2xl w-[64px] h-[64px] mb-7 shadow-xl"
+                            style="background: linear-gradient(135deg, #2B7FFF 0%, #155DFC 100%);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33"
+                                fill="none">
+                                <path
+                                    d="M16.6626 30.1333C24.0264 30.1333 29.9959 24.1638 29.9959 16.8C29.9959 9.43621 24.0264 3.46667 16.6626 3.46667C9.29876 3.46667 3.32922 9.43621 3.32922 16.8C3.32922 24.1638 9.29876 30.1333 16.6626 30.1333Z"
+                                    stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M16.6626 24.8C21.0809 24.8 24.6626 21.2183 24.6626 16.8C24.6626 12.3817 21.0809 8.79999 16.6626 8.79999C12.2443 8.79999 8.6626 12.3817 8.6626 16.8C8.6626 21.2183 12.2443 24.8 16.6626 24.8Z"
+                                    stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M16.6626 19.4666C18.1354 19.4666 19.3293 18.2727 19.3293 16.8C19.3293 15.3272 18.1354 14.1333 16.6626 14.1333C15.1899 14.1333 13.996 15.3272 13.996 16.8C13.996 18.2727 15.1899 19.4666 16.6626 19.4666Z"
+                                    stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-normal text-center pb-5 text-[#101828]">Our Mission</h3>
+                        <p class="text-base text-center font-normal text-[#4A5565] pb-14">To provide comprehensive
+                            education that develops intellectual capabilities, moral character, and practical skills
+                            essential for success in higher education and life.</p>
+                    </div>
+                    <div
+                        class="py-6 grid place-items-center shadow-xl px-6 bg-white rounded-2xl border-1 border-gray-300">
+                        <div class="flex items-center justify-center px-4 py-4 rounded-2xl w-[64px] h-[64px] mb-7 shadow-xl"
+                            style="background: linear-gradient(135deg, #00C950 0%, #00A63E 100%);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33"
+                                fill="none">
+                                <path d="M16.9874 10.1333V28.8" stroke="white" stroke-width="2.66667"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M4.98739 24.8C4.63376 24.8 4.29463 24.6595 4.04458 24.4095C3.79453 24.1594 3.65405 23.8203 3.65405 23.4667V6.13332C3.65405 5.7797 3.79453 5.44056 4.04458 5.19051C4.29463 4.94046 4.63376 4.79999 4.98739 4.79999H11.6541C13.0685 4.79999 14.4251 5.36189 15.4253 6.36208C16.4255 7.36228 16.9874 8.71883 16.9874 10.1333C16.9874 8.71883 17.5493 7.36228 18.5495 6.36208C19.5497 5.36189 20.9062 4.79999 22.3207 4.79999H28.9874C29.341 4.79999 29.6801 4.94046 29.9302 5.19051C30.1802 5.44056 30.3207 5.7797 30.3207 6.13332V23.4667C30.3207 23.8203 30.1802 24.1594 29.9302 24.4095C29.6801 24.6595 29.341 24.8 28.9874 24.8H20.9874C19.9265 24.8 18.9091 25.2214 18.159 25.9716C17.4088 26.7217 16.9874 27.7391 16.9874 28.8C16.9874 27.7391 16.566 26.7217 15.8158 25.9716C15.0657 25.2214 14.0483 24.8 12.9874 24.8H4.98739Z"
+                                    stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-normal text-center pb-5 text-[#101828]">Our Vision</h3>
+                        <p class="text-base text-center font-normal text-[#4A5565] pb-14">To be a leading educational
+                            institution that nurtures confident, responsible, and innovative global citizens who
+                            contribute meaningfully to society.</p>
+                    </div>
+                    <div
+                        class="py-6 grid place-items-center shadow-xl px-6 bg-white rounded-2xl border-1 border-gray-300">
+                        <div class="flex items-center justify-center px-4 py-4 rounded-2xl w-[64px] h-[64px] mb-7 shadow-xl"
+                            style="background: linear-gradient(135deg, #AD46FF 0%, #9810FA 100%);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33"
+                                fill="none">
+                                <path
+                                    d="M21.6584 28.8V26.1333C21.6584 24.7188 21.0965 23.3623 20.0963 22.3621C19.0961 21.3619 17.7395 20.8 16.325 20.8H8.32503C6.91054 20.8 5.55399 21.3619 4.5538 22.3621C3.5536 23.3623 2.9917 24.7188 2.9917 26.1333V28.8"
+                                    stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M21.6584 4.97064C22.8021 5.26714 23.815 5.93499 24.538 6.86939C25.2611 7.80379 25.6534 8.95183 25.6534 10.1333C25.6534 11.3148 25.2611 12.4628 24.538 13.3972C23.815 14.3316 22.8021 14.9995 21.6584 15.296"
+                                    stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M29.6584 28.8V26.1333C29.6576 24.9516 29.2643 23.8037 28.5403 22.8697C27.8163 21.9358 26.8026 21.2688 25.6584 20.9733"
+                                    stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M12.325 15.4667C15.2706 15.4667 17.6584 13.0788 17.6584 10.1333C17.6584 7.1878 15.2706 4.79999 12.325 4.79999C9.37951 4.79999 6.9917 7.1878 6.9917 10.1333C6.9917 13.0788 9.37951 15.4667 12.325 15.4667Z"
+                                    stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-normal text-center pb-5 text-[#101828]">Our Values</h3>
+                        <ul class=" grid gap-2">
+                            <li class="text-base text-center font-normal text-[#4A5565]">
+                                Excellence in Education
+                            </li>
+                            <li class="text-base text-center font-normal text-[#4A5565]">
+                                Integrity and Honesty
+                            </li>
+                            <li class="text-base font-normal text-center text-[#4A5565]">
+                                Respect and Tolerance
+                            </li>
+                            <li class="text-base font-normal text-center text-[#4A5565]">
+                                Innovation and Creativity
+                            </li>
+                            <li class="text-base font-normal text-center text-[#4A5565]">
+                                Community Service
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="">
+            <div class="container">
+                <div class="px-8 py-8 bg-[#EFF6FF] gap-24 rounded-[10px] flex flex-col sm:flex-row">
+                    <div class="">
+                        <h2 class="sm:text-3xl text-xl font-normal text-[#1C398E]">Principal's Message</h2>
+                        <p class="sm:text-lg text-base font-normal text-[#364153] leading-[29.25px] my-4">"Education is not just
+                            about acquiring
+                            knowledge; it's about developing the whole person. At Government High School Chaki Faiq, we
+                            are committed to providing an environment where every student can discover their unique
+                            talents, build confidence, and develop the skills necessary to become responsible citizens
+                            and future leaders."</p>
+                        <span class="text-base font-normal text-[#1C398E]">Mr. Ahmed Khan</span>
+                        <p class="text-base font-normal text-[#4A5565] pt-1 pb-1">Principal</p>
+                        <p class="text-base font-normal text-[#4A5565]">M.A. Education, B.Ed.</p>
+                    </div>
+                    <div class="flex justify-center sm:items-center">
+                        <div class="h-[192px] w-[192px] mr-16 px-12 py-12 bg-[#D1D5DC] rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="96" height="97" viewBox="0 0 96 97"
+                                fill="none">
+                                <path
+                                    d="M64 84.2875V76.2875C64 72.044 62.3143 67.9744 59.3137 64.9738C56.3131 61.9732 52.2435 60.2875 48 60.2875H24C19.7565 60.2875 15.6869 61.9732 12.6863 64.9738C9.68571 67.9744 8 72.044 8 76.2875V84.2875"
+                                    stroke="#6A7282" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M64 12.7997C67.431 13.6892 70.4696 15.6927 72.6387 18.4959C74.8079 21.2991 75.9848 24.7432 75.9848 28.2877C75.9848 31.8321 74.8079 35.2762 72.6387 38.0794C70.4696 40.8826 67.431 42.8862 64 43.7757"
+                                    stroke="#6A7282" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M88 84.2875V76.2875C87.9974 72.7424 86.8174 69.2986 84.6455 66.4968C82.4735 63.6949 79.4325 61.6938 76 60.8075"
+                                    stroke="#6A7282" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M36 44.2875C44.8366 44.2875 52 37.124 52 28.2875C52 19.4509 44.8366 12.2875 36 12.2875C27.1634 12.2875 20 19.4509 20 28.2875C20 37.124 27.1634 44.2875 36 44.2875Z"
+                                    stroke="#6A7282" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-16">
+            <div class="container">
+                <div>
+                    <h2 class="text-3xl text-[#1C398E] font-normal text-center pb-8">Our Journey</h2>
+                    <div class="grid gap-8 pb-16">
+                        <div class="flex gap-4">
+                            <div class="px-4 py-5 rounded-full h-[64px] w-[64p] bg-[#155DFC]">
+                                <span class="text-sm text-white font-normal">1999</span>
+                            </div>
+                            <div class="px-6 w-full grid gap-2 py-6 rounded-[14px] bg-white"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <h3 class="text-xl font-normal text-[#1C398E]">School Established</h3>
+                                <p class="text-base font-normal text-[#4A5565]">Founded as Government High School Chaki
+                                    Faiq</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="px-4 py-5 rounded-full h-[64px] w-[64p] bg-[#155DFC]">
+                                <span class="text-sm text-white font-normal">2005</span>
+                            </div>
+                            <div class="px-6 w-full grid gap-2 py-6 rounded-[14px] bg-white"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <h3 class="text-xl font-normal text-[#1C398E]">Science Lab Inaugurated</h3>
+                                <p class="text-base font-normal text-[#4A5565]">State-of-the-art laboratory facilities
+                                    added</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="px-4 py-5 rounded-full h-[64px] w-[64p] bg-[#155DFC]">
+                                <span class="text-sm text-white font-normal">2010</span>
+                            </div>
+                            <div class="px-6 w-full grid gap-2 py-6 rounded-[14px] bg-white"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <h3 class="text-xl font-normal text-[#1C398E]">Computer Lab Setup</h3>
+                                <p class="text-base font-normal text-[#4A5565]">Digital learning infrastructure
+                                    implemented</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="px-4 py-5 rounded-full h-[64px] w-[64p] bg-[#155DFC]">
+                                <span class="text-sm text-white font-normal">2015</span>
+                            </div>
+                            <div class="px-6 w-full grid gap-2 py-6 rounded-[14px] bg-white"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <h3 class="text-xl font-normal text-[#1C398E]">Library Expansion</h3>
+                                <p class="text-base font-normal text-[#4A5565]">Library capacity increased to 5000+
+                                    books</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="px-4 py-5 rounded-full h-[64px] w-[64p] bg-[#155DFC]">
+                                <span class="text-sm text-white font-normal">2020</span>
+                            </div>
+                            <div class="px-6 w-full grid gap-2 py-6 rounded-[14px] bg-white"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <h3 class="text-xl font-normal text-[#1C398E]">Sports Complex</h3>
+                                <p class="text-base font-normal text-[#4A5565]">New sports facilities and playground
+                                    developed</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="px-4 py-5 rounded-full h-[64px] w-[64p] bg-[#155DFC]">
+                                <span class="text-sm text-white font-normal">2024</span>
+                            </div>
+                            <div class="px-6 w-full grid gap-2 py-6 rounded-[14px] bg-white"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <h3 class="text-xl font-normal text-[#1C398E]">100% Pass Rate</h3>
+                                <p class="text-base font-normal text-[#4A5565]">Achieved perfect matriculation success
+                                    rate</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 sm:grid-cols-4">
+                        <div
+                            class="grid place-items-center gap-4">
+                            <div class="px-4 py-4 bg-[#DBEAFE] rounded-full h-[64px] w-[64px]">
+                                <svg class="block" xmlns="http://www.w3.org/2000/svg" width="32" height="33"
+                                    viewBox="0 0 32 33" fill="none">
+                                    <path d="M10.6667 3.0542V8.38753" stroke="#155DFC" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.3333 3.0542V8.38753" stroke="#155DFC" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M25.3333 5.7207H6.66667C5.19391 5.7207 4 6.91461 4 8.38737V27.054C4 28.5268 5.19391 29.7207 6.66667 29.7207H25.3333C26.8061 29.7207 28 28.5268 28 27.054V8.38737C28 6.91461 26.8061 5.7207 25.3333 5.7207Z"
+                                        stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M4 13.7207H28" stroke="#155DFC" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="grid gap-2 text-center">
+                                <h3 class="text-2xl font-normal text-[#1C398E]">25+</h3>
+                                <p class="text-base font-normal text-[#4A5565]">Years of Service</p>
+                            </div>
+                        </div>
+                        <div
+                            class="grid place-items-center gap-4">
+                            <div class="px-4 py-4 bg-[#DBEAFE] rounded-full h-[64px] w-[64px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                    fill="none">
+                                    <path
+                                        d="M21.3333 28.3875V25.7208C21.3333 24.3063 20.7714 22.9497 19.7712 21.9495C18.771 20.9494 17.4144 20.3875 16 20.3875H7.99996C6.58547 20.3875 5.22892 20.9494 4.22872 21.9495C3.22853 22.9497 2.66663 24.3063 2.66663 25.7208V28.3875"
+                                        stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M21.3334 4.55811C22.477 4.8546 23.4899 5.52246 24.2129 6.45686C24.936 7.39125 25.3283 8.53929 25.3283 9.72077C25.3283 10.9023 24.936 12.0503 24.2129 12.9847C23.4899 13.9191 22.477 14.5869 21.3334 14.8834"
+                                        stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M29.3334 28.3872V25.7205C29.3325 24.5389 28.9392 23.3909 28.2152 22.457C27.4912 21.523 26.4775 20.856 25.3334 20.5605"
+                                        stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M12 15.0541C14.9455 15.0541 17.3333 12.6663 17.3333 9.72078C17.3333 6.77527 14.9455 4.38745 12 4.38745C9.05444 4.38745 6.66663 6.77527 6.66663 9.72078C6.66663 12.6663 9.05444 15.0541 12 15.0541Z"
+                                        stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="grid gap-2 text-center">
+                                <span class="text-2xl font-normal text-[#1C398E]">1200+</span>
+                                <p class="text-base font-normal text-[#4A5565]">Students</p>
+                            </div>
+                        </div>
+                        <div
+                            class="grid place-items-center gap-4">
+                            <div class="px-4 py-4 bg-[#DBEAFE] rounded-full h-[64px] w-[64px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                    fill="none">
+                                    <path d="M16 9.7207V28.3874" stroke="#155DFC" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M3.99996 24.3875C3.64634 24.3875 3.3072 24.247 3.05715 23.9969C2.8071 23.7469 2.66663 23.4077 2.66663 23.0541V5.72078C2.66663 5.36716 2.8071 5.02802 3.05715 4.77798C3.3072 4.52793 3.64634 4.38745 3.99996 4.38745H10.6666C12.0811 4.38745 13.4377 4.94935 14.4379 5.94955C15.4381 6.94974 16 8.3063 16 9.72078C16 8.3063 16.5619 6.94974 17.5621 5.94955C18.5622 4.94935 19.9188 4.38745 21.3333 4.38745H28C28.3536 4.38745 28.6927 4.52793 28.9428 4.77798C29.1928 5.02802 29.3333 5.36716 29.3333 5.72078V23.0541C29.3333 23.4077 29.1928 23.7469 28.9428 23.9969C28.6927 24.247 28.3536 24.3875 28 24.3875H20C18.9391 24.3875 17.9217 24.8089 17.1715 25.559C16.4214 26.3092 16 27.3266 16 28.3875C16 27.3266 15.5785 26.3092 14.8284 25.559C14.0782 24.8089 13.0608 24.3875 12 24.3875H3.99996Z"
+                                        stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="grid gap-2 text-center">
+                                <span class="text-2xl font-normal text-[#1C398E]">50+</span>
+                                <p class="text-base font-normal text-[#4A5565]">Faculty Members</p>
+                            </div>
+                        </div>
+                        <div
+                            class="grid place-items-center gap-4">
+                            <div class="px-4 py-4 bg-[#DBEAFE] rounded-full h-[64px] w-[64px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                    fill="none">
+                                    <path
+                                        d="M13.3334 19.9341V22.1021C13.3283 22.5589 13.206 23.0068 12.9781 23.4028C12.7503 23.7987 12.4245 24.1295 12.032 24.3634C11.1989 24.9805 10.5212 25.7834 10.0527 26.7083C9.58421 27.6332 9.33792 28.6546 9.33337 29.6914"
+                                        stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M18.6666 19.9341V22.1021C18.6717 22.5589 18.794 23.0068 19.0219 23.4028C19.2497 23.7987 19.5755 24.1295 19.968 24.3634C20.8011 24.9805 21.4788 25.7834 21.9473 26.7083C22.4158 27.6332 22.6621 28.6546 22.6666 29.6914"
+                                        stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M24 12.3874H26C26.8841 12.3874 27.7319 12.0362 28.357 11.4111C28.9821 10.7859 29.3333 9.93809 29.3333 9.05404C29.3333 8.16998 28.9821 7.32214 28.357 6.69701C27.7319 6.07189 26.8841 5.7207 26 5.7207H24"
+                                        stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M5.33337 29.7207H26.6667" stroke="#155DFC" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M8 12.3875C8 14.5093 8.84286 16.5441 10.3431 18.0444C11.8434 19.5447 13.8783 20.3875 16 20.3875C18.1217 20.3875 20.1566 19.5447 21.6569 18.0444C23.1571 16.5441 24 14.5093 24 12.3875V4.38753C24 4.03391 23.8595 3.69477 23.6095 3.44472C23.3594 3.19467 23.0203 3.0542 22.6667 3.0542H9.33333C8.97971 3.0542 8.64057 3.19467 8.39052 3.44472C8.14048 3.69477 8 4.03391 8 4.38753V12.3875Z"
+                                        stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M7.99996 12.3874H5.99996C5.1159 12.3874 4.26806 12.0362 3.64294 11.4111C3.01782 10.7859 2.66663 9.93809 2.66663 9.05404C2.66663 8.16998 3.01782 7.32214 3.64294 6.69701C4.26806 6.07189 5.1159 5.7207 5.99996 5.7207H7.99996"
+                                        stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="grid gap-2 text-center">
+                                <span class="text-2xl font-normal text-[#1C398E]">15+</span>
+                                <p class="text-base font-normal text-[#4A5565]">Awards Won</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class=" bg-[#101828]">
+    <div class="container">
+      <nav>
+        <div class="py-12 grid justify-center">
+          <div class="bg-[#155DFC] px-35 w-[530px] sm:w-[869px] h-[192px]">
+            <h2 class="sm:text-4xl text-2xl font-normal text-center text-white pb-6">Ready to Join Our School?</h2>
+            <div class="flex justify-center">
+              <p
+                class="sm:text-xl text-base font-normal max-w-[450px] sm:max-w-[610px] text-center text-[#DBEAFE] pb-7">
+                Take the first step towards
+                excellence in
+                education. Apply now for the upcoming academic year.</p>
+            </div>
+            <div class="flex justify-center">
+              <button class="px-8 py-2 rounded-lg bg-white">
+                <a href="/" class="text-lg font-normal text-[#155DFC]">Apply for Admission</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="py-16 grid grid-cols-1 sm:grid-cols-3 gap-12">
+          <ul class="grid gap-6">
+            <li class="flex gap-3">
+              <a class="logo" href="\"><img src="assets/images/logo.png" alt="logo" width="56" height="56"></a>
+              <div>
+                <p class="text-xl text-white font-normal">Government High School</p>
+                <span class="text-base text-[#99A1AF] font-normal">Chaki Faiq</span>
+              </div>
+            </li>
+            <li>
+              <p class="text-base text-[#99A1AF] font-normal">Committed to providing quality education and character
+                development, nurturing future leaders with excellence in academics and moral values.</p>
+            </li>
+            <li class="grid gap-3">
+              <a href="https://www.google.com/maps?q=Main+Road,+Chaki+Faiq,+Pakistan" target="_blank" class="flex gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path
+                    d="M16.6666 8.73356C16.6666 12.8944 12.0508 17.2277 10.5008 18.5661C10.3564 18.6746 10.1806 18.7334 9.99992 18.7334C9.81925 18.7334 9.64348 18.6746 9.49909 18.5661C7.94909 17.2277 3.33325 12.8944 3.33325 8.73356C3.33325 6.96545 4.03563 5.26976 5.28587 4.01952C6.53612 2.76927 8.23181 2.06689 9.99992 2.06689C11.768 2.06689 13.4637 2.76927 14.714 4.01952C15.9642 5.26976 16.6666 6.96545 16.6666 8.73356Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M10 11.2334C11.3807 11.2334 12.5 10.1141 12.5 8.7334C12.5 7.35269 11.3807 6.2334 10 6.2334C8.61929 6.2334 7.5 7.35269 7.5 8.7334C7.5 10.1141 8.61929 11.2334 10 11.2334Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="text-base font-normal text-[#99A1AF]">Main Road, Chaki Faiq, Pakistan</p>
+              </a>
+              <a href="tel:+92-XXX-XXXXXXX" class="flex gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path
+                    d="M11.5267 14.2069C11.6989 14.2859 11.8927 14.304 12.0765 14.2581C12.2602 14.2122 12.4229 14.1051 12.5376 13.9544L12.8334 13.5669C12.9887 13.3599 13.19 13.1919 13.4214 13.0762C13.6528 12.9605 13.908 12.9002 14.1667 12.9002H16.6667C17.1088 12.9002 17.5327 13.0758 17.8453 13.3884C18.1578 13.7009 18.3334 14.1249 18.3334 14.5669V17.0669C18.3334 17.5089 18.1578 17.9328 17.8453 18.2454C17.5327 18.558 17.1088 18.7336 16.6667 18.7336C12.6885 18.7336 8.87319 17.1532 6.06015 14.3402C3.2471 11.5271 1.66675 7.71181 1.66675 3.73356C1.66675 3.29153 1.84234 2.86761 2.1549 2.55505C2.46746 2.24249 2.89139 2.06689 3.33341 2.06689H5.83341C6.27544 2.06689 6.69936 2.24249 7.01193 2.55505C7.32449 2.86761 7.50008 3.29153 7.50008 3.73356V6.23356C7.50008 6.4923 7.43984 6.74749 7.32413 6.97892C7.20841 7.21034 7.04041 7.41165 6.83341 7.56689L6.44341 7.85939C6.29043 7.97621 6.1826 8.14238 6.13824 8.32969C6.09388 8.51699 6.11573 8.71387 6.20008 8.88689C7.33898 11.2001 9.2121 13.0709 11.5267 14.2069Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="text-base font-normal text-[#99A1AF]">+92-XXX-XXXXXXX</p>
+              </a>
+              <a href="mailto:info@ghschakifaiq.edu.pk" class="flex gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path
+                    d="M18.3334 6.2334L10.8409 11.0059C10.5867 11.1536 10.2979 11.2314 10.0038 11.2314C9.7098 11.2314 9.421 11.1536 9.16675 11.0059L1.66675 6.2334"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M16.6667 3.7334H3.33341C2.41294 3.7334 1.66675 4.47959 1.66675 5.40007V15.4001C1.66675 16.3205 2.41294 17.0667 3.33341 17.0667H16.6667C17.5872 17.0667 18.3334 16.3205 18.3334 15.4001V5.40007C18.3334 4.47959 17.5872 3.7334 16.6667 3.7334Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="text-base font-normal text-[#99A1AF]">info@ghschakifaiq.edu.pk</p>
+              </a>
+            </li>
+          </ul>
+          <div>
+            <h3 class="text-xl font-normal text-white pb-6">Quick Links</h3>
+            <ul class="grid gap-3">
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">About Us</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Academics</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Admissions</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Faculty</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Gallery</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-normal text-white pb-6">School Hours</h3>
+            <ul class="grid gap-4">
+              <li class="grid gap-1">
+                <h4 class="text-base font-normal text-white">Morning Session (Classes 6-8)</h4>
+                <time class="text-base text-[#99A1AF] font-normal">8:00 AM - 12:15 PM</time>
+              </li>
+              <li class="grid gap-1">
+                <h4 class="text-base font-normal text-white">Afternoon Session (Classes 9-10)</h4>
+                <time class="text-base text-[#99A1AF] font-normal">1:00 PM - 5:15 PM</time>
+              </li>
+              <li class="grid gap-1">
+                <h4 class="text-base font-normal text-white">Office Hours</h4>
+                <time class="text-base text-[#99A1AF] font-normal">Monday - Friday: 8:00 AM - 3:00 PM</time>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="py-8 flex flex-col gap-6 sm:flex-row justify-between" style="border-top: 0.8px solid #1E2939;">
+          <p class="text-sm text-[#99A1AF] font-normal">© 2024 Government High School Chaki Faiq. All rights reserved.
+          </p>
+          <span class="text-sm text-[#99A1AF] font-normal">Established 1999 • 25+ Years of Excellence</span>
+        </div>
+      </nav>
+    </div>
+  </footer>
+</body>
+
+</html>

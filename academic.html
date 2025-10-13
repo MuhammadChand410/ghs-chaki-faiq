@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Chakki Faiq</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        dropdownButtons.forEach(btn => {
+            const dropdown = btn.nextElementSibling;
+            const arrow = btn.querySelector('svg');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-180');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+            document.querySelectorAll('.dropdown-btn svg').forEach(a => a.classList.remove('rotate-180'));
+        });
+    });
+</script>
+
+<body>
+    <header class="py-4 sticky top-0 bg-white shadow z-50">
+        <div class="container">
+            <nav class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <a href="/">
+                        <img src="assets/images/logo.png" alt="logo" width="56" height="56">
+                    </a>
+                    <div>
+                        <p class="text-2xl text-[#101828] font-normal">Government High School</p>
+                        <span class="text-sm text-[#155DFC] font-normal">Chaki Faiq</span>
+                    </div>
+                </div>
+
+                <button id="nav-toggle" class="block md:hidden text-[#155DFC] focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <ul id="nav-menu"
+                    class="hidden flex-col md:flex md:flex-row md:items-center gap-4 md:gap-8 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none p-5 md:p-0 transition-all duration-300">
+                    <li>
+                        <a href="/"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Home</a>
+                    </li>
+
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            About
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</a>
+                            <a href="faculity.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Faculty</a>
+                            <a href="achievements.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Achievements</a>
+                            <a href="student.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Student
+                                Life</a>
+                        </div>
+                    </li>
+
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            Academics
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="academic.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Curriculum</a>
+                            <a href="download.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Downloads</a>
+                            <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Gallery</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="admission.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Admissions</a>
+                    </li>
+                    <li>
+                        <a href="contact-us.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/"
+                            class="px-6 py-2 rounded-lg bg-[#155DFC] text-white text-sm font-normal inline-block hover:bg-[#0D4ED8]">Apply
+                            Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="flex justify-center pt-16">
+                    <div class="max-w-[790px] grid gap-6">
+                        <h2 class="text-center text-4xl sm:text-6xl text-[#1C398E] font-normal">Academics & Learning
+                        </h2>
+                        <p class="sm:text-xl text-base font-normal text-center text-[#4A5565]">Our comprehensive
+                            curriculum follows the national standards while fostering critical thinking, creativity, and
+                            practical skills essential for success in higher education.</p>
+                    </div>
+                </div>
+                <div class="my-16">
+                    <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center pb-8">Matriculation
+                        Curriculum</h2>
+                    <div class="grid sm:grid-cols-3 grid-cols-1 gap-6">
+                        <div
+                            class="px-6 py-6 bg-white border rounded-[14px] shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl">
+                            <div class=" grid gap-6">
+                                <div class="bg-[#DBEAFE] px-3 py-3 rounded-full w-fit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"
+                                        fill="none">
+                                        <path
+                                            d="M18.7998 2.60001H6.7998C5.69524 2.60001 4.7998 3.49544 4.7998 4.60001V20.6C4.7998 21.7046 5.69524 22.6 6.7998 22.6H18.7998C19.9044 22.6 20.7998 21.7046 20.7998 20.6V4.60001C20.7998 3.49544 19.9044 2.60001 18.7998 2.60001Z"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M8.7998 6.60001H16.7998" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M16.7998 14.6V18.6" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M16.7998 10.6H16.8098" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M12.7998 10.6H12.8098" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M8.7998 10.6H8.8098" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M12.7998 14.6H12.8098" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M8.7998 14.6H8.8098" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M12.7998 18.6H12.8098" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M8.7998 18.6H8.8098" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-[#1C398E] text-base font-normal">Mathematics</h3>
+                                <p class="text-base font-normal text-[#4A5565]">Algebra, Geometry, Trigonometry,
+                                    Statistics</p>
+                            </div>
+                        </div>
+                        <div
+                            class="px-6 py-6 bg-white border rounded-[14px] shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl">
+                            <div class=" grid gap-6">
+                                <div class="bg-[#DBEAFE] px-3 py-3 rounded-full w-fit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"
+                                        fill="none">
+                                        <path
+                                            d="M14.4624 2.60001V8.60001C14.4622 8.93549 14.5465 9.26562 14.7074 9.56001L20.2174 19.64C20.384 19.9446 20.4685 20.2874 20.4625 20.6345C20.4565 20.9817 20.3603 21.3213 20.1832 21.62C20.0061 21.9187 19.7543 22.1661 19.4526 22.3379C19.1509 22.5098 18.8096 22.6001 18.4624 22.6H6.46238C6.11515 22.6001 5.77389 22.5098 5.47217 22.3379C5.17044 22.1661 4.91865 21.9187 4.74157 21.62C4.56448 21.3213 4.46821 20.9817 4.46221 20.6345C4.45622 20.2874 4.54071 19.9446 4.70738 19.64L10.2174 9.56001C10.3783 9.26562 10.4625 8.93549 10.4624 8.60001V2.60001"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M6.91553 15.6H18.0095" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M8.9624 2.60001H15.9624" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-[#1C398E] text-base font-normal">Sciences</h3>
+                                <p class="text-base font-normal text-[#4A5565]">Physics, Chemistry, Biology</p>
+                            </div>
+                        </div>
+                        <div
+                            class="px-6 py-6 bg-white border rounded-[14px] shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl">
+                            <div class=" grid gap-6">
+                                <div class="bg-[#DBEAFE] px-3 py-3 rounded-full w-fit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"
+                                        fill="none">
+                                        <path
+                                            d="M12.125 22.6C17.6478 22.6 22.125 18.1229 22.125 12.6C22.125 7.07716 17.6478 2.60001 12.125 2.60001C6.60215 2.60001 2.125 7.07716 2.125 12.6C2.125 18.1229 6.60215 22.6 12.125 22.6Z"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12.125 2.60001C9.55723 5.29616 8.125 8.87675 8.125 12.6C8.125 16.3233 9.55723 19.9039 12.125 22.6C14.6928 19.9039 16.125 16.3233 16.125 12.6C16.125 8.87675 14.6928 5.29616 12.125 2.60001Z"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M2.125 12.6H22.125" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-[#1C398E] text-base font-normal">Languages</h3>
+                                <p class="text-base font-normal text-[#4A5565]">English, Urdu, Arabic</p>
+                            </div>
+                        </div>
+                        <div
+                            class="px-6 py-6 bg-white border rounded-[14px] shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl">
+                            <div class=" grid gap-6">
+                                <div class="bg-[#DBEAFE] px-3 py-3 rounded-full w-fit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"
+                                        fill="none">
+                                        <path d="M12.7998 7.20001V21.2" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M3.7998 18.2C3.53459 18.2 3.28023 18.0947 3.0927 17.9071C2.90516 17.7196 2.7998 17.4652 2.7998 17.2V4.20001C2.7998 3.9348 2.90516 3.68044 3.0927 3.49291C3.28023 3.30537 3.53459 3.20001 3.7998 3.20001H8.7998C9.86067 3.20001 10.8781 3.62144 11.6282 4.37158C12.3784 5.12173 12.7998 6.13915 12.7998 7.20001C12.7998 6.13915 13.2212 5.12173 13.9714 4.37158C14.7215 3.62144 15.7389 3.20001 16.7998 3.20001H21.7998C22.065 3.20001 22.3194 3.30537 22.5069 3.49291C22.6944 3.68044 22.7998 3.9348 22.7998 4.20001V17.2C22.7998 17.4652 22.6944 17.7196 22.5069 17.9071C22.3194 18.0947 22.065 18.2 21.7998 18.2H15.7998C15.0042 18.2 14.2411 18.5161 13.6785 19.0787C13.1159 19.6413 12.7998 20.4044 12.7998 21.2C12.7998 20.4044 12.4837 19.6413 11.9211 19.0787C11.3585 18.5161 10.5955 18.2 9.7998 18.2H3.7998Z"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-[#1C398E] text-base font-normal">Social Studies</h3>
+                                <p class="text-base font-normal text-[#4A5565]">History, Geography, Civics, Economics
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="px-6 py-6 bg-white border rounded-[14px] shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl">
+                            <div class=" grid gap-6">
+                                <div class="bg-[#DBEAFE] px-3 py-3 rounded-full w-fit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"
+                                        fill="none">
+                                        <path
+                                            d="M12.4624 22.2C9.81024 22.2 7.2667 21.1464 5.39133 19.2711C3.51597 17.3957 2.4624 14.8522 2.4624 12.2C2.4624 9.54785 3.51597 7.00431 5.39133 5.12894C7.2667 3.25358 9.81024 2.20001 12.4624 2.20001C15.1146 2.20001 17.6581 3.14822 19.5335 4.83605C21.4088 6.52388 22.4624 8.81306 22.4624 11.2C22.4624 12.5261 21.9356 13.7979 20.9979 14.7355C20.0603 15.6732 18.7885 16.2 17.4624 16.2H15.2124C14.8874 16.2 14.5688 16.2905 14.2924 16.4614C14.0159 16.6322 13.7925 16.8767 13.6472 17.1674C13.5018 17.4581 13.4403 17.7835 13.4695 18.1072C13.4987 18.4309 13.6174 18.74 13.8124 19L14.1124 19.4C14.3074 19.66 14.4261 19.9692 14.4553 20.2929C14.4845 20.6165 14.423 20.942 14.2776 21.2326C14.1323 21.5233 13.9089 21.7678 13.6324 21.9387C13.356 22.1095 13.0374 22.2 12.7124 22.2H12.4624Z"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M13.9624 7.20001C14.2385 7.20001 14.4624 6.97615 14.4624 6.70001C14.4624 6.42387 14.2385 6.20001 13.9624 6.20001C13.6863 6.20001 13.4624 6.42387 13.4624 6.70001C13.4624 6.97615 13.6863 7.20001 13.9624 7.20001Z"
+                                            fill="#155DFC" stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M17.9624 11.2C18.2385 11.2 18.4624 10.9762 18.4624 10.7C18.4624 10.4239 18.2385 10.2 17.9624 10.2C17.6863 10.2 17.4624 10.4239 17.4624 10.7C17.4624 10.9762 17.6863 11.2 17.9624 11.2Z"
+                                            fill="#155DFC" stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M6.9624 13.2C7.23854 13.2 7.4624 12.9762 7.4624 12.7C7.4624 12.4239 7.23854 12.2 6.9624 12.2C6.68626 12.2 6.4624 12.4239 6.4624 12.7C6.4624 12.9762 6.68626 13.2 6.9624 13.2Z"
+                                            fill="#155DFC" stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M8.9624 8.20001C9.23854 8.20001 9.4624 7.97615 9.4624 7.70001C9.4624 7.42387 9.23854 7.20001 8.9624 7.20001C8.68626 7.20001 8.4624 7.42387 8.4624 7.70001C8.4624 7.97615 8.68626 8.20001 8.9624 8.20001Z"
+                                            fill="#155DFC" stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-[#1C398E] text-base font-normal">Arts</h3>
+                                <p class="text-base font-normal text-[#4A5565]">Drawing, Calligraphy, Creative Writing
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center pb-8">Daily Schedule</h2>
+                <div class="grid sm:grid-cols-2 grid-cols-1 gap-8">
+                    <div class="px-6 py-6 bg-white rounded-[14px] " style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                        <div class="grid gap-8">
+                            <p class="text-[#1C398E] flex text-start text-sm sm:text-base font-normal">Morning Session (Classes
+                                6-8)</p>
+                            <div class="grid gap-3">
+                                <div class="py-2 flex gap-8 justify-between"
+                                    style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                    <span class="text-[#4A5565] text-base font-normal">Assembly</span>
+                                    <p class="text-[#1C398E] text-base font-normal">8:00 - 8:15 AM</p>
+                                </div>
+                                <div class="py-2 flex gap-8 justify-between"
+                                    style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                    <span class="text-[#4A5565] text-base font-normal">Period 1</span>
+                                    <p class="text-[#1C398E] text-base font-normal">8:00 - 9:00 AM</p>
+                                </div>
+                                <div class="py-2 flex gap-8 justify-between"
+                                    style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                    <span class="text-[#4A5565] text-base font-normal">Period 2</span>
+                                    <p class="text-[#1C398E] text-base font-normal">9:00 - 9:45 AM</p>
+                                </div>
+                                <div class="py-2 flex gap-8 justify-between"
+                                    style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                    <span class="text-[#4A5565] text-base font-normal">Break</span>
+                                    <p class="text-[#1C398E] text-base font-normal">9:45 - 10:00 AM</p>
+                                </div>
+                                <div class="py-2 flex gap-8 justify-between"
+                                    style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                    <span class="text-[#4A5565] text-base font-normal">Period 3</span>
+                                    <p class="text-[#1C398E] text-base font-normal">10:00 - 10:45 AM</p>
+                                </div>
+                                <div class="py-2 flex gap-8 justify-between"
+                                    style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                    <span class="text-[#4A5565] text-base font-normal">Period 4</span>
+                                    <p class="text-[#1C398E] text-base font-normal">10:45 - 11:30 AM</p>
+                                </div>
+                                <div class="py-2 flex gap-8 justify-between">
+                                    <span class="text-[#4A5565] text-base font-normal">Period 5</span>
+                                    <p class="text-[#1C398E] text-base font-normal">11:30 AM - 12:15 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 py-6 bg-white rounded-[14px] " style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                        <div class="grid gap-8">
+                            <p class="text-[#1C398E] flex text-start text-smsm:text-base font-normal">Afternoon Session (Classes
+                                9-10)</p>
+                            <div class="grid gap-3">
+                                <div class="py-2 flex gap-8 justify-between"
+                                    style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                    <span class="text-[#4A5565] text-base font-normal">Assembly</span>
+                                    <p class="text-[#1C398E] text-base font-normal">1:00 - 1:15 PM</p>
+                                </div>
+                                <div class="py-2 flex gap-8 justify-between"
+                                    style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                    <span class="text-[#4A5565] text-base font-normal">Period 1</span>
+                                    <p class="text-[#1C398E] text-base font-normal">1:15 - 2:00 PM</p>
+                                </div>
+                                <div class="py-2 flex gap-8 justify-between"
+                                    style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                    <span class="text-[#4A5565] text-base font-normal">Period 2</span>
+                                    <p class="text-[#1C398E] text-base font-normal">2:00 - 2:45 PM</p>
+                                </div>
+                                <div class="py-2 flex gap-8 justify-between"
+                                    style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                    <span class="text-[#4A5565] text-base font-normal">Break</span>
+                                    <p class="text-[#1C398E] text-base font-normal">2:45 - 3:00 PM</p>
+                                </div>
+                                <div class="py-2 flex gap-8 justify-between"
+                                    style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                    <span class="text-[#4A5565] text-base font-normal">Period 3</span>
+                                    <p class="text-[#1C398E] text-base font-normal">3:00 - 3:45 PM</p>
+                                </div>
+                                <div class="py-2 flex gap-8 justify-between"
+                                    style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                    <span class="text-[#4A5565] text-base font-normal">Period 4</span>
+                                    <p class="text-[#1C398E] text-base font-normal">3:45 - 4:30 PM</p>
+                                </div>
+                                <div class="py-2 flex gap-8 justify-between">
+                                    <span class="text-[#4A5565] text-base font-normal">Period 5</span>
+                                    <p class="text-[#1C398E] text-base font-normal">4:30 - 5:15 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-16">
+            <div class="container">
+                <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center pb-8">Study Materials & Resources
+                </h2>
+                <div class="grid sm:grid-cols-3 pb-8 grid-cols-1 gap-8">
+                    <div class="px-6 py-6 bg-white rounded-[14px] shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl"
+                        style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                        <div class="grid gap-4">
+                            <div class="flex gap-3">
+                                <div class="px-2.5 py-2.5 bg-[#DBEAFE] w-fit rounded-[10px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                        fill="none">
+                                        <path d="M10.7998 12.7001V2.70007" stroke="#155DFC" stroke-width="1.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M18.2998 12.7001V16.0334C18.2998 16.4754 18.1242 16.8994 17.8116 17.2119C17.4991 17.5245 17.0752 17.7001 16.6331 17.7001H4.96647C4.52444 17.7001 4.10052 17.5245 3.78796 17.2119C3.4754 16.8994 3.2998 16.4754 3.2998 16.0334V12.7001"
+                                            stroke="#155DFC" stroke-width="1.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M6.6333 8.53345L10.8 12.7001L14.9666 8.53345" stroke="#155DFC"
+                                            stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="">
+                                    <h3 class="text-base text-[#1C398E]">Class 9 Syllabus</h3>
+                                    <p class="text-[#6A7282] text-sm font-normal">PDF • 2.3 MB</p>
+                                </div>
+                            </div>
+                            <button
+                                class="flex hover:bg-gray-100 gap-3.5 items-center justify-center text-[#0A0A0A] text-sm font-medium w-full px-8 py-2 bg-white rounded-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                    fill="none">
+                                    <path d="M8.94971 10.2001V2.20007" stroke="#0A0A0A" stroke-width="1.33333"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M14.9497 10.2001V12.8667C14.9497 13.2204 14.8092 13.5595 14.5592 13.8095C14.3091 14.0596 13.97 14.2001 13.6164 14.2001H4.28304C3.92942 14.2001 3.59028 14.0596 3.34023 13.8095C3.09018 13.5595 2.94971 13.2204 2.94971 12.8667V10.2001"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M5.61621 6.8667L8.94954 10.2L12.2829 6.8667" stroke="#0A0A0A"
+                                        stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                    <div class="px-6 py-6 bg-white rounded-[14px] shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl"
+                        style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                        <div class="grid gap-4">
+                            <div class="flex gap-3">
+                                <div class="px-2.5 py-2.5 bg-[#DBEAFE] w-fit rounded-[10px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                        fill="none">
+                                        <path d="M10.7998 12.7001V2.70007" stroke="#155DFC" stroke-width="1.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M18.2998 12.7001V16.0334C18.2998 16.4754 18.1242 16.8994 17.8116 17.2119C17.4991 17.5245 17.0752 17.7001 16.6331 17.7001H4.96647C4.52444 17.7001 4.10052 17.5245 3.78796 17.2119C3.4754 16.8994 3.2998 16.4754 3.2998 16.0334V12.7001"
+                                            stroke="#155DFC" stroke-width="1.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M6.6333 8.53345L10.8 12.7001L14.9666 8.53345" stroke="#155DFC"
+                                            stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="">
+                                    <h3 class="text-base text-[#1C398E]">Class 10 Syllabus</h3>
+                                    <p class="text-[#6A7282] text-sm font-normal">PDF • 2.5 MB</p>
+                                </div>
+                            </div>
+                            <button
+                                class="flex hover:bg-gray-100 gap-3.5 items-center justify-center text-[#0A0A0A] text-sm font-medium w-full px-8 py-2 bg-white rounded-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                    fill="none">
+                                    <path d="M8.94971 10.2001V2.20007" stroke="#0A0A0A" stroke-width="1.33333"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M14.9497 10.2001V12.8667C14.9497 13.2204 14.8092 13.5595 14.5592 13.8095C14.3091 14.0596 13.97 14.2001 13.6164 14.2001H4.28304C3.92942 14.2001 3.59028 14.0596 3.34023 13.8095C3.09018 13.5595 2.94971 13.2204 2.94971 12.8667V10.2001"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M5.61621 6.8667L8.94954 10.2L12.2829 6.8667" stroke="#0A0A0A"
+                                        stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                    <div class="px-6 py-6 bg-white rounded-[14px] shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl"
+                        style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                        <div class="grid gap-4">
+                            <div class="flex gap-3">
+                                <div class="px-2.5 py-2.5 bg-[#DBEAFE] w-fit rounded-[10px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                        fill="none">
+                                        <path d="M10.7998 12.7001V2.70007" stroke="#155DFC" stroke-width="1.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M18.2998 12.7001V16.0334C18.2998 16.4754 18.1242 16.8994 17.8116 17.2119C17.4991 17.5245 17.0752 17.7001 16.6331 17.7001H4.96647C4.52444 17.7001 4.10052 17.5245 3.78796 17.2119C3.4754 16.8994 3.2998 16.4754 3.2998 16.0334V12.7001"
+                                            stroke="#155DFC" stroke-width="1.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M6.6333 8.53345L10.8 12.7001L14.9666 8.53345" stroke="#155DFC"
+                                            stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="">
+                                    <h3 class="text-base text-[#1C398E]">Mathematics Study Guide</h3>
+                                    <p class="text-[#6A7282] text-sm font-normal">PDF • 4.1 MB</p>
+                                </div>
+                            </div>
+                            <button
+                                class="flex hover:bg-gray-100 gap-3.5 items-center justify-center text-[#0A0A0A] text-sm font-medium w-full px-8 py-2 bg-white rounded-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                    fill="none">
+                                    <path d="M8.94971 10.2001V2.20007" stroke="#0A0A0A" stroke-width="1.33333"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M14.9497 10.2001V12.8667C14.9497 13.2204 14.8092 13.5595 14.5592 13.8095C14.3091 14.0596 13.97 14.2001 13.6164 14.2001H4.28304C3.92942 14.2001 3.59028 14.0596 3.34023 13.8095C3.09018 13.5595 2.94971 13.2204 2.94971 12.8667V10.2001"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M5.61621 6.8667L8.94954 10.2L12.2829 6.8667" stroke="#0A0A0A"
+                                        stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                    <div class="px-6 py-6 bg-white rounded-[14px] shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl"
+                        style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                        <div class="grid gap-4">
+                            <div class="flex gap-3">
+                                <div class="px-2.5 py-2.5 bg-[#DBEAFE] w-fit rounded-[10px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                        fill="none">
+                                        <path d="M10.7998 12.7001V2.70007" stroke="#155DFC" stroke-width="1.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M18.2998 12.7001V16.0334C18.2998 16.4754 18.1242 16.8994 17.8116 17.2119C17.4991 17.5245 17.0752 17.7001 16.6331 17.7001H4.96647C4.52444 17.7001 4.10052 17.5245 3.78796 17.2119C3.4754 16.8994 3.2998 16.4754 3.2998 16.0334V12.7001"
+                                            stroke="#155DFC" stroke-width="1.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M6.6333 8.53345L10.8 12.7001L14.9666 8.53345" stroke="#155DFC"
+                                            stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="">
+                                    <h3 class="text-base text-[#1C398E]">Science Lab Manual</h3>
+                                    <p class="text-[#6A7282] text-sm font-normal">PDF • 3.8 MB</p>
+                                </div>
+                            </div>
+                            <button
+                                class="flex hover:bg-gray-100 gap-3.5 items-center justify-center text-[#0A0A0A] text-sm font-medium w-full px-8 py-2 bg-white rounded-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                    fill="none">
+                                    <path d="M8.94971 10.2001V2.20007" stroke="#0A0A0A" stroke-width="1.33333"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M14.9497 10.2001V12.8667C14.9497 13.2204 14.8092 13.5595 14.5592 13.8095C14.3091 14.0596 13.97 14.2001 13.6164 14.2001H4.28304C3.92942 14.2001 3.59028 14.0596 3.34023 13.8095C3.09018 13.5595 2.94971 13.2204 2.94971 12.8667V10.2001"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M5.61621 6.8667L8.94954 10.2L12.2829 6.8667" stroke="#0A0A0A"
+                                        stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                    <div class="px-6 py-6 bg-white rounded-[14px] shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl"
+                        style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                        <div class="grid gap-4">
+                            <div class="flex gap-3">
+                                <div class="px-2.5 py-2.5 bg-[#DBEAFE] w-fit rounded-[10px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                        fill="none">
+                                        <path d="M10.7998 12.7001V2.70007" stroke="#155DFC" stroke-width="1.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M18.2998 12.7001V16.0334C18.2998 16.4754 18.1242 16.8994 17.8116 17.2119C17.4991 17.5245 17.0752 17.7001 16.6331 17.7001H4.96647C4.52444 17.7001 4.10052 17.5245 3.78796 17.2119C3.4754 16.8994 3.2998 16.4754 3.2998 16.0334V12.7001"
+                                            stroke="#155DFC" stroke-width="1.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M6.6333 8.53345L10.8 12.7001L14.9666 8.53345" stroke="#155DFC"
+                                            stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="">
+                                    <h3 class="text-base text-[#1C398E]">English Grammar Rules</h3>
+                                    <p class="text-[#6A7282] text-sm font-normal">PDF • 1.9 MB</p>
+                                </div>
+                            </div>
+                            <button
+                                class="flex hover:bg-gray-100 gap-3.5 items-center justify-center text-[#0A0A0A] text-sm font-medium w-full px-8 py-2 bg-white rounded-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                    fill="none">
+                                    <path d="M8.94971 10.2001V2.20007" stroke="#0A0A0A" stroke-width="1.33333"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M14.9497 10.2001V12.8667C14.9497 13.2204 14.8092 13.5595 14.5592 13.8095C14.3091 14.0596 13.97 14.2001 13.6164 14.2001H4.28304C3.92942 14.2001 3.59028 14.0596 3.34023 13.8095C3.09018 13.5595 2.94971 13.2204 2.94971 12.8667V10.2001"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M5.61621 6.8667L8.94954 10.2L12.2829 6.8667" stroke="#0A0A0A"
+                                        stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                    <div class="px-6 py-6 bg-white rounded-[14px] shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl"
+                        style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                        <div class="grid gap-4">
+                            <div class="flex gap-3">
+                                <div class="px-2.5 py-2.5 bg-[#DBEAFE] w-fit rounded-[10px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                        fill="none">
+                                        <path d="M10.7998 12.7001V2.70007" stroke="#155DFC" stroke-width="1.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M18.2998 12.7001V16.0334C18.2998 16.4754 18.1242 16.8994 17.8116 17.2119C17.4991 17.5245 17.0752 17.7001 16.6331 17.7001H4.96647C4.52444 17.7001 4.10052 17.5245 3.78796 17.2119C3.4754 16.8994 3.2998 16.4754 3.2998 16.0334V12.7001"
+                                            stroke="#155DFC" stroke-width="1.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M6.6333 8.53345L10.8 12.7001L14.9666 8.53345" stroke="#155DFC"
+                                            stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="">
+                                    <h3 class="text-base text-[#1C398E]">Past Papers Collection</h3>
+                                    <p class="text-[#6A7282] text-sm font-normal">ZIP • 15.2 MB</p>
+                                </div>
+                            </div>
+                            <button
+                                class="flex hover:bg-gray-100 gap-3.5 items-center justify-center text-[#0A0A0A] text-sm font-medium w-full px-8 py-2 bg-white rounded-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                    fill="none">
+                                    <path d="M8.94971 10.2001V2.20007" stroke="#0A0A0A" stroke-width="1.33333"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M14.9497 10.2001V12.8667C14.9497 13.2204 14.8092 13.5595 14.5592 13.8095C14.3091 14.0596 13.97 14.2001 13.6164 14.2001H4.28304C3.92942 14.2001 3.59028 14.0596 3.34023 13.8095C3.09018 13.5595 2.94971 13.2204 2.94971 12.8667V10.2001"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M5.61621 6.8667L8.94954 10.2L12.2829 6.8667" stroke="#0A0A0A"
+                                        stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid justify-center">
+                    <button
+                        class="px-4 py-2.5 rounded-xl bg-[#155DFC] flex gap-4 items-center text-sm text-white font-normal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                            <path d="M10.3252 2.59998H14.3252V6.59998" stroke="white" stroke-width="1.33333"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M6.9917 9.93331L14.325 2.59998" stroke="white" stroke-width="1.33333"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M12.3252 9.26664V13.2666C12.3252 13.6203 12.1847 13.9594 11.9347 14.2095C11.6846 14.4595 11.3455 14.6 10.9919 14.6H3.65853C3.30491 14.6 2.96577 14.4595 2.71572 14.2095C2.46567 13.9594 2.3252 13.6203 2.3252 13.2666V5.93331C2.3252 5.57969 2.46567 5.24055 2.71572 4.9905C2.96577 4.74045 3.30491 4.59998 3.65853 4.59998H7.65853"
+                                stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Online Library Portal
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center pb-8">Learning Facilities
+                </h2>
+                <div class="grid gap-8">
+                    <div class="rounded-[10px] bg-white " style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div class="flex pt-4 flex-col justify-center pl-8 gap-3">
+                                <h3 class="text-[#1C398E] text-xl sm:text-2xl font-normal">Science Laboratory</h3>
+                                <p class="text-base sm:text-lg font-normal text-[#4A5565]">Fully equipped physics, chemistry, and
+                                    biology labs with modern instruments</p>
+                            </div>
+                            <div>
+                                <img src="assets/images/learning-facilties.jpeg" alt="learning"
+                                    class="w-[543px] rounded-b-[10px] sm:rounded-b-none sm:rounded-r-[10px] w-full h-[230px] sm:h-[724px] object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-[10px] bg-white " style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                        <div class="grid sm:grid-cols-2 grid-cols-1 gap-8">
+                            <div class="flex flex-col pt-4 sm:justify-center pl-8 gap-3">
+                                <h3 class="text-[#1C398E] text-xl sm:text-2xl font-normal">Library</h3>
+                                <p class="text-base sm:text-lg font-normal text-[#4A5565]">Over 5000+ books, journals, and digital
+                                    resources for comprehensive learning</p>
+                            </div>
+                            <div>
+                                <img src="assets/images/library.jpeg" alt="learning"
+                                    class="w-[543px] h-[230px] sm:h-[362px] w-full sm:rounded-b-none rounded-b-[10px] sm:rounded-r-[10px] object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-[10px] bg-white " style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div class="flex flex-col pt-4 justify-center pl-8 gap-3">
+                                <h3 class="text-[#1C398E] text-xl sm:text-2xl font-normal">Computer Lab</h3>
+                                <p class="text-base sm:text-lg font-normal text-[#4A5565]">30 modern computers with high-speed
+                                    internet for digital literacy</p>
+                            </div>
+                            <div>
+                                <img src="assets/images/computer.jpeg" alt="learning"
+                                    class="w-[543px] h-[230px] sm:h-[362px] w-full sm:rounded-b-none rounded-b-[10px] sm:rounded-r-[10px] object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-16">
+            <div class="container">
+                <div class="bg-[#EFF6FF] px-8 py-8 rounded-[10px]">
+                    <div class="grid gap-8">
+                        <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center">Assessment & Evaluation</h2>
+                        <div class="grid sm:grid-cols-3 grid-cols-1 gap-8">
+                            <div class="grid place-items-center gap-3">
+                                <div class="px-4 py-4 bg-[#DBEAFE] rounded-full w-fit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                        fill="none">
+                                        <path d="M16 8.77515V16.7751L21.3333 19.4418" stroke="#155DFC"
+                                            stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M15.9998 30.1086C23.3636 30.1086 29.3332 24.139 29.3332 16.7752C29.3332 9.41143 23.3636 3.44189 15.9998 3.44189C8.63604 3.44189 2.6665 9.41143 2.6665 16.7752C2.6665 24.139 8.63604 30.1086 15.9998 30.1086Z"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-[#1C398E] text-lg sm:text-xl text-center font-normal">Continuous Assessment</h3>
+                                <p class="text-sm sm:text-base font-normal text-center text-[#4A5565]">Regular quizzes,
+                                    assignments,
+                                    and class participation evaluation</p>
+                            </div>
+                            <div class="grid place-items-center gap-3">
+                                <div class="px-4 py-4 bg-[#DBEAFE] rounded-full w-fit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                        fill="none">
+                                        <path d="M16 10.1084V28.7751" stroke="#155DFC" stroke-width="2.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M3.99984 24.7751C3.64622 24.7751 3.30708 24.6347 3.05703 24.3846C2.80698 24.1346 2.6665 23.7954 2.6665 23.4418V6.10848C2.6665 5.75486 2.80698 5.41572 3.05703 5.16567C3.30708 4.91562 3.64622 4.77515 3.99984 4.77515H10.6665C12.081 4.77515 13.4375 5.33705 14.4377 6.33724C15.4379 7.33744 15.9998 8.69399 15.9998 10.1085C15.9998 8.69399 16.5617 7.33744 17.5619 6.33724C18.5621 5.33705 19.9187 4.77515 21.3332 4.77515H27.9998C28.3535 4.77515 28.6926 4.91562 28.9426 5.16567C29.1927 5.41572 29.3332 5.75486 29.3332 6.10848V23.4418C29.3332 23.7954 29.1927 24.1346 28.9426 24.3846C28.6926 24.6347 28.3535 24.7751 27.9998 24.7751H19.9998C18.939 24.7751 17.9216 25.1966 17.1714 25.9467C16.4213 26.6969 15.9998 27.7143 15.9998 28.7751C15.9998 27.7143 15.5784 26.6969 14.8283 25.9467C14.0781 25.1966 13.0607 24.7751 11.9998 24.7751H3.99984Z"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-[#1C398E] text-lg sm:text-xl text-center font-normal">Periodic Exams</h3>
+                                <p class="text-sm sm:text-base font-normal text-center text-[#4A5565]">Mid-term and final
+                                    examinations following board patterns</p>
+                            </div>
+                            <div class="grid place-items-center gap-3">
+                                <div class="px-4 py-4 bg-[#DBEAFE] rounded-full w-fit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                        fill="none">
+                                        <path
+                                            d="M13.3335 20.3218V22.4898C13.3285 22.9466 13.2061 23.3945 12.9783 23.7905C12.7504 24.1864 12.4246 24.5172 12.0322 24.7511C11.199 25.3682 10.5213 26.1711 10.0528 27.096C9.58434 28.0209 9.33804 29.0423 9.3335 30.0791"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M18.6665 20.3218V22.4898C18.6715 22.9466 18.7939 23.3945 19.0217 23.7905C19.2496 24.1864 19.5754 24.5172 19.9678 24.7511C20.801 25.3682 21.4787 26.1711 21.9472 27.096C22.4157 28.0209 22.662 29.0423 22.6665 30.0791"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M24 12.7751H26C26.8841 12.7751 27.7319 12.4239 28.357 11.7988C28.9821 11.1736 29.3333 10.3258 29.3333 9.44173C29.3333 8.55768 28.9821 7.70983 28.357 7.08471C27.7319 6.45959 26.8841 6.1084 26 6.1084H24"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M5.3335 30.1084H26.6668" stroke="#155DFC" stroke-width="2.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M8 12.7752C8 14.897 8.84286 16.9318 10.3431 18.4321C11.8434 19.9324 13.8783 20.7752 16 20.7752C18.1217 20.7752 20.1566 19.9324 21.6569 18.4321C23.1571 16.9318 24 14.897 24 12.7752V4.77523C24 4.42161 23.8595 4.08247 23.6095 3.83242C23.3594 3.58237 23.0203 3.44189 22.6667 3.44189H9.33333C8.97971 3.44189 8.64057 3.58237 8.39052 3.83242C8.14048 4.08247 8 4.42161 8 4.77523V12.7752Z"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M7.99984 12.7751H5.99984C5.11578 12.7751 4.26794 12.4239 3.64281 11.7988C3.01769 11.1736 2.6665 10.3258 2.6665 9.44173C2.6665 8.55768 3.01769 7.70983 3.64281 7.08471C4.26794 6.45959 5.11578 6.1084 5.99984 6.1084H7.99984"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-[#1C398E] text-lg sm:text-xl text-center font-normal">Board Preparation</h3>
+                                <p class="text-sm sm:text-base font-normal text-center text-[#4A5565]">Comprehensive preparation
+                                    for matriculation board examinations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+     <footer class=" bg-[#101828]">
+    <div class="container">
+      <nav>
+        <div class="py-12 grid justify-center">
+          <div class="bg-[#155DFC] px-35 w-[530px] sm:w-[869px] h-[192px]">
+            <h2 class="sm:text-4xl text-2xl font-normal text-center text-white pb-6">Ready to Join Our School?</h2>
+            <div class="flex justify-center">
+              <p
+                class="sm:text-xl text-base font-normal max-w-[450px] sm:max-w-[610px] text-center text-[#DBEAFE] pb-7">
+                Take the first step towards
+                excellence in
+                education. Apply now for the upcoming academic year.</p>
+            </div>
+            <div class="flex justify-center">
+              <button class="px-8 py-2 rounded-lg bg-white">
+                <a href="/" class="text-lg font-normal text-[#155DFC]">Apply for Admission</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="py-16 grid grid-cols-1 sm:grid-cols-3 gap-12">
+          <ul class="grid gap-6">
+            <li class="flex gap-3">
+              <a class="logo" href="\"><img src="assets/images/logo.png" alt="logo" width="56" height="56"></a>
+              <div>
+                <p class="text-xl text-white font-normal">Government High School</p>
+                <span class="text-base text-[#99A1AF] font-normal">Chaki Faiq</span>
+              </div>
+            </li>
+            <li>
+              <p class="text-base text-[#99A1AF] font-normal">Committed to providing quality education and character
+                development, nurturing future leaders with excellence in academics and moral values.</p>
+            </li>
+            <li class="grid gap-3">
+              <a href="https://www.google.com/maps?q=Main+Road,+Chaki+Faiq,+Pakistan" target="_blank" class="flex gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path
+                    d="M16.6666 8.73356C16.6666 12.8944 12.0508 17.2277 10.5008 18.5661C10.3564 18.6746 10.1806 18.7334 9.99992 18.7334C9.81925 18.7334 9.64348 18.6746 9.49909 18.5661C7.94909 17.2277 3.33325 12.8944 3.33325 8.73356C3.33325 6.96545 4.03563 5.26976 5.28587 4.01952C6.53612 2.76927 8.23181 2.06689 9.99992 2.06689C11.768 2.06689 13.4637 2.76927 14.714 4.01952C15.9642 5.26976 16.6666 6.96545 16.6666 8.73356Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M10 11.2334C11.3807 11.2334 12.5 10.1141 12.5 8.7334C12.5 7.35269 11.3807 6.2334 10 6.2334C8.61929 6.2334 7.5 7.35269 7.5 8.7334C7.5 10.1141 8.61929 11.2334 10 11.2334Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="text-base font-normal text-[#99A1AF]">Main Road, Chaki Faiq, Pakistan</p>
+              </a>
+              <a href="tel:+92-XXX-XXXXXXX" class="flex gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path
+                    d="M11.5267 14.2069C11.6989 14.2859 11.8927 14.304 12.0765 14.2581C12.2602 14.2122 12.4229 14.1051 12.5376 13.9544L12.8334 13.5669C12.9887 13.3599 13.19 13.1919 13.4214 13.0762C13.6528 12.9605 13.908 12.9002 14.1667 12.9002H16.6667C17.1088 12.9002 17.5327 13.0758 17.8453 13.3884C18.1578 13.7009 18.3334 14.1249 18.3334 14.5669V17.0669C18.3334 17.5089 18.1578 17.9328 17.8453 18.2454C17.5327 18.558 17.1088 18.7336 16.6667 18.7336C12.6885 18.7336 8.87319 17.1532 6.06015 14.3402C3.2471 11.5271 1.66675 7.71181 1.66675 3.73356C1.66675 3.29153 1.84234 2.86761 2.1549 2.55505C2.46746 2.24249 2.89139 2.06689 3.33341 2.06689H5.83341C6.27544 2.06689 6.69936 2.24249 7.01193 2.55505C7.32449 2.86761 7.50008 3.29153 7.50008 3.73356V6.23356C7.50008 6.4923 7.43984 6.74749 7.32413 6.97892C7.20841 7.21034 7.04041 7.41165 6.83341 7.56689L6.44341 7.85939C6.29043 7.97621 6.1826 8.14238 6.13824 8.32969C6.09388 8.51699 6.11573 8.71387 6.20008 8.88689C7.33898 11.2001 9.2121 13.0709 11.5267 14.2069Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="text-base font-normal text-[#99A1AF]">+92-XXX-XXXXXXX</p>
+              </a>
+              <a href="mailto:info@ghschakifaiq.edu.pk" class="flex gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path
+                    d="M18.3334 6.2334L10.8409 11.0059C10.5867 11.1536 10.2979 11.2314 10.0038 11.2314C9.7098 11.2314 9.421 11.1536 9.16675 11.0059L1.66675 6.2334"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M16.6667 3.7334H3.33341C2.41294 3.7334 1.66675 4.47959 1.66675 5.40007V15.4001C1.66675 16.3205 2.41294 17.0667 3.33341 17.0667H16.6667C17.5872 17.0667 18.3334 16.3205 18.3334 15.4001V5.40007C18.3334 4.47959 17.5872 3.7334 16.6667 3.7334Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="text-base font-normal text-[#99A1AF]">info@ghschakifaiq.edu.pk</p>
+              </a>
+            </li>
+          </ul>
+          <div>
+            <h3 class="text-xl font-normal text-white pb-6">Quick Links</h3>
+            <ul class="grid gap-3">
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">About Us</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Academics</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Admissions</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Faculty</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Gallery</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-normal text-white pb-6">School Hours</h3>
+            <ul class="grid gap-4">
+              <li class="grid gap-1">
+                <h4 class="text-base font-normal text-white">Morning Session (Classes 6-8)</h4>
+                <time class="text-base text-[#99A1AF] font-normal">8:00 AM - 12:15 PM</time>
+              </li>
+              <li class="grid gap-1">
+                <h4 class="text-base font-normal text-white">Afternoon Session (Classes 9-10)</h4>
+                <time class="text-base text-[#99A1AF] font-normal">1:00 PM - 5:15 PM</time>
+              </li>
+              <li class="grid gap-1">
+                <h4 class="text-base font-normal text-white">Office Hours</h4>
+                <time class="text-base text-[#99A1AF] font-normal">Monday - Friday: 8:00 AM - 3:00 PM</time>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="py-8 flex flex-col gap-6 sm:flex-row justify-between" style="border-top: 0.8px solid #1E2939;">
+          <p class="text-sm text-[#99A1AF] font-normal">© 2024 Government High School Chaki Faiq. All rights reserved.
+          </p>
+          <span class="text-sm text-[#99A1AF] font-normal">Established 1999 • 25+ Years of Excellence</span>
+        </div>
+      </nav>
+    </div>
+  </footer>
+</body>
+
+</html>

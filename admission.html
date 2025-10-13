@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Chakki Faiq</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        dropdownButtons.forEach(btn => {
+            const dropdown = btn.nextElementSibling;
+            const arrow = btn.querySelector('svg');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-180');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+            document.querySelectorAll('.dropdown-btn svg').forEach(a => a.classList.remove('rotate-180'));
+        });
+    });
+</script>
+
+<body>
+    <header class="py-4 sticky top-0 bg-white shadow z-50">
+        <div class="container">
+            <nav class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <a href="/">
+                        <img src="assets/images/logo.png" alt="logo" width="56" height="56">
+                    </a>
+                    <div>
+                        <p class="text-2xl text-[#101828] font-normal">Government High School</p>
+                        <span class="text-sm text-[#155DFC] font-normal">Chaki Faiq</span>
+                    </div>
+                </div>
+
+                <button id="nav-toggle" class="block md:hidden text-[#155DFC] focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <ul id="nav-menu"
+                    class="hidden flex-col md:flex md:flex-row md:items-center gap-4 md:gap-8 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none p-5 md:p-0 transition-all duration-300">
+                    <li>
+                        <a href="/"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Home</a>
+                    </li>
+
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            About
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</a>
+                            <a href="faculity.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Faculty</a>
+                            <a href="achievements.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Achievements</a>
+                            <a href="student.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Student
+                                Life</a>
+                        </div>
+                    </li>
+
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            Academics
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="academic.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Curriculum</a>
+                            <a href="download.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Downloads</a>
+                            <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Gallery</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="admission.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Admissions</a>
+                    </li>
+                    <li>
+                        <a href="contact-us.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/"
+                            class="px-6 py-2 rounded-lg bg-[#155DFC] text-white text-sm font-normal inline-block hover:bg-[#0D4ED8]">Apply
+                            Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="my-16">
+            <div class="container">
+                <div class="grid gap-16">
+                    <div class="flex justify-center">
+                        <div class="max-w-[780px] grid gap-6">
+                            <h2 class="text-center text-4xl sm:text-6xl text-[#1C398E] font-normal">Admissions
+                            </h2>
+                            <p class="sm:text-xl text-base font-normal text-center text-[#4A5565]">Join Government High
+                                School Chaki Faiq and be part of our tradition of excellence. We welcome students who
+                                are
+                                eager to learn, grow, and contribute to our vibrant community.</p>
+                        </div>
+                    </div>
+                    <div class="px-4 py-4 bg-[#FEFCE8]" style="border-left: 4px solid #FDC700;">
+                        <div class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                fill="none">
+                                <path
+                                    d="M10.0003 19.1331C14.6027 19.1331 18.3337 15.4022 18.3337 10.7998C18.3337 6.19742 14.6027 2.46646 10.0003 2.46646C5.39795 2.46646 1.66699 6.19742 1.66699 10.7998C1.66699 15.4022 5.39795 19.1331 10.0003 19.1331Z"
+                                    stroke="#D08700" stroke-width="1.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M10 7.46646V10.7998" stroke="#D08700" stroke-width="1.66667"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M10 14.1331H10.0083" stroke="#D08700" stroke-width="1.66667"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div class="grid gap-1">
+                                <h3 class="text-[#894B00] text-base font-normal">Admissions Open for Academic Year
+                                    2025-26
+                                </h3>
+                                <p class="text-[#A65F00] font-normal text-sm">Online applications are now being
+                                    accepted.
+                                    Submit your application before the deadline.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div>
+                    <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center pb-8">Admission Process</h2>
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-4">
+                        <div
+                            class="group hover:text-blue-500 hover:border-2 hover:border-blue-500 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl px-6 py-6 bg-white rounded-[14px] border cursor-pointer">
+                            <div class="grid gap-6">
+                                <div class="grid gap-6 place-items-center">
+                                    <div class="grid place-items-center gap-5">
+                                        <div
+                                            class="px-4 mb-5 py-4 rounded-full flex items-center justify-center h-[80px] w-[80px] bg-[#F3F4F6] group-hover:bg-[#DBEAFE] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33"
+                                                viewBox="0 0 32 33" fill="none"
+                                                class="transition-all duration-300 group-hover:[&>path]:stroke-[#155DFC]">
+                                                <path
+                                                    d="M19.9997 3.26654H7.99967C7.29243 3.26654 6.61415 3.54749 6.11406 4.04759C5.61396 4.54769 5.33301 5.22596 5.33301 5.93321V27.2665C5.33301 27.9738 5.61396 28.6521 6.11406 29.1522C6.61415 29.6523 7.29243 29.9332 7.99967 29.9332H23.9997C24.7069 29.9332 25.3852 29.6523 25.8853 29.1522C26.3854 28.6521 26.6663 27.9738 26.6663 27.2665V9.93321L19.9997 3.26654Z"
+                                                    stroke="#99A1AF" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M18.667 3.26654V8.59987C18.667 9.30712 18.9479 9.9854 19.448 10.4855C19.9481 10.9856 20.6264 11.2665 21.3337 11.2665H26.667"
+                                                    stroke="#99A1AF" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M13.3337 12.5999H10.667" stroke="#99A1AF"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M21.3337 17.9332H10.667" stroke="#99A1AF"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M21.3337 23.2665H10.667" stroke="#99A1AF"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid place-items-center gap-3">
+                                            <span
+                                                class="text-[#4A5565] bg-[#D1D5DC] w-fit text-sm font-normal px-3 py-1.5 rounded-full group-hover:bg-[#155DFC] group-hover:text-[#FFF] transition-all duration-300">
+                                                1
+                                            </span>
+                                            <h4
+                                                class="text-[#4A5565] text-lg font-normal group-hover:text-[#1C398E;] transition-all duration-300">
+                                                Fill Application Form
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center grid place-items-center">
+                                        <p
+                                            class="text-[#6A7282] text-sm font-normal group-hover:text-[#364153] transition-all duration-300">
+                                            Complete the online registration form with required details
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="group hover:text-blue-500 hover:border-2 hover:border-blue-500 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl px-6 py-6 bg-white rounded-[14px] border cursor-pointer">
+                            <div class="grid gap-6">
+                                <div class="grid gap-6 place-items-center">
+                                    <div class="grid place-items-center gap-5">
+                                        <div
+                                            class="px-4 mb-5 py-4 rounded-full flex items-center justify-center h-[80px] w-[80px] bg-[#F3F4F6] group-hover:bg-[#DBEAFE] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33"
+                                                viewBox="0 0 32 33" fill="none"
+                                                class="transition-all duration-300 group-hover:[&>path]:stroke-[#155DFC]">
+                                                <path
+                                                    d="M29.0681 13.9332C29.6771 16.9216 29.2431 20.0284 27.8386 22.7356C26.4341 25.4427 24.144 27.5866 21.3502 28.8096C18.5563 30.0326 15.4276 30.2609 12.4859 29.4563C9.5441 28.6518 6.96705 26.863 5.1845 24.3884C3.40195 21.9138 2.52163 18.9028 2.69035 15.8577C2.85907 12.8126 4.06664 9.91729 6.11167 7.65473C8.1567 5.39218 10.9156 3.89908 13.9282 3.42444C16.9409 2.94981 20.0252 3.52232 22.6668 5.04651"
+                                                    stroke="#99A1AF" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12 15.2665L16 19.2665L29.3333 5.93317" stroke="#99A1AF"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid place-items-center gap-3">
+                                            <span
+                                                class="text-[#4A5565] bg-[#D1D5DC] w-fit text-sm font-normal px-3 py-1.5 rounded-full group-hover:bg-[#155DFC] group-hover:text-[#FFF] transition-all duration-300">
+                                                2
+                                            </span>
+                                            <h4
+                                                class="text-[#4A5565] text-lg font-normal group-hover:text-[#1C398E;] transition-all duration-300">
+                                                Submit Documents
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="text-center grid place-items-center">
+                                        <p
+                                            class="text-[#6A7282] text-sm font-normal group-hover:text-[#364153] transition-all duration-300">
+                                            Provide required documents and certificates
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="group hover:text-blue-500 hover:border-2 hover:border-blue-500 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl px-6 py-6 bg-white rounded-[14px] border cursor-pointer">
+                            <div class="grid gap-6">
+                                <div class="grid gap-6 place-items-center">
+                                    <div class="grid place-items-center gap-5">
+                                        <div
+                                            class="px-4 mb-5 py-4 rounded-full flex items-center justify-center h-[80px] w-[80px] bg-[#F3F4F6] group-hover:bg-[#DBEAFE] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33"
+                                                viewBox="0 0 32 33" fill="none"
+                                                class="transition-all duration-300 group-hover:[&>path]:stroke-[#155DFC]">
+                                                <path
+                                                    d="M28.5597 15.1626C28.7984 15.0574 29.001 14.8843 29.1423 14.6651C29.2836 14.4458 29.3575 14.1898 29.3548 13.929C29.3521 13.6681 29.273 13.4137 29.1271 13.1974C28.9813 12.9811 28.7752 12.8123 28.5344 12.712L17.1064 7.50665C16.759 7.34818 16.3816 7.26617 15.9997 7.26617C15.6179 7.26617 15.2405 7.34818 14.8931 7.50665L3.4664 12.7067C3.22902 12.8106 3.02709 12.9815 2.88529 13.1984C2.74349 13.4153 2.66797 13.6688 2.66797 13.928C2.66797 14.1871 2.74349 14.4407 2.88529 14.6576C3.02709 14.8745 3.22902 15.0454 3.4664 15.1493L14.8931 20.36C15.2405 20.5185 15.6179 20.6005 15.9997 20.6005C16.3816 20.6005 16.759 20.5185 17.1064 20.36L28.5597 15.1626Z"
+                                                    stroke="#99A1AF" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M29.333 13.9332V21.9332" stroke="#99A1AF"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M8 17.2665V21.9332C8 22.9941 8.84286 24.0115 10.3431 24.7616C11.8434 25.5118 13.8783 25.9332 16 25.9332C18.1217 25.9332 20.1566 25.5118 21.6569 24.7616C23.1571 24.0115 24 22.9941 24 21.9332V17.2665"
+                                                    stroke="#99A1AF" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid place-items-center gap-3">
+                                            <span
+                                                class="text-[#4A5565] bg-[#D1D5DC] w-fit text-sm font-normal px-3 py-1.5 rounded-full group-hover:bg-[#155DFC] group-hover:text-[#FFF] transition-all duration-300">
+                                                3
+                                            </span>
+                                            <h4
+                                                class="text-[#4A5565] text-lg font-normal group-hover:text-[#1C398E;] transition-all duration-300">
+                                                Entrance Test
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="text-center grid place-items-center">
+                                        <p
+                                            class="text-[#6A7282] text-sm font-normal group-hover:text-[#364153] transition-all duration-300">
+                                            Appear for the admission test (if applicable)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="group hover:text-blue-500 hover:border-2 hover:border-blue-500 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl px-6 py-6 bg-white rounded-[14px] border cursor-pointer">
+                            <div class="grid gap-6">
+                                <div class="grid gap-6 place-items-center">
+                                    <div class="grid place-items-center gap-5">
+                                        <div
+                                            class="px-4 mb-5 py-4 rounded-full flex items-center justify-center h-[80px] w-[80px] bg-[#F3F4F6] group-hover:bg-[#DBEAFE] transition-all duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33"
+                                                viewBox="0 0 32 33" fill="none"
+                                                class="transition-all duration-300 group-hover:[&>path]:stroke-[#155DFC]">
+                                                <path
+                                                    d="M29.0681 13.9332C29.6771 16.9216 29.2431 20.0284 27.8386 22.7356C26.4341 25.4427 24.144 27.5866 21.3502 28.8096C18.5563 30.0326 15.4276 30.2609 12.4859 29.4563C9.5441 28.6518 6.96705 26.863 5.1845 24.3884C3.40195 21.9138 2.52163 18.9028 2.69035 15.8577C2.85907 12.8126 4.06664 9.91729 6.11167 7.65473C8.1567 5.39218 10.9156 3.89908 13.9282 3.42444C16.9409 2.94981 20.0252 3.52232 22.6668 5.04651"
+                                                    stroke="#99A1AF" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12 15.2665L16 19.2665L29.3333 5.93317" stroke="#99A1AF"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid place-items-center gap-3">
+                                            <span
+                                                class="text-[#4A5565] bg-[#D1D5DC] w-fit text-sm font-normal px-3 py-1.5 rounded-full group-hover:bg-[#155DFC] group-hover:text-[#FFF] transition-all duration-300">
+                                                4
+                                            </span>
+                                            <h4
+                                                class="text-[#4A5565] text-lg font-normal group-hover:text-[#1C398E;] transition-all duration-300">
+                                                Merit List
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center grid place-items-center">
+                                        <p
+                                            class="text-[#6A7282] text-sm font-normal group-hover:text-[#364153] transition-all duration-300">
+                                            Check merit list and admission confirmation
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-16">
+            <div class="container">
+                <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center pb-8">Admission Requirements</h2>
+                <div class="grid sm:grid-cols-2 grid-cols-1 gap-8">
+                    <div class="px-6 py-6 bg-white border rounded-[14px] shadow-sm">
+                        <div class=" grid gap-6">
+                            <div class="grid gap-1">
+                                <h3 class="text-[#1C398E] text-base font-normal">Class 6 Admission</h3>
+                                <span class="text-xs text-[#0A0A0A] w-fit font-normal px-2 py-1 rounded-lg border">Age
+                                    Limit:
+                                    10-12 years</span>
+                            </div>
+                            <ul class="grid gap-2">
+                                <h4 class="text-[#193CB8] text-base font-normal pb-1">Required Documents:</h4>
+                                <li class="text-[#4A5565] text-base font-normal flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_2001_5678)">
+                                            <path
+                                                d="M15.3339 7.45413C15.6383 8.94833 15.4214 10.5017 14.7191 11.8553C14.0169 13.2089 12.8718 14.2808 11.4749 14.8923C10.078 15.5039 8.51362 15.618 7.04274 15.2157C5.57185 14.8134 4.28333 13.9191 3.39206 12.6817C2.50078 11.4444 2.06062 9.93896 2.14498 8.41639C2.22934 6.89382 2.83312 5.4462 3.85564 4.31492C4.87815 3.18364 6.25759 2.43709 7.76391 2.19977C9.27024 1.96245 10.8124 2.24871 12.1332 3.0108"
+                                                stroke="#00C950" stroke-width="1.33333" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M6.7998 8.12077L8.7998 10.1208L15.4665 3.4541" stroke="#00C950"
+                                                stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2001_5678">
+                                                <rect width="16" height="16" fill="white"
+                                                    transform="translate(0.799805 0.787476)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    Birth Certificate
+                                </li>
+                                <li class="text-[#4A5565] text-base font-normal flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_2001_5678)">
+                                            <path
+                                                d="M15.3339 7.45413C15.6383 8.94833 15.4214 10.5017 14.7191 11.8553C14.0169 13.2089 12.8718 14.2808 11.4749 14.8923C10.078 15.5039 8.51362 15.618 7.04274 15.2157C5.57185 14.8134 4.28333 13.9191 3.39206 12.6817C2.50078 11.4444 2.06062 9.93896 2.14498 8.41639C2.22934 6.89382 2.83312 5.4462 3.85564 4.31492C4.87815 3.18364 6.25759 2.43709 7.76391 2.19977C9.27024 1.96245 10.8124 2.24871 12.1332 3.0108"
+                                                stroke="#00C950" stroke-width="1.33333" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M6.7998 8.12077L8.7998 10.1208L15.4665 3.4541" stroke="#00C950"
+                                                stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2001_5678">
+                                                <rect width="16" height="16" fill="white"
+                                                    transform="translate(0.799805 0.787476)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    Previous School Certificate
+                                </li>
+                                <li class="text-[#4A5565] text-base font-normal flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_2001_5678)">
+                                            <path
+                                                d="M15.3339 7.45413C15.6383 8.94833 15.4214 10.5017 14.7191 11.8553C14.0169 13.2089 12.8718 14.2808 11.4749 14.8923C10.078 15.5039 8.51362 15.618 7.04274 15.2157C5.57185 14.8134 4.28333 13.9191 3.39206 12.6817C2.50078 11.4444 2.06062 9.93896 2.14498 8.41639C2.22934 6.89382 2.83312 5.4462 3.85564 4.31492C4.87815 3.18364 6.25759 2.43709 7.76391 2.19977C9.27024 1.96245 10.8124 2.24871 12.1332 3.0108"
+                                                stroke="#00C950" stroke-width="1.33333" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M6.7998 8.12077L8.7998 10.1208L15.4665 3.4541" stroke="#00C950"
+                                                stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2001_5678">
+                                                <rect width="16" height="16" fill="white"
+                                                    transform="translate(0.799805 0.787476)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    Passport Size Photos (4)
+                                </li>
+                                <li class="text-[#4A5565] text-base font-normal flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_2001_5678)">
+                                            <path
+                                                d="M15.3339 7.45413C15.6383 8.94833 15.4214 10.5017 14.7191 11.8553C14.0169 13.2089 12.8718 14.2808 11.4749 14.8923C10.078 15.5039 8.51362 15.618 7.04274 15.2157C5.57185 14.8134 4.28333 13.9191 3.39206 12.6817C2.50078 11.4444 2.06062 9.93896 2.14498 8.41639C2.22934 6.89382 2.83312 5.4462 3.85564 4.31492C4.87815 3.18364 6.25759 2.43709 7.76391 2.19977C9.27024 1.96245 10.8124 2.24871 12.1332 3.0108"
+                                                stroke="#00C950" stroke-width="1.33333" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M6.7998 8.12077L8.7998 10.1208L15.4665 3.4541" stroke="#00C950"
+                                                stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2001_5678">
+                                                <rect width="16" height="16" fill="white"
+                                                    transform="translate(0.799805 0.787476)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    Father/Guardian CNIC Copy
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="px-6 py-6 bg-white border rounded-[14px] shadow-sm">
+                        <div class=" grid gap-6">
+                            <div class="grid gap-1">
+                                <h3 class="text-[#1C398E] text-base font-normal">Class 9 Admission</h3>
+                                <span class="text-xs text-[#0A0A0A] w-fit font-normal px-2 py-1 rounded-lg border">Age
+                                    Limit:
+                                    13-15 years</span>
+                            </div>
+                            <ul class="grid gap-2">
+                                <h4 class="text-[#193CB8] text-base font-normal pb-1">Required Documents:</h4>
+                                <li class="text-[#4A5565] text-base font-normal flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_2001_5678)">
+                                            <path
+                                                d="M15.3339 7.45413C15.6383 8.94833 15.4214 10.5017 14.7191 11.8553C14.0169 13.2089 12.8718 14.2808 11.4749 14.8923C10.078 15.5039 8.51362 15.618 7.04274 15.2157C5.57185 14.8134 4.28333 13.9191 3.39206 12.6817C2.50078 11.4444 2.06062 9.93896 2.14498 8.41639C2.22934 6.89382 2.83312 5.4462 3.85564 4.31492C4.87815 3.18364 6.25759 2.43709 7.76391 2.19977C9.27024 1.96245 10.8124 2.24871 12.1332 3.0108"
+                                                stroke="#00C950" stroke-width="1.33333" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M6.7998 8.12077L8.7998 10.1208L15.4665 3.4541" stroke="#00C950"
+                                                stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2001_5678">
+                                                <rect width="16" height="16" fill="white"
+                                                    transform="translate(0.799805 0.787476)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    8th Grade Certificate
+                                </li>
+                                <li class="text-[#4A5565] text-base font-normal flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_2001_5678)">
+                                            <path
+                                                d="M15.3339 7.45413C15.6383 8.94833 15.4214 10.5017 14.7191 11.8553C14.0169 13.2089 12.8718 14.2808 11.4749 14.8923C10.078 15.5039 8.51362 15.618 7.04274 15.2157C5.57185 14.8134 4.28333 13.9191 3.39206 12.6817C2.50078 11.4444 2.06062 9.93896 2.14498 8.41639C2.22934 6.89382 2.83312 5.4462 3.85564 4.31492C4.87815 3.18364 6.25759 2.43709 7.76391 2.19977C9.27024 1.96245 10.8124 2.24871 12.1332 3.0108"
+                                                stroke="#00C950" stroke-width="1.33333" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M6.7998 8.12077L8.7998 10.1208L15.4665 3.4541" stroke="#00C950"
+                                                stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2001_5678">
+                                                <rect width="16" height="16" fill="white"
+                                                    transform="translate(0.799805 0.787476)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    Birth Certificate
+                                </li>
+                                <li class="text-[#4A5565] text-base font-normal flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_2001_5678)">
+                                            <path
+                                                d="M15.3339 7.45413C15.6383 8.94833 15.4214 10.5017 14.7191 11.8553C14.0169 13.2089 12.8718 14.2808 11.4749 14.8923C10.078 15.5039 8.51362 15.618 7.04274 15.2157C5.57185 14.8134 4.28333 13.9191 3.39206 12.6817C2.50078 11.4444 2.06062 9.93896 2.14498 8.41639C2.22934 6.89382 2.83312 5.4462 3.85564 4.31492C4.87815 3.18364 6.25759 2.43709 7.76391 2.19977C9.27024 1.96245 10.8124 2.24871 12.1332 3.0108"
+                                                stroke="#00C950" stroke-width="1.33333" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M6.7998 8.12077L8.7998 10.1208L15.4665 3.4541" stroke="#00C950"
+                                                stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2001_5678">
+                                                <rect width="16" height="16" fill="white"
+                                                    transform="translate(0.799805 0.787476)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    Character Certificate
+                                </li>
+                                <li class="text-[#4A5565] text-base font-normal flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_2001_5678)">
+                                            <path
+                                                d="M15.3339 7.45413C15.6383 8.94833 15.4214 10.5017 14.7191 11.8553C14.0169 13.2089 12.8718 14.2808 11.4749 14.8923C10.078 15.5039 8.51362 15.618 7.04274 15.2157C5.57185 14.8134 4.28333 13.9191 3.39206 12.6817C2.50078 11.4444 2.06062 9.93896 2.14498 8.41639C2.22934 6.89382 2.83312 5.4462 3.85564 4.31492C4.87815 3.18364 6.25759 2.43709 7.76391 2.19977C9.27024 1.96245 10.8124 2.24871 12.1332 3.0108"
+                                                stroke="#00C950" stroke-width="1.33333" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M6.7998 8.12077L8.7998 10.1208L15.4665 3.4541" stroke="#00C950"
+                                                stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2001_5678">
+                                                <rect width="16" height="16" fill="white"
+                                                    transform="translate(0.799805 0.787476)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    Passport Size Photos (4)
+                                </li>
+                                <li class="text-[#4A5565] text-base font-normal flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_2001_5678)">
+                                            <path
+                                                d="M15.3339 7.45413C15.6383 8.94833 15.4214 10.5017 14.7191 11.8553C14.0169 13.2089 12.8718 14.2808 11.4749 14.8923C10.078 15.5039 8.51362 15.618 7.04274 15.2157C5.57185 14.8134 4.28333 13.9191 3.39206 12.6817C2.50078 11.4444 2.06062 9.93896 2.14498 8.41639C2.22934 6.89382 2.83312 5.4462 3.85564 4.31492C4.87815 3.18364 6.25759 2.43709 7.76391 2.19977C9.27024 1.96245 10.8124 2.24871 12.1332 3.0108"
+                                                stroke="#00C950" stroke-width="1.33333" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M6.7998 8.12077L8.7998 10.1208L15.4665 3.4541" stroke="#00C950"
+                                                stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2001_5678">
+                                                <rect width="16" height="16" fill="white"
+                                                    transform="translate(0.799805 0.787476)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    Father/Guardian CNIC Copy
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center pb-8">Important Dates</h2>
+                <div class="px-6 py-6 rounded-[14px] border bg-white">
+                    <div class="grid gap-4">
+                        <div class="flex sm:flex-row flex-col gap-3 sm:gap-8 justify-between pb-4"
+                            style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                            <div class="text-[#1C398E] text-base font-normal flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                    fill="none">
+                                    <path d="M7.4668 2.2478V5.58114" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.1328 2.2478V5.58114" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M16.6331 3.91455H4.96647C4.046 3.91455 3.2998 4.66074 3.2998 5.58122V17.2479C3.2998 18.1684 4.046 18.9146 4.96647 18.9146H16.6331C17.5536 18.9146 18.2998 18.1684 18.2998 17.2479V5.58122C18.2998 4.66074 17.5536 3.91455 16.6331 3.91455Z"
+                                        stroke="#155DFC" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M3.2998 8.91455H18.2998" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Admission Forms Available
+                            </div>
+                            <span
+                                class="text-xs text-[#193CB8] bg-[#DBEAFE] w-fit font-normal px-2 py-1 rounded-lg border">Age
+                                February 1, 2025</span>
+                        </div>
+                        <div class="flex sm:flex-row flex-col gap-3 sm:gap-8 justify-between pb-4"
+                            style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                            <div class="text-[#1C398E] text-base font-normal flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                    fill="none">
+                                    <path d="M7.4668 2.2478V5.58114" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.1328 2.2478V5.58114" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M16.6331 3.91455H4.96647C4.046 3.91455 3.2998 4.66074 3.2998 5.58122V17.2479C3.2998 18.1684 4.046 18.9146 4.96647 18.9146H16.6331C17.5536 18.9146 18.2998 18.1684 18.2998 17.2479V5.58122C18.2998 4.66074 17.5536 3.91455 16.6331 3.91455Z"
+                                        stroke="#155DFC" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M3.2998 8.91455H18.2998" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Last Date for Form Submission
+                            </div>
+                            <span
+                                class="text-xs text-[#193CB8] bg-[#DBEAFE] w-fit font-normal px-2 py-1 rounded-lg border">Age
+                                March 15, 2025</span>
+                        </div>
+                        <div class="flex sm:flex-row flex-col gap-3 sm:gap-8 justify-between pb-4"
+                            style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                            <div class="text-[#1C398E] text-base font-normal flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                    fill="none">
+                                    <path d="M7.4668 2.2478V5.58114" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.1328 2.2478V5.58114" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M16.6331 3.91455H4.96647C4.046 3.91455 3.2998 4.66074 3.2998 5.58122V17.2479C3.2998 18.1684 4.046 18.9146 4.96647 18.9146H16.6331C17.5536 18.9146 18.2998 18.1684 18.2998 17.2479V5.58122C18.2998 4.66074 17.5536 3.91455 16.6331 3.91455Z"
+                                        stroke="#155DFC" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M3.2998 8.91455H18.2998" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Entrance Test (if required)
+                            </div>
+                            <span
+                                class="text-xs text-[#193CB8] bg-[#DBEAFE] w-fit font-normal px-2 py-1 rounded-lg border">Age
+                                March 25, 2025</span>
+                        </div>
+                        <div class="flex sm:flex-row flex-col gap-3 sm:gap-8 justify-between pb-4"
+                            style="border-bottom: 0.8px solid rgba(0, 0, 0, 0.10);">
+                            <div class="text-[#1C398E] text-base font-normal flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                    fill="none">
+                                    <path d="M7.4668 2.2478V5.58114" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.1328 2.2478V5.58114" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M16.6331 3.91455H4.96647C4.046 3.91455 3.2998 4.66074 3.2998 5.58122V17.2479C3.2998 18.1684 4.046 18.9146 4.96647 18.9146H16.6331C17.5536 18.9146 18.2998 18.1684 18.2998 17.2479V5.58122C18.2998 4.66074 17.5536 3.91455 16.6331 3.91455Z"
+                                        stroke="#155DFC" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M3.2998 8.91455H18.2998" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Merit List Announcement
+                            </div>
+                            <span
+                                class="text-xs text-[#193CB8] bg-[#DBEAFE] w-fit font-normal px-2 py-1 rounded-lg border">Age
+                                April 5, 2025</span>
+                        </div>
+                        <div class="flex sm:flex-row flex-col gap-3 sm:gap-8 justify-between pb-4">
+                            <div class="text-[#1C398E] text-base font-normal flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                    fill="none">
+                                    <path d="M7.4668 2.2478V5.58114" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.1328 2.2478V5.58114" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M16.6331 3.91455H4.96647C4.046 3.91455 3.2998 4.66074 3.2998 5.58122V17.2479C3.2998 18.1684 4.046 18.9146 4.96647 18.9146H16.6331C17.5536 18.9146 18.2998 18.1684 18.2998 17.2479V5.58122C18.2998 4.66074 17.5536 3.91455 16.6331 3.91455Z"
+                                        stroke="#155DFC" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M3.2998 8.91455H18.2998" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Classes Begin
+                            </div>
+                            <span
+                                class="text-xs text-[#193CB8] bg-[#DBEAFE] w-fit font-normal px-2 py-1 rounded-lg border">Age
+                                April 15, 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-16">
+            <div class="container">
+                <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center pb-8">Online Application Form
+                </h2>
+                <div class="grid place-items-center">
+                    <form id="studentForm"
+                        class="max-w-[1030px] px-6 py-6 rounded-[14px] bg-white border w-full space-y-6 shadow-sm">
+                        <div class="grid gap-1.5">
+                            <h3 class="text-[#1C398E] text-base font-semibold">Student Registration Form</h3>
+                            <p class="text-[#4A5565] text-base font-normal">Fill in all required information accurately
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <label class="grid text-[#0A0A0A] text-sm font-normal">Student Name *
+                                <input id="studentName" type="text" class="px-3 py-2.5 rounded-lg bg-[#F3F3F5]"
+                                    placeholder="Enter student's full name">
+                                <span id="error-studentName" class="text-red-600 text-xs hidden">Please enter student
+                                    name</span>
+                            </label>
+                            <label class="grid text-[#0A0A0A] text-sm font-normal">Father's Name *
+                                <input id="fatherName" type="text" class="px-3 py-2.5 rounded-lg bg-[#F3F3F5]"
+                                    placeholder="Enter father's full name">
+                                <span id="error-fatherName" class="text-red-600 text-xs hidden">Please enter father's
+                                    name</span>
+                            </label>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <label class="grid text-[#0A0A0A] text-sm font-normal">CNIC/B-Form Number *
+                                <input id="cnic" type="text" class="px-3 py-2.5 rounded-lg bg-[#F3F3F5]"
+                                    placeholder="XXXXX-XXXXXXX-X">
+                                <span id="error-cnic" class="text-red-600 text-xs hidden">Please enter CNIC/B-Form
+                                    number</span>
+                            </label>
+                            <label class="grid text-[#0A0A0A] text-sm font-normal">Admission Class *
+                                <input id="admissionClass" type="text" class="px-3 py-2.5 rounded-lg bg-[#F3F3F5]"
+                                    placeholder="Select class">
+                                <span id="error-admissionClass" class="text-red-600 text-xs hidden">Please enter class
+                                    name</span>
+                            </label>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <label class="grid text-[#0A0A0A] text-sm font-normal">Email Address *
+                                <input id="email" type="email" class="px-3 py-2.5 rounded-lg bg-[#F3F3F5]"
+                                    placeholder="student@email.com">
+                                <span id="error-email" class="text-red-600 text-xs hidden">Please enter valid
+                                    email</span>
+                            </label>
+                            <label class="grid text-[#0A0A0A] text-sm font-normal">Phone Number *
+                                <input id="phone" type="text" class="px-3 py-2.5 rounded-lg bg-[#F3F3F5]"
+                                    placeholder="+92 XXX XXXXXXX">
+                                <span id="error-phone" class="text-red-600 text-xs hidden">Please enter valid 11-digit
+                                    phone
+                                    number</span>
+                            </label>
+                        </div>
+
+                        <label class="grid text-[#0A0A0A] text-sm font-normal">Complete Address *
+                            <textarea id="address" class="px-3 py-2.5 rounded-lg bg-[#F3F3F5] h-[64px] resize-none"
+                                placeholder="Enter complete home address"></textarea>
+                            <span id="error-address" class="text-red-600 text-xs hidden">Please enter address</span>
+                        </label>
+
+                        <label class="grid text-[#0A0A0A] text-sm font-normal">Previous School Name *
+                            <input id="schoolName" type="text" class="px-3 py-2.5 rounded-lg bg-[#F3F3F5]"
+                                placeholder="Name of last attended school">
+                            <span id="error-schoolName" class="text-red-600 text-xs hidden">Please enter school
+                                name</span>
+                        </label>
+
+                        <div class="grid gap-4">
+                            <div>
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input id="documentsReady" type="checkbox"
+                                        class="w-4 h-4 text-blue-600 bg-[#F3F3F5] rounded focus:ring-blue-500">
+                                    <span class="text-[#0A0A0A] text-sm font-normal">I confirm that all required
+                                        documents
+                                        are ready</span>
+                                </label>
+                                <span id="error-documents" class="text-red-600 text-xs hidden">Please confirm
+                                    documents</span>
+                            </div>
+                            <div>
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input id="agreeTerms" type="checkbox"
+                                        class="w-4 h-4 text-blue-600 bg-[#F3F3F5] rounded focus:ring-blue-500">
+                                    <span class="text-[#0A0A0A] text-sm font-normal">I agree to the terms and conditions
+                                        *</span>
+                                </label>
+                                <span id="error-terms" class="text-red-600 text-xs hidden">You must agree to terms and
+                                    conditions</span>
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
+                            <button type="submit"
+                                class="px-4 py-2 bg-[#155DFC] rounded-lg text-white font-normal text-sm">
+                                Submit Application
+                            </button>
+                            <button id="saveDraftBtn" type="button"
+                                class="px-4 py-2 bg-[#FFF] rounded-lg text-[#0A0A0A] font-normal text-sm border border-gray-300">
+                                Save as Draft (PDF)
+                            </button>
+                        </div>
+
+                        <p id="successMsg" class="text-green-700 text-center font-semibold hidden">
+                            <!-- 🎉 Form submitted successfully! -->
+                        </p>
+                    </form>
+                </div>
+                <script>
+                    const form = document.getElementById("studentForm");
+                    const successMsg = document.getElementById("successMsg");
+                    const saveBtn = document.getElementById("saveDraftBtn");
+                    const docCheckbox = document.getElementById("documentsReady");
+                    const termsCheckbox = document.getElementById("agreeTerms");
+
+                    function getFormData() {
+                        return {
+                            studentName: document.getElementById("studentName").value.trim(),
+                            fatherName: document.getElementById("fatherName").value.trim(),
+                            cnic: document.getElementById("cnic").value.trim(),
+                            admissionClass: document.getElementById("admissionClass").value.trim(),
+                            email: document.getElementById("email").value.trim(),
+                            phone: document.getElementById("phone").value.trim(),
+                            address: document.getElementById("address").value.trim(),
+                            schoolName: document.getElementById("schoolName").value.trim(),
+                            documentsReady: docCheckbox.checked,
+                            agreeTerms: termsCheckbox.checked
+                        };
+                    }
+
+                    document.querySelectorAll("input, textarea, select").forEach((field) => {
+                        field.addEventListener("input", () => {
+                            const errorEl = document.getElementById(`error-${field.id}`);
+                            if (errorEl) errorEl.classList.add("hidden");
+                        });
+                    });
+
+                    docCheckbox.addEventListener("change", () => {
+                        if (docCheckbox.checked) {
+                            document.getElementById("error-documents").classList.add("hidden");
+                        }
+                    });
+                    termsCheckbox.addEventListener("change", () => {
+                        if (termsCheckbox.checked) {
+                            document.getElementById("error-terms").classList.add("hidden");
+                        }
+                    });
+
+                    form.addEventListener("submit", (e) => {
+                        e.preventDefault();
+                        successMsg.classList.add("hidden");
+                        document.querySelectorAll("small[id^='error']").forEach(el => el.classList.add("hidden"));
+
+                        const data = getFormData();
+                        let valid = true;
+
+                        Object.keys(data).forEach((key) => {
+                            if ((key !== "documentsReady" && key !== "agreeTerms") && !data[key]) {
+                                const errorEl = document.getElementById(`error-${key}`);
+                                if (errorEl) errorEl.classList.remove("hidden");
+                                valid = false;
+                            }
+                        });
+
+                        if (data.phone && !/^\d{11}$/.test(data.phone.replace(/\D/g, ""))) {
+                            document.getElementById("error-phone").classList.remove("hidden");
+                            valid = false;
+                        }
+
+                        if (data.email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) {
+                            document.getElementById("error-email").classList.remove("hidden");
+                            valid = false;
+                        }
+
+                        if (!data.documentsReady) {
+                            document.getElementById("error-documents").classList.remove("hidden");
+                            valid = false;
+                        }
+                        if (!data.agreeTerms) {
+                            document.getElementById("error-terms").classList.remove("hidden");
+                            valid = false;
+                        }
+
+                        if (valid) {
+                            console.log("Form Submitted Data:", data);
+                            alert("🎉 Form submitted successfully!");
+                            successMsg.classList.remove("hidden");
+                            form.reset();
+                        }
+                    });
+
+                    saveBtn.addEventListener("click", async () => {
+                        const { jsPDF } = window.jspdf;
+                        const data = getFormData();
+
+                        const pdf = new jsPDF();
+                        pdf.setFontSize(14);
+                        pdf.text("📄 Student Registration Draft", 10, 15);
+                        pdf.setFontSize(12);
+
+                        let y = 30;
+                        for (const [key, value] of Object.entries(data)) {
+                            if (key !== "documentsReady" && key !== "agreeTerms") {
+                                pdf.text(`${key.replace(/([A-Z])/g, " $1")}: ${value || "Not Provided"}`, 10, y);
+                                y += 10;
+                            }
+                        }
+
+                        pdf.text(`Documents Ready: ${data.documentsReady ? "Yes" : "No"}`, 10, y);
+                        y += 10;
+                        pdf.text(`Agreed to Terms: ${data.agreeTerms ? "Yes" : "No"}`, 10, y);
+
+                        pdf.save("Student_Registration_Draft.pdf");
+                        alert("💾 Draft saved successfully as PDF!");
+                    });
+                </script>
+
+                <!-- <script>
+                    const form = document.getElementById("studentForm");
+                    const successMsg = document.getElementById("successMsg");
+                    const saveBtn = document.getElementById("saveDraftBtn");
+                    const docCheckbox = document.getElementById("documentsReady");
+                    const termsCheckbox = document.getElementById("agreeTerms");
+
+                    function getFormData() {
+                        return {
+                            studentName: document.getElementById("studentName").value.trim(),
+                            fatherName: document.getElementById("fatherName").value.trim(),
+                            cnic: document.getElementById("cnic").value.trim(),
+                            admissionClass: document.getElementById("admissionClass").value.trim(),
+                            email: document.getElementById("email").value.trim(),
+                            phone: document.getElementById("phone").value.trim(),
+                            address: document.getElementById("address").value.trim(),
+                            schoolName: document.getElementById("schoolName").value.trim(),
+                            documentsReady: docCheckbox.checked,
+                            agreeTerms: termsCheckbox.checked
+                        };
+                    }
+                    document.querySelectorAll("input, textarea, select").forEach((field) => {
+                        field.addEventListener("input", () => {
+                            const errorEl = document.getElementById(`error-${field.id}`);
+                            if (errorEl) errorEl.classList.add("hidden");
+                        });
+                    });
+
+                    docCheckbox.addEventListener("change", () => {
+                        if (docCheckbox.checked) {
+                            document.getElementById("error-documents").classList.add("hidden");
+                        }
+                    });
+                    termsCheckbox.addEventListener("change", () => {
+                        if (termsCheckbox.checked) {
+                            document.getElementById("error-terms").classList.add("hidden");
+                        }
+                    });
+
+                    form.addEventListener("submit", (e) => {
+                        e.preventDefault();
+                        successMsg.classList.add("hidden");
+                        document.querySelectorAll("small[id^='error']").forEach(el => el.classList.add("hidden"));
+
+                        const data = getFormData();
+                        let valid = true;
+
+                        Object.keys(data).forEach((key) => {
+                            if ((key !== "documentsReady" && key !== "agreeTerms") && !data[key]) {
+                                const errorEl = document.getElementById(`error-${key}`);
+                                if (errorEl) errorEl.classList.remove("hidden");
+                                valid = false;
+                            }
+                        });
+
+                        if (data.phone && !/^\d{11}$/.test(data.phone.replace(/\D/g, ""))) {
+                            document.getElementById("error-phone").classList.remove("hidden");
+                            valid = false;
+                        }
+
+                        if (data.email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) {
+                            document.getElementById("error-email").classList.remove("hidden");
+                            valid = false;
+                        }
+
+                        if (!data.documentsReady) {
+                            document.getElementById("error-documents").classList.remove("hidden");
+                            valid = false;
+                        }
+                        if (!data.agreeTerms) {
+                            document.getElementById("error-terms").classList.remove("hidden");
+                            valid = false;
+                        }
+
+                        if (valid) {
+                            console.log("Form Submitted Data:", data);
+                            alert("🎉 Form submitted successfully!");
+                            successMsg.classList.remove("hidden");
+                        }
+                    });
+
+                    saveBtn.addEventListener("click", async () => {
+                        const { jsPDF } = window.jspdf;
+                        const data = getFormData();
+
+                        const pdf = new jsPDF();
+                        pdf.setFontSize(14);
+                        pdf.text("📄 Student Registration Draft", 10, 15);
+                        pdf.setFontSize(12);
+
+                        let y = 30;
+                        for (const [key, value] of Object.entries(data)) {
+                            if (key !== "documentsReady" && key !== "agreeTerms") {
+                                pdf.text(`${key.replace(/([A-Z])/g, " $1")}: ${value || "Not Provided"}`, 10, y);
+                                y += 10;
+                            }
+                        }
+
+                        pdf.text(`Documents Ready: ${data.documentsReady ? "Yes" : "No"}`, 10, y);
+                        y += 10;
+                        pdf.text(`Agreed to Terms: ${data.agreeTerms ? "Yes" : "No"}`, 10, y);
+
+                        pdf.save("Student_Registration_Draft.pdf");
+                        alert("💾 Draft saved successfully as PDF!");
+                    });
+                </script> -->
+
+            </div>
+
+        </section>
+
+        <section class="pb-16">
+            <div class="container">
+                <div class="px-8 py-8 bg-[#F9FAFB] rounded-[10px] ">
+                    <h2 class="text-center text-xl sm:text-3xl text-[#1C398E] font-normal">Download Forms</h2>
+                    <div class="grid w-full sm:justify-center">
+                        <div class="grid sm:grid-cols-3 grid-cols-1 pt-8 gap-6">
+                            <div class=" px-6 py-6 bg-white rounded-[14px] transform transition-all duration-300 hover:-translate-y hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid gap-2">
+                                    <div class="grid gap-3.5 place-items-center">
+                                        <div class="px-4 py-4 bg-[#DBEAFE] rounded-full">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
+                                                viewBox="0 0 33 33" fill="none">
+                                                <path d="M16.3252 20.7251V4.7251" stroke="#155DFC"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M28.3252 20.7251V26.0584C28.3252 26.7657 28.0442 27.444 27.5441 27.944C27.044 28.4441 26.3658 28.7251 25.6585 28.7251H6.99186C6.28462 28.7251 5.60634 28.4441 5.10624 27.944C4.60615 27.444 4.3252 26.7657 4.3252 26.0584V20.7251"
+                                                    stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M9.6582 14.0583L16.3249 20.725L22.9915 14.0583"
+                                                    stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-[#1C398E] text-base font-normal">Admission Form</h3>
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <p class="text-[#4A5565] font-normal text-center text-base">Complete admission
+                                            application form</p>
+                                        <button
+                                            class="flex hover:bg-gray-100 gap-4 items-center  justify-center px-4 py-2 bg-white rounded-xl text-sm font-normal text-[#0A0A0A]"
+                                            style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.6377 10.8376V2.83765" stroke="#0A0A0A"
+                                                    stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.6377 10.8376V13.5043C14.6377 13.8579 14.4972 14.1971 14.2472 14.4471C13.9971 14.6972 13.658 14.8376 13.3044 14.8376H3.97103C3.61741 14.8376 3.27827 14.6972 3.02822 14.4471C2.77817 14.1971 2.6377 13.8579 2.6377 13.5043V10.8376"
+                                                    stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.30469 7.50439L8.63802 10.8377L11.9714 7.50439"
+                                                    stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download PDF
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 py-6 bg-white rounded-[14px] transform transition-all duration-300 hover:-translate-y hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid gap-2">
+                                    <div class="grid gap-3.5 place-items-center">
+                                        <div class="px-4 py-4 bg-[#DBEAFE] rounded-full">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
+                                                viewBox="0 0 33 33" fill="none">
+                                                <path
+                                                    d="M20.987 3.39185H8.98698C8.27974 3.39185 7.60146 3.6728 7.10136 4.17289C6.60126 4.67299 6.32031 5.35127 6.32031 6.05851V27.3918C6.32031 28.0991 6.60126 28.7774 7.10136 29.2775C7.60146 29.7776 8.27974 30.0585 8.98698 30.0585H24.987C25.6942 30.0585 26.3725 29.7776 26.8726 29.2775C27.3727 28.7774 27.6536 28.0991 27.6536 27.3918V10.0585L20.987 3.39185Z"
+                                                    stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M19.6543 3.39185V8.72518C19.6543 9.43242 19.9352 10.1107 20.4353 10.6108C20.9354 11.1109 21.6137 11.3918 22.321 11.3918H27.6543"
+                                                    stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M14.321 12.7251H11.6543" stroke="#155DFC"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M22.321 18.0583H11.6543" stroke="#155DFC"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M22.321 23.3918H11.6543" stroke="#155DFC"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-[#1C398E] text-base font-normal">Document Checklist</h3>
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <p class="text-[#4A5565] font-normal text-center text-base">List of required
+                                            documents</p>
+                                        <button
+                                            class="flex hover:bg-gray-100 gap-4 items-center  justify-center px-4 py-2 bg-white rounded-xl text-sm font-normal text-[#0A0A0A]"
+                                            style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.6377 10.8376V2.83765" stroke="#0A0A0A"
+                                                    stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.6377 10.8376V13.5043C14.6377 13.8579 14.4972 14.1971 14.2472 14.4471C13.9971 14.6972 13.658 14.8376 13.3044 14.8376H3.97103C3.61741 14.8376 3.27827 14.6972 3.02822 14.4471C2.77817 14.1971 2.6377 13.8579 2.6377 13.5043V10.8376"
+                                                    stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.30469 7.50439L8.63802 10.8377L11.9714 7.50439"
+                                                    stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download PDF
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 py-6 bg-white rounded-[14px] transform transition-all duration-300 hover:-translate-y hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid gap-2">
+                                    <div class="grid gap-3.5 place-items-center">
+                                        <div class="px-4 py-4 bg-[#DBEAFE] rounded-full">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
+                                                viewBox="0 0 33 33" fill="none">
+                                                <path
+                                                    d="M29.2218 15.2878C29.4605 15.1825 29.6631 15.0095 29.8044 14.7902C29.9457 14.571 30.0196 14.315 30.0169 14.0541C30.0142 13.7933 29.9351 13.5389 29.7892 13.3226C29.6434 13.1063 29.4373 12.9375 29.1965 12.8372L17.7685 7.63183C17.4211 7.47336 17.0437 7.39136 16.6618 7.39136C16.28 7.39136 15.9026 7.47336 15.5552 7.63183L4.12851 12.8318C3.89113 12.9358 3.6892 13.1067 3.5474 13.3236C3.4056 13.5405 3.33008 13.794 3.33008 14.0532C3.33008 14.3123 3.4056 14.5658 3.5474 14.7827C3.6892 14.9997 3.89113 15.1705 4.12851 15.2745L15.5552 20.4852C15.9026 20.6436 16.28 20.7256 16.6618 20.7256C17.0437 20.7256 17.4211 20.6436 17.7685 20.4852L29.2218 15.2878Z"
+                                                    stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M29.9951 14.0583V22.0583" stroke="#155DFC"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M8.66211 17.3918V22.0585C8.66211 23.1194 9.50496 24.1368 11.0053 24.8869C12.5055 25.6371 14.5404 26.0585 16.6621 26.0585C18.7838 26.0585 20.8187 25.6371 22.319 24.8869C23.8193 24.1368 24.6621 23.1194 24.6621 22.0585V17.3918"
+                                                    stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-[#1C398E] text-base font-normal">Prospectus</h3>
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <p class="text-[#4A5565] font-normal text-center text-base">Complete school
+                                            information guide</p>
+                                        <button
+                                            class="flex hover:bg-gray-100 gap-4 items-center  justify-center px-4 py-2 bg-white rounded-xl text-sm font-normal text-[#0A0A0A]"
+                                            style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.6377 10.8376V2.83765" stroke="#0A0A0A"
+                                                    stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.6377 10.8376V13.5043C14.6377 13.8579 14.4972 14.1971 14.2472 14.4471C13.9971 14.6972 13.658 14.8376 13.3044 14.8376H3.97103C3.61741 14.8376 3.27827 14.6972 3.02822 14.4471C2.77817 14.1971 2.6377 13.8579 2.6377 13.5043V10.8376"
+                                                    stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.30469 7.50439L8.63802 10.8377L11.9714 7.50439"
+                                                    stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download PDF
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class=" bg-[#101828]">
+        <div class="container">
+            <nav>
+                <div class="py-12 grid justify-center">
+                    <div class="bg-[#155DFC] px-35 w-[530px] sm:w-[869px] h-[192px]">
+                        <h2 class="sm:text-4xl text-2xl font-normal text-center text-white pb-6">Ready to Join Our
+                            School?</h2>
+                        <div class="flex justify-center">
+                            <p
+                                class="sm:text-xl text-base font-normal max-w-[450px] sm:max-w-[610px] text-center text-[#DBEAFE] pb-7">
+                                Take the first step towards
+                                excellence in
+                                education. Apply now for the upcoming academic year.</p>
+                        </div>
+                        <div class="flex justify-center">
+                            <button class="px-8 py-2 rounded-lg bg-white">
+                                <a href="/" class="text-lg font-normal text-[#155DFC]">Apply for Admission</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-16 grid grid-cols-1 sm:grid-cols-3 gap-12">
+                    <ul class="grid gap-6">
+                        <li class="flex gap-3">
+                            <a class="logo" href="\"><img src="assets/images/logo.png" alt="logo" width="56"
+                                    height="56"></a>
+                            <div>
+                                <p class="text-xl text-white font-normal">Government High School</p>
+                                <span class="text-base text-[#99A1AF] font-normal">Chaki Faiq</span>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="text-base text-[#99A1AF] font-normal">Committed to providing quality education and
+                                character
+                                development, nurturing future leaders with excellence in academics and moral values.</p>
+                        </li>
+                        <li class="grid gap-3">
+                            <a href="https://www.google.com/maps?q=Main+Road,+Chaki+Faiq,+Pakistan" target="_blank"
+                                class="flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M16.6666 8.73356C16.6666 12.8944 12.0508 17.2277 10.5008 18.5661C10.3564 18.6746 10.1806 18.7334 9.99992 18.7334C9.81925 18.7334 9.64348 18.6746 9.49909 18.5661C7.94909 17.2277 3.33325 12.8944 3.33325 8.73356C3.33325 6.96545 4.03563 5.26976 5.28587 4.01952C6.53612 2.76927 8.23181 2.06689 9.99992 2.06689C11.768 2.06689 13.4637 2.76927 14.714 4.01952C15.9642 5.26976 16.6666 6.96545 16.6666 8.73356Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M10 11.2334C11.3807 11.2334 12.5 10.1141 12.5 8.7334C12.5 7.35269 11.3807 6.2334 10 6.2334C8.61929 6.2334 7.5 7.35269 7.5 8.7334C7.5 10.1141 8.61929 11.2334 10 11.2334Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p class="text-base font-normal text-[#99A1AF]">Main Road, Chaki Faiq, Pakistan</p>
+                            </a>
+                            <a href="tel:+92-XXX-XXXXXXX" class="flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M11.5267 14.2069C11.6989 14.2859 11.8927 14.304 12.0765 14.2581C12.2602 14.2122 12.4229 14.1051 12.5376 13.9544L12.8334 13.5669C12.9887 13.3599 13.19 13.1919 13.4214 13.0762C13.6528 12.9605 13.908 12.9002 14.1667 12.9002H16.6667C17.1088 12.9002 17.5327 13.0758 17.8453 13.3884C18.1578 13.7009 18.3334 14.1249 18.3334 14.5669V17.0669C18.3334 17.5089 18.1578 17.9328 17.8453 18.2454C17.5327 18.558 17.1088 18.7336 16.6667 18.7336C12.6885 18.7336 8.87319 17.1532 6.06015 14.3402C3.2471 11.5271 1.66675 7.71181 1.66675 3.73356C1.66675 3.29153 1.84234 2.86761 2.1549 2.55505C2.46746 2.24249 2.89139 2.06689 3.33341 2.06689H5.83341C6.27544 2.06689 6.69936 2.24249 7.01193 2.55505C7.32449 2.86761 7.50008 3.29153 7.50008 3.73356V6.23356C7.50008 6.4923 7.43984 6.74749 7.32413 6.97892C7.20841 7.21034 7.04041 7.41165 6.83341 7.56689L6.44341 7.85939C6.29043 7.97621 6.1826 8.14238 6.13824 8.32969C6.09388 8.51699 6.11573 8.71387 6.20008 8.88689C7.33898 11.2001 9.2121 13.0709 11.5267 14.2069Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p class="text-base font-normal text-[#99A1AF]">+92-XXX-XXXXXXX</p>
+                            </a>
+                            <a href="mailto:info@ghschakifaiq.edu.pk" class="flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M18.3334 6.2334L10.8409 11.0059C10.5867 11.1536 10.2979 11.2314 10.0038 11.2314C9.7098 11.2314 9.421 11.1536 9.16675 11.0059L1.66675 6.2334"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M16.6667 3.7334H3.33341C2.41294 3.7334 1.66675 4.47959 1.66675 5.40007V15.4001C1.66675 16.3205 2.41294 17.0667 3.33341 17.0667H16.6667C17.5872 17.0667 18.3334 16.3205 18.3334 15.4001V5.40007C18.3334 4.47959 17.5872 3.7334 16.6667 3.7334Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p class="text-base font-normal text-[#99A1AF]">info@ghschakifaiq.edu.pk</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div>
+                        <h3 class="text-xl font-normal text-white pb-6">Quick Links</h3>
+                        <ul class="grid gap-3">
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">About Us</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Academics</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Admissions</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Faculty</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Gallery</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-normal text-white pb-6">School Hours</h3>
+                        <ul class="grid gap-4">
+                            <li class="grid gap-1">
+                                <h4 class="text-base font-normal text-white">Morning Session (Classes 6-8)</h4>
+                                <time class="text-base text-[#99A1AF] font-normal">8:00 AM - 12:15 PM</time>
+                            </li>
+                            <li class="grid gap-1">
+                                <h4 class="text-base font-normal text-white">Afternoon Session (Classes 9-10)</h4>
+                                <time class="text-base text-[#99A1AF] font-normal">1:00 PM - 5:15 PM</time>
+                            </li>
+                            <li class="grid gap-1">
+                                <h4 class="text-base font-normal text-white">Office Hours</h4>
+                                <time class="text-base text-[#99A1AF] font-normal">Monday - Friday: 8:00 AM - 3:00
+                                    PM</time>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="py-8 flex flex-col gap-6 sm:flex-row justify-between"
+                    style="border-top: 0.8px solid #1E2939;">
+                    <p class="text-sm text-[#99A1AF] font-normal">© 2024 Government High School Chaki Faiq. All rights
+                        reserved.
+                    </p>
+                    <span class="text-sm text-[#99A1AF] font-normal">Established 1999 • 25+ Years of Excellence</span>
+                </div>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+
+</html>

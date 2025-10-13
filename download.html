@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Chakki Faiq</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        dropdownButtons.forEach(btn => {
+            const dropdown = btn.nextElementSibling;
+            const arrow = btn.querySelector('svg');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-180');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+            document.querySelectorAll('.dropdown-btn svg').forEach(a => a.classList.remove('rotate-180'));
+        });
+    });
+</script>
+
+<body>
+    <header class="py-4 sticky top-0 bg-white shadow z-50">
+        <div class="container">
+            <nav class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <a href="/">
+                        <img src="assets/images/logo.png" alt="logo" width="56" height="56">
+                    </a>
+                    <div>
+                        <p class="text-2xl text-[#101828] font-normal">Government High School</p>
+                        <span class="text-sm text-[#155DFC] font-normal">Chaki Faiq</span>
+                    </div>
+                </div>
+
+                <button id="nav-toggle" class="block md:hidden text-[#155DFC] focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <ul id="nav-menu"
+                    class="hidden flex-col md:flex md:flex-row md:items-center gap-4 md:gap-8 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none p-5 md:p-0 transition-all duration-300">
+                    <li>
+                        <a href="/"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Home</a>
+                    </li>
+
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            About
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</a>
+                            <a href="faculity.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Faculty</a>
+                            <a href="achievements.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Achievements</a>
+                            <a href="student.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Student
+                                Life</a>
+                        </div>
+                    </li>
+
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            Academics
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="academic.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Curriculum</a>
+                            <a href="download.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Downloads</a>
+                            <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Gallery</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="admission.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Admissions</a>
+                    </li>
+                    <li>
+                        <a href="contact-us.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/"
+                            class="px-6 py-2 rounded-lg bg-[#155DFC] text-white text-sm font-normal inline-block hover:bg-[#0D4ED8]">Apply
+                            Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="my-16">
+            <div class=" container">
+                <div class="flex justify-center">
+                    <div class="max-w-[750px] grid gap-6">
+                        <h2 class="text-center text-4xl sm:text-6xl text-[#1C398E] font-normal">Downloads & Resources
+                        </h2>
+                        <p class="sm:text-xl text-base font-normal text-center text-[#4A5565]">Access all essential
+                            academic resources, past papers, syllabi, forms, and important notices. Everything you need
+                            for academic success in one place.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class=" container">
+                <div class="pb-16">
+                    <ul class="flex flex-wrap flex-row w-auto items-center sm:justify-center gap-8 sm:gap-3 mb-4 sm:mb-10">
+                        <li><button
+                                class="open-card-btn bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="all">All Resources</button></li>
+                        <li><button
+                                class="open-card-btn bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="syllabus">Syllabus</button></li>
+                        <li><button
+                                class="open-card-btn bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="paper">Past Papers</button></li>
+                        <li><button
+                                class="open-card-btn bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="schedules">Schedules</button></li>
+                        <li><button
+                                class="open-card-btn bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="forms">Forms</button></li>
+                        <li><button
+                                class="open-card-btn bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="notices">Notices</button></li>
+                    </ul>
+                    <div>
+                        <div class="grid grid-cols-2 gap-12 sm:gap-6 py-10 sm:py-20 sm:grid-cols-4">
+                            <div class="grid place-items-center gap-4">
+                                <div
+                                    class="px-3 py-3 bg-[#DBEAFE] grid justify-center items-center rounded-full h-[64px] w-[64px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                                        fill="none">
+                                        <path d="M12 7.79999V21.8" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M3 18.8C2.73478 18.8 2.48043 18.6946 2.29289 18.5071C2.10536 18.3196 2 18.0652 2 17.8V4.79999C2 4.53477 2.10536 4.28042 2.29289 4.09288C2.48043 3.90534 2.73478 3.79999 3 3.79999H8C9.06087 3.79999 10.0783 4.22141 10.8284 4.97156C11.5786 5.72171 12 6.73912 12 7.79999C12 6.73912 12.4214 5.72171 13.1716 4.97156C13.9217 4.22141 14.9391 3.79999 16 3.79999H21C21.2652 3.79999 21.5196 3.90534 21.7071 4.09288C21.8946 4.28042 22 4.53477 22 4.79999V17.8C22 18.0652 21.8946 18.3196 21.7071 18.5071C21.5196 18.6946 21.2652 18.8 21 18.8H15C14.2044 18.8 13.4413 19.1161 12.8787 19.6787C12.3161 20.2413 12 21.0043 12 21.8C12 21.0043 11.6839 20.2413 11.1213 19.6787C10.5587 19.1161 9.79565 18.8 9 18.8H3Z"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 text-center">
+                                    <h3 class="text-2xl font-normal text-[#1C398E]">25+</h3>
+                                    <p class="text-base font-normal text-[#4A5565]">Syllabus Files</p>
+                                </div>
+                            </div>
+                            <div class="grid place-items-center gap-4">
+                                <div
+                                    class="px-3 py-3 bg-[#DCFCE7] grid justify-center items-center rounded-full h-[64px] w-[64px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                                        fill="none">
+                                        <path
+                                            d="M15 2.79999H6C5.46957 2.79999 4.96086 3.0107 4.58579 3.38577C4.21071 3.76085 4 4.26955 4 4.79999V20.8C4 21.3304 4.21071 21.8391 4.58579 22.2142C4.96086 22.5893 5.46957 22.8 6 22.8H18C18.5304 22.8 19.0391 22.5893 19.4142 22.2142C19.7893 21.8391 20 21.3304 20 20.8V7.79999L15 2.79999Z"
+                                            stroke="#00A63E" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M14 2.79999V6.79999C14 7.33042 14.2107 7.83913 14.5858 8.2142C14.9609 8.58927 15.4696 8.79999 16 8.79999H20"
+                                            stroke="#00A63E" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M10 9.79999H8" stroke="#00A63E" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M16 13.8H8" stroke="#00A63E" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M16 17.8H8" stroke="#00A63E" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 text-center">
+                                    <span class="text-2xl font-normal text-[#1C398E]">150+</span>
+                                    <p class="text-base font-normal text-[#4A5565]">Past Papers</p>
+                                </div>
+                            </div>
+                            <div class="grid place-items-center gap-4">
+                                <div
+                                    class="px-3 py-3 grid justify-center items-center bg-[#FEF9C2] rounded-full h-[64px] w-[64px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                                        fill="none">
+                                        <path
+                                            d="M15 2.79999H9C8.44772 2.79999 8 3.2477 8 3.79999V5.79999C8 6.35227 8.44772 6.79999 9 6.79999H15C15.5523 6.79999 16 6.35227 16 5.79999V3.79999C16 3.2477 15.5523 2.79999 15 2.79999Z"
+                                            stroke="#D08700" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M16 4.79999H18C18.5304 4.79999 19.0391 5.0107 19.4142 5.38577C19.7893 5.76085 20 6.26955 20 6.79999V20.8C20 21.3304 19.7893 21.8391 19.4142 22.2142C19.0391 22.5893 18.5304 22.8 18 22.8H6C5.46957 22.8 4.96086 22.5893 4.58579 22.2142C4.21071 21.8391 4 21.3304 4 20.8V6.79999C4 6.26955 4.21071 5.76085 4.58579 5.38577C4.96086 5.0107 5.46957 4.79999 6 4.79999H8"
+                                            stroke="#D08700" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M12 11.8H16" stroke="#D08700" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M12 16.8H16" stroke="#D08700" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M8 11.8H8.01" stroke="#D08700" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M8 16.8H8.01" stroke="#D08700" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 text-center">
+                                    <span class="text-2xl font-normal text-[#1C398E]">20+</span>
+                                    <p class="text-base font-normal text-[#4A5565]">Forms</p>
+                                </div>
+                            </div>
+                            <div class="grid place-items-center gap-4">
+                                <div
+                                    class="px-3 grid justify-center items-center py-3 bg-[#F3E8FF] rounded-full h-[64px] w-[64px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                                        fill="none">
+                                        <path d="M12 15.8V3.79999" stroke="#9810FA" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M21 15.8V19.8C21 20.3304 20.7893 20.8391 20.4142 21.2142C20.0391 21.5893 19.5304 21.8 19 21.8H5C4.46957 21.8 3.96086 21.5893 3.58579 21.2142C3.21071 20.8391 3 20.3304 3 19.8V15.8"
+                                            stroke="#9810FA" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M7 10.8L12 15.8L17 10.8" stroke="#9810FA" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 text-center">
+                                    <span class="text-2xl font-normal text-[#1C398E]">3000+</span>
+                                    <p class="text-base font-normal text-[#4A5565]">Total Downloads</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="card-container" class="grid  gap-8">
+                            <div data-category="syllabus"
+                                class="card flex flex-col gap-6 bg-white rounded-xl px-6 py-6 border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);" data-category="Admin">
+                                <div class="flex sm:flex-row flex-col items-center justify-between gap-8">
+                                    <div class="flex gap-4">
+                                        <div class="px-3 py-3 bg-[#EFF6FF] h-[48px] w-fit rounded-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 25 25" fill="none">
+                                                <path d="M12.7998 7.58752V21.5875" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M3.7998 18.5875C3.53459 18.5875 3.28023 18.4822 3.0927 18.2946C2.90516 18.1071 2.7998 17.8527 2.7998 17.5875V4.58752C2.7998 4.32231 2.90516 4.06795 3.0927 3.88042C3.28023 3.69288 3.53459 3.58752 3.7998 3.58752H8.7998C9.86067 3.58752 10.8781 4.00895 11.6282 4.7591C12.3784 5.50924 12.7998 6.52666 12.7998 7.58752C12.7998 6.52666 13.2212 5.50924 13.9714 4.7591C14.7215 4.00895 15.7389 3.58752 16.7998 3.58752H21.7998C22.065 3.58752 22.3194 3.69288 22.5069 3.88042C22.6944 4.06795 22.7998 4.32231 22.7998 4.58752V17.5875C22.7998 17.8527 22.6944 18.1071 22.5069 18.2946C22.3194 18.4822 22.065 18.5875 21.7998 18.5875H15.7998C15.0042 18.5875 14.2411 18.9036 13.6785 19.4662C13.1159 20.0288 12.7998 20.7919 12.7998 21.5875C12.7998 20.7919 12.4837 20.0288 11.9211 19.4662C11.3585 18.9036 10.5955 18.5875 9.7998 18.5875H3.7998Z"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <h3 class="text-[#1C398E] text-lg font-normal">Class 9 Mathematics Syllabus
+                                                2024-25</h3>
+                                            <p class="text-[#4A5565] text-sm font-normal">Complete mathematics
+                                                curriculum for class 9 including all topics and learning objectives</p>
+                                            <div class="flex gap-3">
+                                                <span
+                                                    class="text-[#C10007] px-2 py-0.5 bg-[#FFE2E2] rounded-xl w-fit">PDF</span>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3570)">
+                                                            <path
+                                                                d="M7.5625 1.375H3.0625C2.79728 1.375 2.54293 1.48036 2.35539 1.66789C2.16786 1.85543 2.0625 2.10978 2.0625 2.375V10.375C2.0625 10.6402 2.16786 10.8946 2.35539 11.0821C2.54293 11.2696 2.79728 11.375 3.0625 11.375H9.0625C9.32772 11.375 9.58207 11.2696 9.76961 11.0821C9.95714 10.8946 10.0625 10.6402 10.0625 10.375V3.875L7.5625 1.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M7.0625 1.375V3.375C7.0625 3.64022 7.16786 3.89457 7.35539 4.08211C7.54293 4.26964 7.79728 4.375 8.0625 4.375H10.0625"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M5.0625 4.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 6.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 8.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3570">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.0625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">2.1 MB</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3579)">
+                                                            <path d="M4.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path
+                                                                d="M10.125 2.375H3.125C2.57272 2.375 2.125 2.82272 2.125 3.375V10.375C2.125 10.9273 2.57272 11.375 3.125 11.375H10.125C10.6773 11.375 11.125 10.9273 11.125 10.375V3.375C11.125 2.82272 10.6773 2.375 10.125 2.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.125 5.375H11.125" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3579">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">15/02/2024</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <path d="M6.91211 7.875V1.875" stroke="#6A7282"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M11.4121 7.875V9.875C11.4121 10.1402 11.3068 10.3946 11.1192 10.5821C10.9317 10.7696 10.6773 10.875 10.4121 10.875H3.41211C3.14689 10.875 2.89254 10.7696 2.705 10.5821C2.51747 10.3946 2.41211 10.1402 2.41211 9.875V7.875"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M4.41211 5.375L6.91211 7.875L9.41211 5.375"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">245 downloads</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid sm:w-fit w-full">
+                                        <button
+                                            class="text-[#FFF] text-sm font-normal flex gap-4 justify-center sm:items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.4375 10.3813V2.38129" stroke="white" stroke-width="1.33333"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.4375 10.3813V13.048C14.4375 13.4016 14.297 13.7407 14.047 13.9908C13.7969 14.2408 13.4578 14.3813 13.1042 14.3813H3.77083C3.41721 14.3813 3.07807 14.2408 2.82802 13.9908C2.57798 13.7407 2.4375 13.4016 2.4375 13.048V10.3813"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.10449 7.04797L8.43783 10.3813L11.7712 7.04797"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="paper"
+                                class="card flex flex-col gap-6 bg-white rounded-xl px-6 py-6 border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);" data-category="Admin">
+                                <div class="flex sm:flex-row flex-col items-center justify-between gap-8">
+                                    <div class="flex gap-4">
+                                        <div class="px-3 py-3 bg-[#EFF6FF] h-[48px] w-fit rounded-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 25 25" fill="none">
+                                                <path
+                                                    d="M15.7998 2.77502H6.7998C6.26937 2.77502 5.76066 2.98574 5.38559 3.36081C5.01052 3.73588 4.7998 4.24459 4.7998 4.77502V20.775C4.7998 21.3055 5.01052 21.8142 5.38559 22.1892C5.76066 22.5643 6.26937 22.775 6.7998 22.775H18.7998C19.3302 22.775 19.8389 22.5643 20.214 22.1892C20.5891 21.8142 20.7998 21.3055 20.7998 20.775V7.77502L15.7998 2.77502Z"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.7998 2.77502V6.77502C14.7998 7.30546 15.0105 7.81417 15.3856 8.18924C15.7607 8.56431 16.2694 8.77502 16.7998 8.77502H20.7998"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M10.7998 9.77502H8.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.7998 13.775H8.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.7998 17.775H8.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <h3 class="text-[#1C398E] text-lg font-normal">Class 10 Physics Past Papers
+                                                Collection</h3>
+                                            <p class="text-[#4A5565] text-sm font-normal">Collection of physics past
+                                                papers from 2019-2023 with solutions</p>
+                                            <div class="flex gap-3">
+                                                <span
+                                                    class="text-[#1447E6] px-2 py-0.5 bg-[#DBEAFE] rounded-xl w-fit">ZIP</span>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3570)">
+                                                            <path
+                                                                d="M7.5625 1.375H3.0625C2.79728 1.375 2.54293 1.48036 2.35539 1.66789C2.16786 1.85543 2.0625 2.10978 2.0625 2.375V10.375C2.0625 10.6402 2.16786 10.8946 2.35539 11.0821C2.54293 11.2696 2.79728 11.375 3.0625 11.375H9.0625C9.32772 11.375 9.58207 11.2696 9.76961 11.0821C9.95714 10.8946 10.0625 10.6402 10.0625 10.375V3.875L7.5625 1.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M7.0625 1.375V3.375C7.0625 3.64022 7.16786 3.89457 7.35539 4.08211C7.54293 4.26964 7.79728 4.375 8.0625 4.375H10.0625"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M5.0625 4.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 6.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 8.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3570">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.0625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">8.5 MB</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3579)">
+                                                            <path d="M4.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path
+                                                                d="M10.125 2.375H3.125C2.57272 2.375 2.125 2.82272 2.125 3.375V10.375C2.125 10.9273 2.57272 11.375 3.125 11.375H10.125C10.6773 11.375 11.125 10.9273 11.125 10.375V3.375C11.125 2.82272 10.6773 2.375 10.125 2.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.125 5.375H11.125" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3579">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">10/02/2024</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <path d="M6.91211 7.875V1.875" stroke="#6A7282"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M11.4121 7.875V9.875C11.4121 10.1402 11.3068 10.3946 11.1192 10.5821C10.9317 10.7696 10.6773 10.875 10.4121 10.875H3.41211C3.14689 10.875 2.89254 10.7696 2.705 10.5821C2.51747 10.3946 2.41211 10.1402 2.41211 9.875V7.875"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M4.41211 5.375L6.91211 7.875L9.41211 5.375"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">189 downloads</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid sm:w-fit w-full">
+                                        <button
+                                            class="text-[#FFF] text-sm font-normal flex gap-4 justify-center sm:items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.4375 10.3813V2.38129" stroke="white" stroke-width="1.33333"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.4375 10.3813V13.048C14.4375 13.4016 14.297 13.7407 14.047 13.9908C13.7969 14.2408 13.4578 14.3813 13.1042 14.3813H3.77083C3.41721 14.3813 3.07807 14.2408 2.82802 13.9908C2.57798 13.7407 2.4375 13.4016 2.4375 13.048V10.3813"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.10449 7.04797L8.43783 10.3813L11.7712 7.04797"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="schedules"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border px-6 py-6 border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="flex sm:flex-row flex-col items-center justify-between gap-8">
+                                    <div class="flex gap-4">
+                                        <div class="px-3 py-3 bg-[#EFF6FF] h-[48px] w-fit rounded-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 25 25" fill="none">
+                                                <path d="M8.7998 2.96252V6.96252" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.7998 2.96252V6.96252" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M19.7998 4.96252H5.7998C4.69524 4.96252 3.7998 5.85795 3.7998 6.96252V20.9625C3.7998 22.0671 4.69524 22.9625 5.7998 22.9625H19.7998C20.9044 22.9625 21.7998 22.0671 21.7998 20.9625V6.96252C21.7998 5.85795 20.9044 4.96252 19.7998 4.96252Z"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M3.7998 10.9625H21.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <h3 class="text-[#1C398E] text-lg font-normal">Mid-Term Examination Schedule
+                                                March 2024</h3>
+                                            <p class="text-[#4A5565] text-sm font-normal">Complete examination timetable
+                                                for all classes with venue details</p>
+                                            <div class="flex gap-3">
+                                                <span
+                                                    class="text-[#C10007] px-2 py-0.5 bg-[#FFE2E2] rounded-xl w-fit">PDF</span>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3570)">
+                                                            <path
+                                                                d="M7.5625 1.375H3.0625C2.79728 1.375 2.54293 1.48036 2.35539 1.66789C2.16786 1.85543 2.0625 2.10978 2.0625 2.375V10.375C2.0625 10.6402 2.16786 10.8946 2.35539 11.0821C2.54293 11.2696 2.79728 11.375 3.0625 11.375H9.0625C9.32772 11.375 9.58207 11.2696 9.76961 11.0821C9.95714 10.8946 10.0625 10.6402 10.0625 10.375V3.875L7.5625 1.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M7.0625 1.375V3.375C7.0625 3.64022 7.16786 3.89457 7.35539 4.08211C7.54293 4.26964 7.79728 4.375 8.0625 4.375H10.0625"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M5.0625 4.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 6.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 8.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3570">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.0625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">450 KB</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3579)">
+                                                            <path d="M4.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path
+                                                                d="M10.125 2.375H3.125C2.57272 2.375 2.125 2.82272 2.125 3.375V10.375C2.125 10.9273 2.57272 11.375 3.125 11.375H10.125C10.6773 11.375 11.125 10.9273 11.125 10.375V3.375C11.125 2.82272 10.6773 2.375 10.125 2.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.125 5.375H11.125" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3579">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">20/02/2024</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <path d="M6.91211 7.875V1.875" stroke="#6A7282"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M11.4121 7.875V9.875C11.4121 10.1402 11.3068 10.3946 11.1192 10.5821C10.9317 10.7696 10.6773 10.875 10.4121 10.875H3.41211C3.14689 10.875 2.89254 10.7696 2.705 10.5821C2.51747 10.3946 2.41211 10.1402 2.41211 9.875V7.875"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M4.41211 5.375L6.91211 7.875L9.41211 5.375"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">567 downloads</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid sm:w-fit w-full">
+                                        <button
+                                            class="text-[#FFF] text-sm font-normal flex gap-4 justify-center sm:items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.4375 10.3813V2.38129" stroke="white" stroke-width="1.33333"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.4375 10.3813V13.048C14.4375 13.4016 14.297 13.7407 14.047 13.9908C13.7969 14.2408 13.4578 14.3813 13.1042 14.3813H3.77083C3.41721 14.3813 3.07807 14.2408 2.82802 13.9908C2.57798 13.7407 2.4375 13.4016 2.4375 13.048V10.3813"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.10449 7.04797L8.43783 10.3813L11.7712 7.04797"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="forms"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border px-6 py-6 border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="flex sm:flex-row flex-col items-center justify-between gap-8">
+                                    <div class="flex gap-4">
+                                        <div class="px-3 py-3 bg-[#EFF6FF] h-[48px] w-fit rounded-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 25 25" fill="none">
+                                                <path
+                                                    d="M15.7998 2.15002H9.7998C9.24752 2.15002 8.7998 2.59774 8.7998 3.15002V5.15002C8.7998 5.70231 9.24752 6.15002 9.7998 6.15002H15.7998C16.3521 6.15002 16.7998 5.70231 16.7998 5.15002V3.15002C16.7998 2.59774 16.3521 2.15002 15.7998 2.15002Z"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M16.7998 4.15002H18.7998C19.3302 4.15002 19.8389 4.36074 20.214 4.73581C20.5891 5.11088 20.7998 5.61959 20.7998 6.15002V20.15C20.7998 20.6805 20.5891 21.1892 20.214 21.5642C19.8389 21.9393 19.3302 22.15 18.7998 22.15H6.7998C6.26937 22.15 5.76066 21.9393 5.38559 21.5642C5.01052 21.1892 4.7998 20.6805 4.7998 20.15V6.15002C4.7998 5.61959 5.01052 5.11088 5.38559 4.73581C5.76066 4.36074 6.26937 4.15002 6.7998 4.15002H8.7998"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12.7998 11.15H16.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M12.7998 16.15H16.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M8.7998 11.15H8.8098" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M8.7998 16.15H8.8098" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <h3 class="text-[#1C398E] text-lg font-normal">Leave Application Form</h3>
+                                            <p class="text-[#4A5565] text-sm font-normal">Standard leave application
+                                                form for students</p>
+                                            <div class="flex gap-3">
+                                                <span
+                                                    class="text-[#C10007] px-2 py-0.5 bg-[#FFE2E2] rounded-xl w-fit">PDF</span>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3570)">
+                                                            <path
+                                                                d="M7.5625 1.375H3.0625C2.79728 1.375 2.54293 1.48036 2.35539 1.66789C2.16786 1.85543 2.0625 2.10978 2.0625 2.375V10.375C2.0625 10.6402 2.16786 10.8946 2.35539 11.0821C2.54293 11.2696 2.79728 11.375 3.0625 11.375H9.0625C9.32772 11.375 9.58207 11.2696 9.76961 11.0821C9.95714 10.8946 10.0625 10.6402 10.0625 10.375V3.875L7.5625 1.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M7.0625 1.375V3.375C7.0625 3.64022 7.16786 3.89457 7.35539 4.08211C7.54293 4.26964 7.79728 4.375 8.0625 4.375H10.0625"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M5.0625 4.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 6.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 8.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3570">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.0625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">125 KB</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3579)">
+                                                            <path d="M4.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path
+                                                                d="M10.125 2.375H3.125C2.57272 2.375 2.125 2.82272 2.125 3.375V10.375C2.125 10.9273 2.57272 11.375 3.125 11.375H10.125C10.6773 11.375 11.125 10.9273 11.125 10.375V3.375C11.125 2.82272 10.6773 2.375 10.125 2.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.125 5.375H11.125" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3579">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">15/01/2024</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <path d="M6.91211 7.875V1.875" stroke="#6A7282"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M11.4121 7.875V9.875C11.4121 10.1402 11.3068 10.3946 11.1192 10.5821C10.9317 10.7696 10.6773 10.875 10.4121 10.875H3.41211C3.14689 10.875 2.89254 10.7696 2.705 10.5821C2.51747 10.3946 2.41211 10.1402 2.41211 9.875V7.875"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M4.41211 5.375L6.91211 7.875L9.41211 5.375"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">78 downloads</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid sm:w-fit w-full">
+                                        <button
+                                            class="text-[#FFF] text-sm font-normal flex gap-4 justify-center sm:items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.4375 10.3813V2.38129" stroke="white" stroke-width="1.33333"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.4375 10.3813V13.048C14.4375 13.4016 14.297 13.7407 14.047 13.9908C13.7969 14.2408 13.4578 14.3813 13.1042 14.3813H3.77083C3.41721 14.3813 3.07807 14.2408 2.82802 13.9908C2.57798 13.7407 2.4375 13.4016 2.4375 13.048V10.3813"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.10449 7.04797L8.43783 10.3813L11.7712 7.04797"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="syllabus"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border px-6 py-6 border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="flex sm:flex-row flex-col items-center justify-between gap-8">
+                                    <div class="flex gap-4">
+                                        <div class="px-3 py-3 bg-[#EFF6FF] h-[48px] w-fit rounded-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 25 25" fill="none">
+                                                <path d="M12.7998 7.58752V21.5875" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M3.7998 18.5875C3.53459 18.5875 3.28023 18.4822 3.0927 18.2946C2.90516 18.1071 2.7998 17.8527 2.7998 17.5875V4.58752C2.7998 4.32231 2.90516 4.06795 3.0927 3.88042C3.28023 3.69288 3.53459 3.58752 3.7998 3.58752H8.7998C9.86067 3.58752 10.8781 4.00895 11.6282 4.7591C12.3784 5.50924 12.7998 6.52666 12.7998 7.58752C12.7998 6.52666 13.2212 5.50924 13.9714 4.7591C14.7215 4.00895 15.7389 3.58752 16.7998 3.58752H21.7998C22.065 3.58752 22.3194 3.69288 22.5069 3.88042C22.6944 4.06795 22.7998 4.32231 22.7998 4.58752V17.5875C22.7998 17.8527 22.6944 18.1071 22.5069 18.2946C22.3194 18.4822 22.065 18.5875 21.7998 18.5875H15.7998C15.0042 18.5875 14.2411 18.9036 13.6785 19.4662C13.1159 20.0288 12.7998 20.7919 12.7998 21.5875C12.7998 20.7919 12.4837 20.0288 11.9211 19.4662C11.3585 18.9036 10.5955 18.5875 9.7998 18.5875H3.7998Z"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <h3 class="text-[#1C398E] text-lg font-normal">Class 10 Chemistry Syllabus
+                                                2024-25</h3>
+                                            <p class="text-[#4A5565] text-sm font-normal">Detailed chemistry curriculum
+                                                covering all practical and theoretical components</p>
+                                            <div class="flex gap-3">
+                                                <span
+                                                    class="text-[#C10007] px-2 py-0.5 bg-[#FFE2E2] rounded-xl w-fit">PDF</span>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3570)">
+                                                            <path
+                                                                d="M7.5625 1.375H3.0625C2.79728 1.375 2.54293 1.48036 2.35539 1.66789C2.16786 1.85543 2.0625 2.10978 2.0625 2.375V10.375C2.0625 10.6402 2.16786 10.8946 2.35539 11.0821C2.54293 11.2696 2.79728 11.375 3.0625 11.375H9.0625C9.32772 11.375 9.58207 11.2696 9.76961 11.0821C9.95714 10.8946 10.0625 10.6402 10.0625 10.375V3.875L7.5625 1.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M7.0625 1.375V3.375C7.0625 3.64022 7.16786 3.89457 7.35539 4.08211C7.54293 4.26964 7.79728 4.375 8.0625 4.375H10.0625"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M5.0625 4.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 6.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 8.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3570">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.0625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">1.8 MB</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3579)">
+                                                            <path d="M4.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path
+                                                                d="M10.125 2.375H3.125C2.57272 2.375 2.125 2.82272 2.125 3.375V10.375C2.125 10.9273 2.57272 11.375 3.125 11.375H10.125C10.6773 11.375 11.125 10.9273 11.125 10.375V3.375C11.125 2.82272 10.6773 2.375 10.125 2.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.125 5.375H11.125" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3579">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">15/02/2024</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <path d="M6.91211 7.875V1.875" stroke="#6A7282"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M11.4121 7.875V9.875C11.4121 10.1402 11.3068 10.3946 11.1192 10.5821C10.9317 10.7696 10.6773 10.875 10.4121 10.875H3.41211C3.14689 10.875 2.89254 10.7696 2.705 10.5821C2.51747 10.3946 2.41211 10.1402 2.41211 9.875V7.875"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M4.41211 5.375L6.91211 7.875L9.41211 5.375"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">198 downloads</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid sm:w-fit w-full">
+                                        <button
+                                            class="text-[#FFF] text-sm font-normal flex gap-4 justify-center sm:items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.4375 10.3813V2.38129" stroke="white" stroke-width="1.33333"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.4375 10.3813V13.048C14.4375 13.4016 14.297 13.7407 14.047 13.9908C13.7969 14.2408 13.4578 14.3813 13.1042 14.3813H3.77083C3.41721 14.3813 3.07807 14.2408 2.82802 13.9908C2.57798 13.7407 2.4375 13.4016 2.4375 13.048V10.3813"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.10449 7.04797L8.43783 10.3813L11.7712 7.04797"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="paper"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border px-6 py-6 border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="flex sm:flex-row flex-col items-center justify-between gap-8">
+                                    <div class="flex gap-4">
+                                        <div class="px-3 py-3 bg-[#EFF6FF] h-[48px] w-fit rounded-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 25 25" fill="none">
+                                                <path
+                                                    d="M15.7998 2.52502H6.7998C6.26937 2.52502 5.76066 2.73574 5.38559 3.11081C5.01052 3.48588 4.7998 3.99459 4.7998 4.52502V20.525C4.7998 21.0555 5.01052 21.5642 5.38559 21.9392C5.76066 22.3143 6.26937 22.525 6.7998 22.525H18.7998C19.3302 22.525 19.8389 22.3143 20.214 21.9392C20.5891 21.5642 20.7998 21.0555 20.7998 20.525V7.52502L15.7998 2.52502Z"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.7998 2.52502V6.52502C14.7998 7.05546 15.0105 7.56417 15.3856 7.93924C15.7607 8.31431 16.2694 8.52502 16.7998 8.52502H20.7998"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M10.7998 9.52502H8.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.7998 13.525H8.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.7998 17.525H8.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <h3 class="text-[#1C398E] text-lg font-normal">English Literature Past
+                                                Papers Class 9</h3>
+                                            <p class="text-[#4A5565] text-sm font-normal">English literature examination
+                                                papers from previous years</p>
+                                            <div class="flex gap-3">
+                                                <span
+                                                    class="text-[#C10007] px-2 py-0.5 bg-[#FFE2E2] rounded-xl w-fit">PDF</span>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3570)">
+                                                            <path
+                                                                d="M7.5625 1.375H3.0625C2.79728 1.375 2.54293 1.48036 2.35539 1.66789C2.16786 1.85543 2.0625 2.10978 2.0625 2.375V10.375C2.0625 10.6402 2.16786 10.8946 2.35539 11.0821C2.54293 11.2696 2.79728 11.375 3.0625 11.375H9.0625C9.32772 11.375 9.58207 11.2696 9.76961 11.0821C9.95714 10.8946 10.0625 10.6402 10.0625 10.375V3.875L7.5625 1.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M7.0625 1.375V3.375C7.0625 3.64022 7.16786 3.89457 7.35539 4.08211C7.54293 4.26964 7.79728 4.375 8.0625 4.375H10.0625"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M5.0625 4.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 6.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 8.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3570">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.0625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">3.2 MB</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3579)">
+                                                            <path d="M4.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path
+                                                                d="M10.125 2.375H3.125C2.57272 2.375 2.125 2.82272 2.125 3.375V10.375C2.125 10.9273 2.57272 11.375 3.125 11.375H10.125C10.6773 11.375 11.125 10.9273 11.125 10.375V3.375C11.125 2.82272 10.6773 2.375 10.125 2.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.125 5.375H11.125" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3579">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">08/02/2024</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <path d="M6.91211 7.875V1.875" stroke="#6A7282"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M11.4121 7.875V9.875C11.4121 10.1402 11.3068 10.3946 11.1192 10.5821C10.9317 10.7696 10.6773 10.875 10.4121 10.875H3.41211C3.14689 10.875 2.89254 10.7696 2.705 10.5821C2.51747 10.3946 2.41211 10.1402 2.41211 9.875V7.875"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M4.41211 5.375L6.91211 7.875L9.41211 5.375"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">156 downloads</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid sm:w-fit w-full">
+                                        <button
+                                            class="text-[#FFF] text-sm font-normal flex gap-4 justify-center sm:items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.4375 10.3813V2.38129" stroke="white" stroke-width="1.33333"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.4375 10.3813V13.048C14.4375 13.4016 14.297 13.7407 14.047 13.9908C13.7969 14.2408 13.4578 14.3813 13.1042 14.3813H3.77083C3.41721 14.3813 3.07807 14.2408 2.82802 13.9908C2.57798 13.7407 2.4375 13.4016 2.4375 13.048V10.3813"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.10449 7.04797L8.43783 10.3813L11.7712 7.04797"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="schedules"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border px-6 py-6 border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="flex sm:flex-row flex-col items-center justify-between gap-8">
+                                    <div class="flex gap-4">
+                                        <div class="px-3 py-3 bg-[#EFF6FF] h-[48px] w-fit rounded-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 25 25" fill="none">
+                                                <path d="M8.7998 2.71252V6.71252" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.7998 2.71252V6.71252" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M19.7998 4.71252H5.7998C4.69524 4.71252 3.7998 5.60795 3.7998 6.71252V20.7125C3.7998 21.8171 4.69524 22.7125 5.7998 22.7125H19.7998C20.9044 22.7125 21.7998 21.8171 21.7998 20.7125V6.71252C21.7998 5.60795 20.9044 4.71252 19.7998 4.71252Z"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M3.7998 10.7125H21.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <h3 class="text-[#1C398E] text-lg font-normal">Annual Sports Day Schedule
+                                                2024</h3>
+                                            <p class="text-[#4A5565] text-sm font-normal">Complete schedule of sports
+                                                events and competitions</p>
+                                            <div class="flex gap-3">
+                                                <span
+                                                    class="text-[#C10007] px-2 py-0.5 bg-[#FFE2E2] rounded-xl w-fit">PDF</span>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3570)">
+                                                            <path
+                                                                d="M7.5625 1.375H3.0625C2.79728 1.375 2.54293 1.48036 2.35539 1.66789C2.16786 1.85543 2.0625 2.10978 2.0625 2.375V10.375C2.0625 10.6402 2.16786 10.8946 2.35539 11.0821C2.54293 11.2696 2.79728 11.375 3.0625 11.375H9.0625C9.32772 11.375 9.58207 11.2696 9.76961 11.0821C9.95714 10.8946 10.0625 10.6402 10.0625 10.375V3.875L7.5625 1.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M7.0625 1.375V3.375C7.0625 3.64022 7.16786 3.89457 7.35539 4.08211C7.54293 4.26964 7.79728 4.375 8.0625 4.375H10.0625"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M5.0625 4.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 6.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 8.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3570">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.0625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">890 KB</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3579)">
+                                                            <path d="M4.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path
+                                                                d="M10.125 2.375H3.125C2.57272 2.375 2.125 2.82272 2.125 3.375V10.375C2.125 10.9273 2.57272 11.375 3.125 11.375H10.125C10.6773 11.375 11.125 10.9273 11.125 10.375V3.375C11.125 2.82272 10.6773 2.375 10.125 2.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.125 5.375H11.125" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3579">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">22/02/2024</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <path d="M6.91211 7.875V1.875" stroke="#6A7282"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M11.4121 7.875V9.875C11.4121 10.1402 11.3068 10.3946 11.1192 10.5821C10.9317 10.7696 10.6773 10.875 10.4121 10.875H3.41211C3.14689 10.875 2.89254 10.7696 2.705 10.5821C2.51747 10.3946 2.41211 10.1402 2.41211 9.875V7.875"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M4.41211 5.375L6.91211 7.875L9.41211 5.375"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">234 downloads</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid sm:w-fit w-full">
+                                        <button
+                                            class="text-[#FFF] text-sm font-normal flex gap-4 justify-center sm:items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.4375 10.3813V2.38129" stroke="white" stroke-width="1.33333"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.4375 10.3813V13.048C14.4375 13.4016 14.297 13.7407 14.047 13.9908C13.7969 14.2408 13.4578 14.3813 13.1042 14.3813H3.77083C3.41721 14.3813 3.07807 14.2408 2.82802 13.9908C2.57798 13.7407 2.4375 13.4016 2.4375 13.048V10.3813"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.10449 7.04797L8.43783 10.3813L11.7712 7.04797"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="forms"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border px-6 py-6 border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="flex sm:flex-row flex-col items-center justify-between gap-8">
+                                    <div class="flex gap-4">
+                                        <div class="px-3 py-3 bg-[#EFF6FF] h-[48px] w-fit rounded-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 25 25" fill="none">
+                                                <path
+                                                    d="M15.7998 2.90015H9.7998C9.24752 2.90015 8.7998 3.34786 8.7998 3.90015V5.90015C8.7998 6.45243 9.24752 6.90015 9.7998 6.90015H15.7998C16.3521 6.90015 16.7998 6.45243 16.7998 5.90015V3.90015C16.7998 3.34786 16.3521 2.90015 15.7998 2.90015Z"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M16.7998 4.90015H18.7998C19.3302 4.90015 19.8389 5.11086 20.214 5.48593C20.5891 5.86101 20.7998 6.36971 20.7998 6.90015V20.9001C20.7998 21.4306 20.5891 21.9393 20.214 22.3144C19.8389 22.6894 19.3302 22.9001 18.7998 22.9001H6.7998C6.26937 22.9001 5.76066 22.6894 5.38559 22.3144C5.01052 21.9393 4.7998 21.4306 4.7998 20.9001V6.90015C4.7998 6.36971 5.01052 5.86101 5.38559 5.48593C5.76066 5.11086 6.26937 4.90015 6.7998 4.90015H8.7998"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12.7998 11.9001H16.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M12.7998 16.9001H16.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M8.7998 11.9001H8.8098" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M8.7998 16.9001H8.8098" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <h3 class="text-[#1C398E] text-lg font-normal">Character Certificate Request
+                                                Form</h3>
+                                            <p class="text-[#4A5565] text-sm font-normal">Application form for character
+                                                certificate</p>
+                                            <div class="flex gap-3">
+                                                <span
+                                                    class="text-[#C10007] px-2 py-0.5 bg-[#FFE2E2] rounded-xl w-fit">PDF</span>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3570)">
+                                                            <path
+                                                                d="M7.5625 1.375H3.0625C2.79728 1.375 2.54293 1.48036 2.35539 1.66789C2.16786 1.85543 2.0625 2.10978 2.0625 2.375V10.375C2.0625 10.6402 2.16786 10.8946 2.35539 11.0821C2.54293 11.2696 2.79728 11.375 3.0625 11.375H9.0625C9.32772 11.375 9.58207 11.2696 9.76961 11.0821C9.95714 10.8946 10.0625 10.6402 10.0625 10.375V3.875L7.5625 1.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M7.0625 1.375V3.375C7.0625 3.64022 7.16786 3.89457 7.35539 4.08211C7.54293 4.26964 7.79728 4.375 8.0625 4.375H10.0625"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M5.0625 4.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 6.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 8.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3570">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.0625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">108 KB</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3579)">
+                                                            <path d="M4.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path
+                                                                d="M10.125 2.375H3.125C2.57272 2.375 2.125 2.82272 2.125 3.375V10.375C2.125 10.9273 2.57272 11.375 3.125 11.375H10.125C10.6773 11.375 11.125 10.9273 11.125 10.375V3.375C11.125 2.82272 10.6773 2.375 10.125 2.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.125 5.375H11.125" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3579">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">20/01/2024</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <path d="M6.91211 7.875V1.875" stroke="#6A7282"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M11.4121 7.875V9.875C11.4121 10.1402 11.3068 10.3946 11.1192 10.5821C10.9317 10.7696 10.6773 10.875 10.4121 10.875H3.41211C3.14689 10.875 2.89254 10.7696 2.705 10.5821C2.51747 10.3946 2.41211 10.1402 2.41211 9.875V7.875"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M4.41211 5.375L6.91211 7.875L9.41211 5.375"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">45 downloads</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid sm:w-fit w-full">
+                                        <button
+                                            class="text-[#FFF] text-sm font-normal flex gap-4 justify-center sm:items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.4375 10.3813V2.38129" stroke="white" stroke-width="1.33333"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.4375 10.3813V13.048C14.4375 13.4016 14.297 13.7407 14.047 13.9908C13.7969 14.2408 13.4578 14.3813 13.1042 14.3813H3.77083C3.41721 14.3813 3.07807 14.2408 2.82802 13.9908C2.57798 13.7407 2.4375 13.4016 2.4375 13.048V10.3813"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.10449 7.04797L8.43783 10.3813L11.7712 7.04797"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="notices"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border px-6 py-6 border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="flex sm:flex-row flex-col items-center justify-between gap-8">
+                                    <div class="flex gap-4">
+                                        <div class="px-3 py-3 bg-[#EFF6FF] h-[48px] w-fit rounded-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 25 25" fill="none">
+                                                <path
+                                                    d="M12.7998 22.0876C18.3227 22.0876 22.7998 17.6105 22.7998 12.0876C22.7998 6.5648 18.3227 2.08765 12.7998 2.08765C7.27696 2.08765 2.7998 6.5648 2.7998 12.0876C2.7998 17.6105 7.27696 22.0876 12.7998 22.0876Z"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12.7998 8.08765V12.0876" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M12.7998 16.0876H12.8098" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <h3 class="text-[#1C398E] text-lg font-normal">Important Notice - Parent
+                                                Teacher Meeting</h3>
+                                            <p class="text-[#4A5565] text-sm font-normal">Notice regarding upcoming
+                                                parent-teacher meeting arrangements</p>
+                                            <div class="flex gap-3">
+                                                <span
+                                                    class="text-[#C10007] px-2 py-0.5 bg-[#FFE2E2] rounded-xl w-fit">PDF</span>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3570)">
+                                                            <path
+                                                                d="M7.5625 1.375H3.0625C2.79728 1.375 2.54293 1.48036 2.35539 1.66789C2.16786 1.85543 2.0625 2.10978 2.0625 2.375V10.375C2.0625 10.6402 2.16786 10.8946 2.35539 11.0821C2.54293 11.2696 2.79728 11.375 3.0625 11.375H9.0625C9.32772 11.375 9.58207 11.2696 9.76961 11.0821C9.95714 10.8946 10.0625 10.6402 10.0625 10.375V3.875L7.5625 1.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M7.0625 1.375V3.375C7.0625 3.64022 7.16786 3.89457 7.35539 4.08211C7.54293 4.26964 7.79728 4.375 8.0625 4.375H10.0625"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M5.0625 4.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 6.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 8.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3570">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.0625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">320 KB</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3579)">
+                                                            <path d="M4.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path
+                                                                d="M10.125 2.375H3.125C2.57272 2.375 2.125 2.82272 2.125 3.375V10.375C2.125 10.9273 2.57272 11.375 3.125 11.375H10.125C10.6773 11.375 11.125 10.9273 11.125 10.375V3.375C11.125 2.82272 10.6773 2.375 10.125 2.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.125 5.375H11.125" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3579">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">25/02/2024</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <path d="M6.91211 7.875V1.875" stroke="#6A7282"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M11.4121 7.875V9.875C11.4121 10.1402 11.3068 10.3946 11.1192 10.5821C10.9317 10.7696 10.6773 10.875 10.4121 10.875H3.41211C3.14689 10.875 2.89254 10.7696 2.705 10.5821C2.51747 10.3946 2.41211 10.1402 2.41211 9.875V7.875"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M4.41211 5.375L6.91211 7.875L9.41211 5.375"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">389 downloads</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid sm:w-fit w-full">
+                                        <button
+                                            class="text-[#FFF] text-sm font-normal flex gap-4 justify-center sm:items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.4375 10.3813V2.38129" stroke="white" stroke-width="1.33333"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.4375 10.3813V13.048C14.4375 13.4016 14.297 13.7407 14.047 13.9908C13.7969 14.2408 13.4578 14.3813 13.1042 14.3813H3.77083C3.41721 14.3813 3.07807 14.2408 2.82802 13.9908C2.57798 13.7407 2.4375 13.4016 2.4375 13.048V10.3813"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.10449 7.04797L8.43783 10.3813L11.7712 7.04797"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="syllabus"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border px-6 py-6 border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="flex sm:flex-row flex-col items-center justify-between gap-8">
+                                    <div class="flex gap-4">
+                                        <div class="px-3 py-3 bg-[#EFF6FF] h-[48px] w-fit rounded-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 25 25" fill="none">
+                                                <path d="M12.7998 7.58752V21.5875" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M3.7998 18.5875C3.53459 18.5875 3.28023 18.4822 3.0927 18.2946C2.90516 18.1071 2.7998 17.8527 2.7998 17.5875V4.58752C2.7998 4.32231 2.90516 4.06795 3.0927 3.88042C3.28023 3.69288 3.53459 3.58752 3.7998 3.58752H8.7998C9.86067 3.58752 10.8781 4.00895 11.6282 4.7591C12.3784 5.50924 12.7998 6.52666 12.7998 7.58752C12.7998 6.52666 13.2212 5.50924 13.9714 4.7591C14.7215 4.00895 15.7389 3.58752 16.7998 3.58752H21.7998C22.065 3.58752 22.3194 3.69288 22.5069 3.88042C22.6944 4.06795 22.7998 4.32231 22.7998 4.58752V17.5875C22.7998 17.8527 22.6944 18.1071 22.5069 18.2946C22.3194 18.4822 22.065 18.5875 21.7998 18.5875H15.7998C15.0042 18.5875 14.2411 18.9036 13.6785 19.4662C13.1159 20.0288 12.7998 20.7919 12.7998 21.5875C12.7998 20.7919 12.4837 20.0288 11.9211 19.4662C11.3585 18.9036 10.5955 18.5875 9.7998 18.5875H3.7998Z"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <h3 class="text-[#1C398E] text-lg font-normal">Biology Lab Manual Class 10
+                                            </h3>
+                                            <p class="text-[#4A5565] text-sm font-normal">Comprehensive biology
+                                                laboratory manual with all experiments</p>
+                                            <div class="flex gap-3">
+                                                <span
+                                                    class="text-[#C10007] px-2 py-0.5 bg-[#FFE2E2] rounded-xl w-fit">PDF</span>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3570)">
+                                                            <path
+                                                                d="M7.5625 1.375H3.0625C2.79728 1.375 2.54293 1.48036 2.35539 1.66789C2.16786 1.85543 2.0625 2.10978 2.0625 2.375V10.375C2.0625 10.6402 2.16786 10.8946 2.35539 11.0821C2.54293 11.2696 2.79728 11.375 3.0625 11.375H9.0625C9.32772 11.375 9.58207 11.2696 9.76961 11.0821C9.95714 10.8946 10.0625 10.6402 10.0625 10.375V3.875L7.5625 1.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M7.0625 1.375V3.375C7.0625 3.64022 7.16786 3.89457 7.35539 4.08211C7.54293 4.26964 7.79728 4.375 8.0625 4.375H10.0625"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M5.0625 4.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 6.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 8.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3570">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.0625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">4.5 MB</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3579)">
+                                                            <path d="M4.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path
+                                                                d="M10.125 2.375H3.125C2.57272 2.375 2.125 2.82272 2.125 3.375V10.375C2.125 10.9273 2.57272 11.375 3.125 11.375H10.125C10.6773 11.375 11.125 10.9273 11.125 10.375V3.375C11.125 2.82272 10.6773 2.375 10.125 2.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.125 5.375H11.125" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3579">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">12/02/2024</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <path d="M6.91211 7.875V1.875" stroke="#6A7282"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M11.4121 7.875V9.875C11.4121 10.1402 11.3068 10.3946 11.1192 10.5821C10.9317 10.7696 10.6773 10.875 10.4121 10.875H3.41211C3.14689 10.875 2.89254 10.7696 2.705 10.5821C2.51747 10.3946 2.41211 10.1402 2.41211 9.875V7.875"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M4.41211 5.375L6.91211 7.875L9.41211 5.375"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">167 downloads</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid sm:w-fit w-full">
+                                        <button
+                                            class="text-[#FFF] text-sm font-normal flex gap-4 justify-center sm:items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.4375 10.3813V2.38129" stroke="white" stroke-width="1.33333"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.4375 10.3813V13.048C14.4375 13.4016 14.297 13.7407 14.047 13.9908C13.7969 14.2408 13.4578 14.3813 13.1042 14.3813H3.77083C3.41721 14.3813 3.07807 14.2408 2.82802 13.9908C2.57798 13.7407 2.4375 13.4016 2.4375 13.048V10.3813"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.10449 7.04797L8.43783 10.3813L11.7712 7.04797"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="paper"
+                                class="card flex flex-col gap-6 bg-white rounded-xl px-6 py-6 border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);" data-category="Admin">
+                                <div class="flex sm:flex-row flex-col items-center justify-between gap-8">
+                                    <div class="flex gap-4">
+                                        <div class="px-3 py-3 bg-[#EFF6FF] h-[48px] w-fit rounded-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 25 25" fill="none">
+                                                <path
+                                                    d="M15.7998 2.77502H6.7998C6.26937 2.77502 5.76066 2.98574 5.38559 3.36081C5.01052 3.73588 4.7998 4.24459 4.7998 4.77502V20.775C4.7998 21.3055 5.01052 21.8142 5.38559 22.1892C5.76066 22.5643 6.26937 22.775 6.7998 22.775H18.7998C19.3302 22.775 19.8389 22.5643 20.214 22.1892C20.5891 21.8142 20.7998 21.3055 20.7998 20.775V7.77502L15.7998 2.77502Z"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.7998 2.77502V6.77502C14.7998 7.30546 15.0105 7.81417 15.3856 8.18924C15.7607 8.56431 16.2694 8.77502 16.7998 8.77502H20.7998"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M10.7998 9.77502H8.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.7998 13.775H8.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.7998 17.775H8.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <h3 class="text-[#1C398E] text-lg font-normal">Urdu Past Papers Collection
+                                                Class 9-10</h3>
+                                            <p class="text-[#4A5565] text-sm font-normal">Complete collection of Urdu
+                                                examination papers with answer keys</p>
+                                            <div class="flex gap-3">
+                                                <span
+                                                    class="text-[#1447E6] px-2 py-0.5 bg-[#DBEAFE] rounded-xl w-fit">ZIP</span>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3570)">
+                                                            <path
+                                                                d="M7.5625 1.375H3.0625C2.79728 1.375 2.54293 1.48036 2.35539 1.66789C2.16786 1.85543 2.0625 2.10978 2.0625 2.375V10.375C2.0625 10.6402 2.16786 10.8946 2.35539 11.0821C2.54293 11.2696 2.79728 11.375 3.0625 11.375H9.0625C9.32772 11.375 9.58207 11.2696 9.76961 11.0821C9.95714 10.8946 10.0625 10.6402 10.0625 10.375V3.875L7.5625 1.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M7.0625 1.375V3.375C7.0625 3.64022 7.16786 3.89457 7.35539 4.08211C7.54293 4.26964 7.79728 4.375 8.0625 4.375H10.0625"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M5.0625 4.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 6.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 8.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3570">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.0625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">6.8 MB</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3579)">
+                                                            <path d="M4.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path
+                                                                d="M10.125 2.375H3.125C2.57272 2.375 2.125 2.82272 2.125 3.375V10.375C2.125 10.9273 2.57272 11.375 3.125 11.375H10.125C10.6773 11.375 11.125 10.9273 11.125 10.375V3.375C11.125 2.82272 10.6773 2.375 10.125 2.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.125 5.375H11.125" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3579">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">05/02/2024</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <path d="M6.91211 7.875V1.875" stroke="#6A7282"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M11.4121 7.875V9.875C11.4121 10.1402 11.3068 10.3946 11.1192 10.5821C10.9317 10.7696 10.6773 10.875 10.4121 10.875H3.41211C3.14689 10.875 2.89254 10.7696 2.705 10.5821C2.51747 10.3946 2.41211 10.1402 2.41211 9.875V7.875"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M4.41211 5.375L6.91211 7.875L9.41211 5.375"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">134 downloads</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid sm:w-fit w-full">
+                                        <button
+                                            class="text-[#FFF] text-sm font-normal flex gap-4 justify-center sm:items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.4375 10.3813V2.38129" stroke="white" stroke-width="1.33333"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.4375 10.3813V13.048C14.4375 13.4016 14.297 13.7407 14.047 13.9908C13.7969 14.2408 13.4578 14.3813 13.1042 14.3813H3.77083C3.41721 14.3813 3.07807 14.2408 2.82802 13.9908C2.57798 13.7407 2.4375 13.4016 2.4375 13.048V10.3813"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.10449 7.04797L8.43783 10.3813L11.7712 7.04797"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="forms"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border px-6 py-6 border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="flex sm:flex-row flex-col items-center justify-between gap-8">
+                                    <div class="flex gap-4">
+                                        <div class="px-3 py-3 bg-[#EFF6FF] h-[48px] w-fit rounded-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 25 25" fill="none">
+                                                <path
+                                                    d="M15.7998 2.15002H9.7998C9.24752 2.15002 8.7998 2.59774 8.7998 3.15002V5.15002C8.7998 5.70231 9.24752 6.15002 9.7998 6.15002H15.7998C16.3521 6.15002 16.7998 5.70231 16.7998 5.15002V3.15002C16.7998 2.59774 16.3521 2.15002 15.7998 2.15002Z"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M16.7998 4.15002H18.7998C19.3302 4.15002 19.8389 4.36074 20.214 4.73581C20.5891 5.11088 20.7998 5.61959 20.7998 6.15002V20.15C20.7998 20.6805 20.5891 21.1892 20.214 21.5642C19.8389 21.9393 19.3302 22.15 18.7998 22.15H6.7998C6.26937 22.15 5.76066 21.9393 5.38559 21.5642C5.01052 21.1892 4.7998 20.6805 4.7998 20.15V6.15002C4.7998 5.61959 5.01052 5.11088 5.38559 4.73581C5.76066 4.36074 6.26937 4.15002 6.7998 4.15002H8.7998"
+                                                    stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12.7998 11.15H16.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M12.7998 16.15H16.7998" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M8.7998 11.15H8.8098" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M8.7998 16.15H8.8098" stroke="#155DFC" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <h3 class="text-[#1C398E] text-lg font-normal">Fee Submission Challan Form
+                                            </h3>
+                                            <p class="text-[#4A5565] text-sm font-normal">Bank challan form for fee
+                                                submission</p>
+                                            <div class="flex gap-3">
+                                                <span
+                                                    class="text-[#C10007] px-2 py-0.5 bg-[#FFE2E2] rounded-xl w-fit">PDF</span>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3570)">
+                                                            <path
+                                                                d="M7.5625 1.375H3.0625C2.79728 1.375 2.54293 1.48036 2.35539 1.66789C2.16786 1.85543 2.0625 2.10978 2.0625 2.375V10.375C2.0625 10.6402 2.16786 10.8946 2.35539 11.0821C2.54293 11.2696 2.79728 11.375 3.0625 11.375H9.0625C9.32772 11.375 9.58207 11.2696 9.76961 11.0821C9.95714 10.8946 10.0625 10.6402 10.0625 10.375V3.875L7.5625 1.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M7.0625 1.375V3.375C7.0625 3.64022 7.16786 3.89457 7.35539 4.08211C7.54293 4.26964 7.79728 4.375 8.0625 4.375H10.0625"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M5.0625 4.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 6.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.0625 8.875H4.0625" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3570">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.0625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">95 KB</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <g clip-path="url(#clip0_2001_3579)">
+                                                            <path d="M4.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.625 1.375V3.375" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path
+                                                                d="M10.125 2.375H3.125C2.57272 2.375 2.125 2.82272 2.125 3.375V10.375C2.125 10.9273 2.57272 11.375 3.125 11.375H10.125C10.6773 11.375 11.125 10.9273 11.125 10.375V3.375C11.125 2.82272 10.6773 2.375 10.125 2.375Z"
+                                                                stroke="#6A7282" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.125 5.375H11.125" stroke="#6A7282"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2001_3579">
+                                                                <rect width="12" height="12" fill="white"
+                                                                    transform="translate(0.625 0.375)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">10/01/2024</p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                                        <path d="M6.91211 7.875V1.875" stroke="#6A7282"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M11.4121 7.875V9.875C11.4121 10.1402 11.3068 10.3946 11.1192 10.5821C10.9317 10.7696 10.6773 10.875 10.4121 10.875H3.41211C3.14689 10.875 2.89254 10.7696 2.705 10.5821C2.51747 10.3946 2.41211 10.1402 2.41211 9.875V7.875"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M4.41211 5.375L6.91211 7.875L9.41211 5.375"
+                                                            stroke="#6A7282" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <p class="text-[#6A7282] text-sm font-normal">512 downloads</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid sm:w-fit w-full">
+                                        <button
+                                            class="text-[#FFF] text-sm font-normal flex gap-4 justify-center sm:items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.4375 10.3813V2.38129" stroke="white" stroke-width="1.33333"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.4375 10.3813V13.048C14.4375 13.4016 14.297 13.7407 14.047 13.9908C13.7969 14.2408 13.4578 14.3813 13.1042 14.3813H3.77083C3.41721 14.3813 3.07807 14.2408 2.82802 13.9908C2.57798 13.7407 2.4375 13.4016 2.4375 13.048V10.3813"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.10449 7.04797L8.43783 10.3813L11.7712 7.04797"
+                                                    stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const buttons = document.querySelectorAll(".open-card-btn");
+                        const cards = document.querySelectorAll(".card");
+
+                        buttons.forEach(button => {
+
+                            button.addEventListener("mouseenter", () => {
+                                if (!button.classList.contains("active")) {
+                                    button.classList.add("bg-gray-100");
+                                }
+                            });
+
+                            button.addEventListener("mouseleave", () => {
+                                if (!button.classList.contains("active")) {
+                                    button.classList.remove("bg-gray-100");
+                                }
+                            });
+
+                            button.addEventListener("click", () => {
+                                const target = button.dataset.target;
+
+                                buttons.forEach(btn => {
+                                    btn.classList.remove("bg-blue-600", "text-white", "active", "bg-gray-100");
+                                    btn.classList.add("bg-white", "text-black");
+                                });
+
+                                button.classList.remove("bg-white", "text-black", "bg-gray-100");
+                                button.classList.add("bg-blue-600", "text-white", "active");
+
+                                cards.forEach(card => {
+                                    const category = card.dataset.category;
+                                    if (target === "all" || category === target) {
+                                        card.classList.remove("hidden");
+                                    } else {
+                                        card.classList.add("hidden");
+                                    }
+                                });
+                            });
+                        });
+                    });
+                </script>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="px-8 py-8 bg-[#EFF6FF] rounded-[10px] ">
+                    <h2 class="text-center text-xl sm:text-3xl text-[#1C398E] font-normal">Quick Access
+                        <div class="grid sm:grid-cols-3 grid-cols-1 pt-8 gap-6">
+                            <div class="px-6 py-6 bg-white rounded-[14px] transform transition-all duration-300 hover:-translate-y hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid gap-6">
+                                    <div class="grid gap-6 place-items-center">
+                                        <div class="px-4 py-4 bg-[#DBEAFE] rounded-full">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
+                                                viewBox="0 0 33 33" fill="none">
+                                                <path d="M11.3291 3.50439V8.83773" stroke="#155DFC"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M21.9951 3.50439V8.83773" stroke="#155DFC"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M25.9954 6.1709H7.32878C5.85602 6.1709 4.66211 7.36481 4.66211 8.83757V27.5042C4.66211 28.977 5.85602 30.1709 7.32878 30.1709H25.9954C27.4682 30.1709 28.6621 28.977 28.6621 27.5042V8.83757C28.6621 7.36481 27.4682 6.1709 25.9954 6.1709Z"
+                                                    stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M4.66211 14.1709H28.6621" stroke="#155DFC"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-[#1C398E] text-base font-normal">Exam Schedule</h3>
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <p class="text-[#4A5565] font-normal text-center text-base">Download latest
+                                            examination timetables and important dates</p>
+                                        <button
+                                            class="flex hover:bg-gray-100 gap-4 items-center  justify-center px-4 py-2 bg-white rounded-xl text-sm font-normal text-[#0A0A0A]"
+                                            style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.6377 10.8376V2.83765" stroke="#0A0A0A"
+                                                    stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.6377 10.8376V13.5043C14.6377 13.8579 14.4972 14.1971 14.2472 14.4471C13.9971 14.6972 13.658 14.8376 13.3044 14.8376H3.97103C3.61741 14.8376 3.27827 14.6972 3.02822 14.4471C2.77817 14.1971 2.6377 13.8579 2.6377 13.5043V10.8376"
+                                                    stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.30469 7.50439L8.63802 10.8377L11.9714 7.50439"
+                                                    stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            View Schedules
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 py-6 bg-white rounded-[14px] transform transition-all duration-300 hover:-translate-y hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid gap-6">
+                                    <div class="grid gap-6 place-items-center">
+                                        <div class="px-4 py-4 bg-[#DCFCE7] rounded-full">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
+                                                viewBox="0 0 33 33" fill="none">
+                                                <path d="M16.9873 10.1709V28.8376" stroke="#00A63E"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M4.98763 24.8376C4.63401 24.8376 4.29487 24.6972 4.04482 24.4471C3.79477 24.1971 3.6543 23.8579 3.6543 23.5043V6.17098C3.6543 5.81736 3.79477 5.47822 4.04482 5.22817C4.29487 4.97812 4.63401 4.83765 4.98763 4.83765H11.6543C13.0688 4.83765 14.4253 5.39955 15.4255 6.39974C16.4257 7.39994 16.9876 8.75649 16.9876 10.171C16.9876 8.75649 17.5495 7.39994 18.5497 6.39974C19.5499 5.39955 20.9065 4.83765 22.321 4.83765H28.9876C29.3413 4.83765 29.6804 4.97812 29.9304 5.22817C30.1805 5.47822 30.321 5.81736 30.321 6.17098V23.5043C30.321 23.8579 30.1805 24.1971 29.9304 24.4471C29.6804 24.6972 29.3413 24.8376 28.9876 24.8376H20.9876C19.9268 24.8376 18.9093 25.2591 18.1592 26.0092C17.4091 26.7594 16.9876 27.7768 16.9876 28.8376C16.9876 27.7768 16.5662 26.7594 15.8161 26.0092C15.0659 25.2591 14.0485 24.8376 12.9876 24.8376H4.98763Z"
+                                                    stroke="#00A63E" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-[#1C398E] text-base font-normal">All Syllabi</h3>
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <p class="text-[#4A5565] font-normal text-center text-base">Complete curriculum
+                                            and syllabus for all subjects and classes</p>
+                                        <button
+                                            class="flex hover:bg-gray-100 gap-4 items-center  justify-center px-4 py-2 bg-white rounded-xl text-sm font-normal text-[#0A0A0A]"
+                                            style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.6377 10.8376V2.83765" stroke="#0A0A0A"
+                                                    stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.6377 10.8376V13.5043C14.6377 13.8579 14.4972 14.1971 14.2472 14.4471C13.9971 14.6972 13.658 14.8376 13.3044 14.8376H3.97103C3.61741 14.8376 3.27827 14.6972 3.02822 14.4471C2.77817 14.1971 2.6377 13.8579 2.6377 13.5043V10.8376"
+                                                    stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.30469 7.50439L8.63802 10.8377L11.9714 7.50439"
+                                                    stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Browse Syllabi
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 py-6 bg-white rounded-[14px] transform transition-all duration-300 hover:-translate-y hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid gap-6">
+                                    <div class="grid gap-6 place-items-center">
+                                        <div class="px-4 py-4 bg-[#FEF9C2] rounded-full">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
+                                                viewBox="0 0 33 33" fill="none">
+                                                <path
+                                                    d="M20.3239 3.50439H8.32389C7.61665 3.50439 6.93837 3.78535 6.43828 4.28544C5.93818 4.78554 5.65723 5.46382 5.65723 6.17106V27.5044C5.65723 28.2116 5.93818 28.8899 6.43828 29.39C6.93837 29.8901 7.61665 30.1711 8.32389 30.1711H24.3239C25.0311 30.1711 25.7094 29.8901 26.2095 29.39C26.7096 28.8899 26.9906 28.2116 26.9906 27.5044V10.1711L20.3239 3.50439Z"
+                                                    stroke="#D08700" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M18.9912 3.50439V8.83773C18.9912 9.54497 19.2722 10.2232 19.7723 10.7233C20.2724 11.2234 20.9506 11.5044 21.6579 11.5044H26.9912"
+                                                    stroke="#D08700" stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M13.6579 12.8376H10.9912" stroke="#D08700"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M21.6579 18.1709H10.9912" stroke="#D08700"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M21.6579 23.5044H10.9912" stroke="#D08700"
+                                                    stroke-width="2.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-[#1C398E] text-base font-normal">Past Papers</h3>
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <p class="text-[#4A5565] font-normal text-center text-base">Previous years'
+                                            question papers with solutions for exam preparation</p>
+                                        <button
+                                            class="flex hover:bg-gray-100 gap-4 items-center  justify-center px-4 py-2 bg-white rounded-xl text-sm font-normal text-[#0A0A0A]"
+                                            style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <path d="M8.6377 10.8376V2.83765" stroke="#0A0A0A"
+                                                    stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.6377 10.8376V13.5043C14.6377 13.8579 14.4972 14.1971 14.2472 14.4471C13.9971 14.6972 13.658 14.8376 13.3044 14.8376H3.97103C3.61741 14.8376 3.27827 14.6972 3.02822 14.4471C2.77817 14.1971 2.6377 13.8579 2.6377 13.5043V10.8376"
+                                                    stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M5.30469 7.50439L8.63802 10.8377L11.9714 7.50439"
+                                                    stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Get Papers
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-12">
+            <div class="container">
+                <div class="pb-4">
+                    <div class="px-6 mb-4 py-6 bg-[#F9FAFB] rounded-[10px]">
+                        <div class="flex gap-4">
+                            <div class="px-2.5 py-2.5 h-[40px] w-fit bg-[#DBEAFE] rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M10.0003 18.9709C14.6027 18.9709 18.3337 15.2399 18.3337 10.6375C18.3337 6.03516 14.6027 2.3042 10.0003 2.3042C5.39795 2.3042 1.66699 6.03516 1.66699 10.6375C1.66699 15.2399 5.39795 18.9709 10.0003 18.9709Z"
+                                        stroke="#155DFC" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M10 7.3042V10.6375" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10 13.9707H10.0083" stroke="#155DFC" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="grid gap-2">
+                               <h2 class="text-[#1C398E] text-base font-normal">Need Help?</h2>
+                               <p class="text-[#4A5565] text-base font-normal">If you're having trouble finding a specific resource or need assistance with downloads, please contact our academic office.</p>
+                               <div class="flex sm:flex-row flex-col gap-2">
+                                <span class="text-[#0A0A0A] text-sm sm:items-center flex justify-center font-normal hover:bg-gray-100 px-3 py-1.5 bg-white rounded-xl" style="border: 0.8px solid rgba(0, 0, 0, 0.10)">Contact Academic Office</span>
+                                 <span class="text-[#0A0A0A] text-sm sm:items-center flex justify-center font-normal hover:bg-gray-100 px-3 py-1.5 bg-white rounded-xl" style="border: 0.8px solid rgba(0, 0, 0, 0.10)">Report Missing Resource</span>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+     <footer class=" bg-[#101828]">
+    <div class="container">
+      <nav>
+        <div class="py-12 grid justify-center">
+          <div class="bg-[#155DFC] px-35 w-[530px] sm:w-[869px] h-[192px]">
+            <h2 class="sm:text-4xl text-2xl font-normal text-center text-white pb-6">Ready to Join Our School?</h2>
+            <div class="flex justify-center">
+              <p
+                class="sm:text-xl text-base font-normal max-w-[450px] sm:max-w-[610px] text-center text-[#DBEAFE] pb-7">
+                Take the first step towards
+                excellence in
+                education. Apply now for the upcoming academic year.</p>
+            </div>
+            <div class="flex justify-center">
+              <button class="px-8 py-2 rounded-lg bg-white">
+                <a href="/" class="text-lg font-normal text-[#155DFC]">Apply for Admission</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="py-16 grid grid-cols-1 sm:grid-cols-3 gap-12">
+          <ul class="grid gap-6">
+            <li class="flex gap-3">
+              <a class="logo" href="\"><img src="assets/images/logo.png" alt="logo" width="56" height="56"></a>
+              <div>
+                <p class="text-xl text-white font-normal">Government High School</p>
+                <span class="text-base text-[#99A1AF] font-normal">Chaki Faiq</span>
+              </div>
+            </li>
+            <li>
+              <p class="text-base text-[#99A1AF] font-normal">Committed to providing quality education and character
+                development, nurturing future leaders with excellence in academics and moral values.</p>
+            </li>
+            <li class="grid gap-3">
+              <a href="https://www.google.com/maps?q=Main+Road,+Chaki+Faiq,+Pakistan" target="_blank" class="flex gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path
+                    d="M16.6666 8.73356C16.6666 12.8944 12.0508 17.2277 10.5008 18.5661C10.3564 18.6746 10.1806 18.7334 9.99992 18.7334C9.81925 18.7334 9.64348 18.6746 9.49909 18.5661C7.94909 17.2277 3.33325 12.8944 3.33325 8.73356C3.33325 6.96545 4.03563 5.26976 5.28587 4.01952C6.53612 2.76927 8.23181 2.06689 9.99992 2.06689C11.768 2.06689 13.4637 2.76927 14.714 4.01952C15.9642 5.26976 16.6666 6.96545 16.6666 8.73356Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M10 11.2334C11.3807 11.2334 12.5 10.1141 12.5 8.7334C12.5 7.35269 11.3807 6.2334 10 6.2334C8.61929 6.2334 7.5 7.35269 7.5 8.7334C7.5 10.1141 8.61929 11.2334 10 11.2334Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="text-base font-normal text-[#99A1AF]">Main Road, Chaki Faiq, Pakistan</p>
+              </a>
+              <a href="tel:+92-XXX-XXXXXXX" class="flex gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path
+                    d="M11.5267 14.2069C11.6989 14.2859 11.8927 14.304 12.0765 14.2581C12.2602 14.2122 12.4229 14.1051 12.5376 13.9544L12.8334 13.5669C12.9887 13.3599 13.19 13.1919 13.4214 13.0762C13.6528 12.9605 13.908 12.9002 14.1667 12.9002H16.6667C17.1088 12.9002 17.5327 13.0758 17.8453 13.3884C18.1578 13.7009 18.3334 14.1249 18.3334 14.5669V17.0669C18.3334 17.5089 18.1578 17.9328 17.8453 18.2454C17.5327 18.558 17.1088 18.7336 16.6667 18.7336C12.6885 18.7336 8.87319 17.1532 6.06015 14.3402C3.2471 11.5271 1.66675 7.71181 1.66675 3.73356C1.66675 3.29153 1.84234 2.86761 2.1549 2.55505C2.46746 2.24249 2.89139 2.06689 3.33341 2.06689H5.83341C6.27544 2.06689 6.69936 2.24249 7.01193 2.55505C7.32449 2.86761 7.50008 3.29153 7.50008 3.73356V6.23356C7.50008 6.4923 7.43984 6.74749 7.32413 6.97892C7.20841 7.21034 7.04041 7.41165 6.83341 7.56689L6.44341 7.85939C6.29043 7.97621 6.1826 8.14238 6.13824 8.32969C6.09388 8.51699 6.11573 8.71387 6.20008 8.88689C7.33898 11.2001 9.2121 13.0709 11.5267 14.2069Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="text-base font-normal text-[#99A1AF]">+92-XXX-XXXXXXX</p>
+              </a>
+              <a href="mailto:info@ghschakifaiq.edu.pk" class="flex gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path
+                    d="M18.3334 6.2334L10.8409 11.0059C10.5867 11.1536 10.2979 11.2314 10.0038 11.2314C9.7098 11.2314 9.421 11.1536 9.16675 11.0059L1.66675 6.2334"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M16.6667 3.7334H3.33341C2.41294 3.7334 1.66675 4.47959 1.66675 5.40007V15.4001C1.66675 16.3205 2.41294 17.0667 3.33341 17.0667H16.6667C17.5872 17.0667 18.3334 16.3205 18.3334 15.4001V5.40007C18.3334 4.47959 17.5872 3.7334 16.6667 3.7334Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="text-base font-normal text-[#99A1AF]">info@ghschakifaiq.edu.pk</p>
+              </a>
+            </li>
+          </ul>
+          <div>
+            <h3 class="text-xl font-normal text-white pb-6">Quick Links</h3>
+            <ul class="grid gap-3">
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">About Us</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Academics</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Admissions</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Faculty</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Gallery</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-normal text-white pb-6">School Hours</h3>
+            <ul class="grid gap-4">
+              <li class="grid gap-1">
+                <h4 class="text-base font-normal text-white">Morning Session (Classes 6-8)</h4>
+                <time class="text-base text-[#99A1AF] font-normal">8:00 AM - 12:15 PM</time>
+              </li>
+              <li class="grid gap-1">
+                <h4 class="text-base font-normal text-white">Afternoon Session (Classes 9-10)</h4>
+                <time class="text-base text-[#99A1AF] font-normal">1:00 PM - 5:15 PM</time>
+              </li>
+              <li class="grid gap-1">
+                <h4 class="text-base font-normal text-white">Office Hours</h4>
+                <time class="text-base text-[#99A1AF] font-normal">Monday - Friday: 8:00 AM - 3:00 PM</time>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="py-8 flex flex-col gap-6 sm:flex-row justify-between" style="border-top: 0.8px solid #1E2939;">
+          <p class="text-sm text-[#99A1AF] font-normal">© 2024 Government High School Chaki Faiq. All rights reserved.
+          </p>
+          <span class="text-sm text-[#99A1AF] font-normal">Established 1999 • 25+ Years of Excellence</span>
+        </div>
+      </nav>
+    </div>
+  </footer>
+</body>
+
+</html>

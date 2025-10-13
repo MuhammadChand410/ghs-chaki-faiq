@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Chakki Faiq</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        dropdownButtons.forEach(btn => {
+            const dropdown = btn.nextElementSibling;
+            const arrow = btn.querySelector('svg');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-180');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+            document.querySelectorAll('.dropdown-btn svg').forEach(a => a.classList.remove('rotate-180'));
+        });
+    });
+</script>
+
+<body>
+    <header class="py-4 sticky top-0 bg-white shadow z-50">
+        <div class="container">
+            <nav class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <a href="/">
+                        <img src="assets/images/logo.png" alt="logo" width="56" height="56">
+                    </a>
+                    <div>
+                        <p class="text-2xl text-[#101828] font-normal">Government High School</p>
+                        <span class="text-sm text-[#155DFC] font-normal">Chaki Faiq</span>
+                    </div>
+                </div>
+
+                <button id="nav-toggle" class="block md:hidden text-[#155DFC] focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <ul id="nav-menu"
+                    class="hidden flex-col md:flex md:flex-row md:items-center gap-4 md:gap-8 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none p-5 md:p-0 transition-all duration-300">
+                    <li>
+                        <a href="/"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Home</a>
+                    </li>
+
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            About
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</a>
+                            <a href="faculity.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Faculty</a>
+                            <a href="achievements.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Achievements</a>
+                            <a href="student.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Student
+                                Life</a>
+                        </div>
+                    </li>
+
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            Academics
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="academic.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Curriculum</a>
+                            <a href="download.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Downloads</a>
+                            <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Gallery</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="admission.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Admissions</a>
+                    </li>
+                    <li>
+                        <a href="contact-us.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/"
+                            class="px-6 py-2 rounded-lg bg-[#155DFC] text-white text-sm font-normal inline-block hover:bg-[#0D4ED8]">Apply
+                            Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="my-16">
+            <div class=" container">
+                <div class="flex justify-center">
+                    <div class="max-w-[800px] grid gap-6">
+                        <h2 class="text-center text-4xl sm:text-6xl text-[#1C398E] font-normal">Our Faculty & Staff</h2>
+                        <p class="sm:text-xl text-base font-normal text-center text-[#4A5565]">Meet our dedicated team
+                            of experienced educators who are committed to nurturing young minds and fostering academic
+                            excellence in every student.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class=" container">
+                <div class="pb-16">
+                    <ul class="flex flex-wrap flex-row w-auto items-center sm:justify-center gap-8 sm:gap-3 mb-4 sm:mb-10">
+                        <li><button
+                                class="open-card-btn bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="all">All Faculty</button></li>
+                        <li><button
+                                class="open-card-btn bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="science">Science</button></li>
+                        <li><button
+                                class="open-card-btn bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="mathematics">Mathematics</button></li>
+                        <li><button
+                                class="open-card-btn bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="languages">Languages</button></li>
+                        <li><button
+                                class="open-card-btn bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="social">Social Studies</button></li>
+                        <li><button
+                                class="open-card-btn bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="administration">Administration</button></li>
+                    </ul>
+                    <div>
+                        <div class="grid grid-cols-2 gap-12 sm:gap-6 py-10 sm:py-20 sm:grid-cols-4">
+                            <div class="grid place-items-center gap-4">
+                                <div class="px-4 py-4 bg-[#DBEAFE] rounded-full h-[64px] w-[64px]">
+                                    <svg class="block" xmlns="http://www.w3.org/2000/svg" width="32" height="33"
+                                        viewBox="0 0 32 33" fill="none">
+                                        <path d="M10.6667 3.0542V8.38753" stroke="#155DFC" stroke-width="2.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M21.3333 3.0542V8.38753" stroke="#155DFC" stroke-width="2.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M25.3333 5.7207H6.66667C5.19391 5.7207 4 6.91461 4 8.38737V27.054C4 28.5268 5.19391 29.7207 6.66667 29.7207H25.3333C26.8061 29.7207 28 28.5268 28 27.054V8.38737C28 6.91461 26.8061 5.7207 25.3333 5.7207Z"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M4 13.7207H28" stroke="#155DFC" stroke-width="2.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 text-center">
+                                    <h3 class="text-2xl font-normal text-[#1C398E]">25+</h3>
+                                    <p class="text-base font-normal text-[#4A5565]">Years of Service</p>
+                                </div>
+                            </div>
+                            <div class="grid place-items-center gap-4">
+                                <div class="px-4 py-4 bg-[#DBEAFE] rounded-full h-[64px] w-[64px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                        fill="none">
+                                        <path
+                                            d="M21.3333 28.3875V25.7208C21.3333 24.3063 20.7714 22.9497 19.7712 21.9495C18.771 20.9494 17.4144 20.3875 16 20.3875H7.99996C6.58547 20.3875 5.22892 20.9494 4.22872 21.9495C3.22853 22.9497 2.66663 24.3063 2.66663 25.7208V28.3875"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M21.3334 4.55811C22.477 4.8546 23.4899 5.52246 24.2129 6.45686C24.936 7.39125 25.3283 8.53929 25.3283 9.72077C25.3283 10.9023 24.936 12.0503 24.2129 12.9847C23.4899 13.9191 22.477 14.5869 21.3334 14.8834"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M29.3334 28.3872V25.7205C29.3325 24.5389 28.9392 23.3909 28.2152 22.457C27.4912 21.523 26.4775 20.856 25.3334 20.5605"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12 15.0541C14.9455 15.0541 17.3333 12.6663 17.3333 9.72078C17.3333 6.77527 14.9455 4.38745 12 4.38745C9.05444 4.38745 6.66663 6.77527 6.66663 9.72078C6.66663 12.6663 9.05444 15.0541 12 15.0541Z"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 text-center">
+                                    <span class="text-2xl font-normal text-[#1C398E]">1200+</span>
+                                    <p class="text-base font-normal text-[#4A5565]">Students</p>
+                                </div>
+                            </div>
+                            <div class="grid place-items-center gap-4">
+                                <div class="px-4 py-4 bg-[#DBEAFE] rounded-full h-[64px] w-[64px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                        fill="none">
+                                        <path d="M16 9.7207V28.3874" stroke="#155DFC" stroke-width="2.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M3.99996 24.3875C3.64634 24.3875 3.3072 24.247 3.05715 23.9969C2.8071 23.7469 2.66663 23.4077 2.66663 23.0541V5.72078C2.66663 5.36716 2.8071 5.02802 3.05715 4.77798C3.3072 4.52793 3.64634 4.38745 3.99996 4.38745H10.6666C12.0811 4.38745 13.4377 4.94935 14.4379 5.94955C15.4381 6.94974 16 8.3063 16 9.72078C16 8.3063 16.5619 6.94974 17.5621 5.94955C18.5622 4.94935 19.9188 4.38745 21.3333 4.38745H28C28.3536 4.38745 28.6927 4.52793 28.9428 4.77798C29.1928 5.02802 29.3333 5.36716 29.3333 5.72078V23.0541C29.3333 23.4077 29.1928 23.7469 28.9428 23.9969C28.6927 24.247 28.3536 24.3875 28 24.3875H20C18.9391 24.3875 17.9217 24.8089 17.1715 25.559C16.4214 26.3092 16 27.3266 16 28.3875C16 27.3266 15.5785 26.3092 14.8284 25.559C14.0782 24.8089 13.0608 24.3875 12 24.3875H3.99996Z"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 text-center">
+                                    <span class="text-2xl font-normal text-[#1C398E]">50+</span>
+                                    <p class="text-base font-normal text-[#4A5565]">Faculty Members</p>
+                                </div>
+                            </div>
+                            <div class="grid place-items-center gap-4">
+                                <div class="px-4 py-4 bg-[#DBEAFE] rounded-full h-[64px] w-[64px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                        fill="none">
+                                        <path
+                                            d="M13.3334 19.9341V22.1021C13.3283 22.5589 13.206 23.0068 12.9781 23.4028C12.7503 23.7987 12.4245 24.1295 12.032 24.3634C11.1989 24.9805 10.5212 25.7834 10.0527 26.7083C9.58421 27.6332 9.33792 28.6546 9.33337 29.6914"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M18.6666 19.9341V22.1021C18.6717 22.5589 18.794 23.0068 19.0219 23.4028C19.2497 23.7987 19.5755 24.1295 19.968 24.3634C20.8011 24.9805 21.4788 25.7834 21.9473 26.7083C22.4158 27.6332 22.6621 28.6546 22.6666 29.6914"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M24 12.3874H26C26.8841 12.3874 27.7319 12.0362 28.357 11.4111C28.9821 10.7859 29.3333 9.93809 29.3333 9.05404C29.3333 8.16998 28.9821 7.32214 28.357 6.69701C27.7319 6.07189 26.8841 5.7207 26 5.7207H24"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M5.33337 29.7207H26.6667" stroke="#155DFC" stroke-width="2.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M8 12.3875C8 14.5093 8.84286 16.5441 10.3431 18.0444C11.8434 19.5447 13.8783 20.3875 16 20.3875C18.1217 20.3875 20.1566 19.5447 21.6569 18.0444C23.1571 16.5441 24 14.5093 24 12.3875V4.38753C24 4.03391 23.8595 3.69477 23.6095 3.44472C23.3594 3.19467 23.0203 3.0542 22.6667 3.0542H9.33333C8.97971 3.0542 8.64057 3.19467 8.39052 3.44472C8.14048 3.69477 8 4.03391 8 4.38753V12.3875Z"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M7.99996 12.3874H5.99996C5.1159 12.3874 4.26806 12.0362 3.64294 11.4111C3.01782 10.7859 2.66663 9.93809 2.66663 9.05404C2.66663 8.16998 3.01782 7.32214 3.64294 6.69701C4.26806 6.07189 5.1159 5.7207 5.99996 5.7207H7.99996"
+                                            stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 text-center">
+                                    <span class="text-2xl font-normal text-[#1C398E]">15+</span>
+                                    <p class="text-base font-normal text-[#4A5565]">Awards Won</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="card-container" class="grid sm:grid-cols-3 grid-cols-1 gap-8">
+                            <div data-category="administration" class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 
+    transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);" data-category="Admin">
+                                <div class="grid place-items-center pt-6">
+                                    <div class="py-6 px-6 mb-5 rounded-full"
+                                        style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49"
+                                            viewBox="0 0 49 49" fill="none">
+                                            <path
+                                                d="M38.6625 42.6V38.6C38.6625 36.4782 37.8196 34.4434 36.3193 32.9431C34.819 31.4428 32.7842 30.6 30.6625 30.6H18.6625C16.5407 30.6 14.5059 31.4428 13.0056 32.9431C11.5053 34.4434 10.6625 36.4782 10.6625 38.6V42.6"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M24.6625 22.6C29.0808 22.6 32.6625 19.0183 32.6625 14.6C32.6625 10.1817 29.0808 6.59998 24.6625 6.59998C20.2442 6.59998 16.6625 10.1817 16.6625 14.6C16.6625 19.0183 20.2442 22.6 24.6625 22.6Z"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-2 place-items-center">
+                                        <h3 class="text-[#1C398E] text-base font-normal">Mr. Ahmed Khan</h3>
+                                        <p class="text-base font-normal text-[#155DFC]">Principal</p>
+                                        <span
+                                            class="py-1 rounded-xl bg-[#ECEEF2] px-2 text-[#030213] font-normal text-xs">Administration</span>
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-6 grid gap-4">
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8] ">Qualification</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">M.A. Education, B.Ed.</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <p class="
+                                        text-sm font-normal text-[#193CB8] ">Subjects</p>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">School
+                                                Administration</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Educational
+                                                Leadership</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Experience</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">25 years</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Achievements</span>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Excellence in Education Award
+                                                2023</p>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">District Best Principal 2022
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="border-t grid gap-2 border-gray-300 pt-4">
+                                        <a href="mailto:principal@ghschakifaiq.edu.pk" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_429)">
+                                                    <path
+                                                        d="M15.4667 5.21667L9.47266 9.03468C9.26926 9.15282 9.03822 9.21504 8.803 9.21504C8.56777 9.21504 8.33673 9.15282 8.13333 9.03468L2.13333 5.21667"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14.1333 3.21667H3.46666C2.73028 3.21667 2.13333 3.81363 2.13333 4.55001V12.55C2.13333 13.2864 2.73028 13.8833 3.46666 13.8833H14.1333C14.8697 13.8833 15.4667 13.2864 15.4667 12.55V4.55001C15.4667 3.81363 14.8697 3.21667 14.1333 3.21667Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_429">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">principal@ghschakifaiq.edu.pk
+                                            </p>
+                                        </a>
+                                        <a href="tel:+92-300-1234567" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_435)">
+                                                    <path
+                                                        d="M10.0213 11.5954C10.159 11.6587 10.3141 11.6731 10.4611 11.6364C10.6081 11.5997 10.7382 11.514 10.83 11.3934L11.0667 11.0834C11.1909 10.9178 11.3519 10.7834 11.537 10.6909C11.7222 10.5983 11.9263 10.5501 12.1333 10.5501H14.1333C14.487 10.5501 14.8261 10.6906 15.0761 10.9406C15.3262 11.1907 15.4667 11.5298 15.4667 11.8834V13.8834C15.4667 14.237 15.3262 14.5762 15.0761 14.8262C14.8261 15.0763 14.487 15.2168 14.1333 15.2168C10.9507 15.2168 7.89849 13.9525 5.64805 11.702C3.39761 9.4516 2.13333 6.39935 2.13333 3.21676C2.13333 2.86313 2.27381 2.524 2.52386 2.27395C2.7739 2.0239 3.11304 1.88342 3.46666 1.88342H5.46666C5.82029 1.88342 6.15942 2.0239 6.40947 2.27395C6.65952 2.524 6.8 2.86313 6.8 3.21676V5.21676C6.8 5.42375 6.7518 5.6279 6.65923 5.81304C6.56666 5.99818 6.43226 6.15923 6.26666 6.28342L5.95466 6.51742C5.83228 6.61087 5.74601 6.74381 5.71052 6.89366C5.67504 7.0435 5.69252 7.20101 5.76 7.33942C6.67112 9.19 8.16961 10.6866 10.0213 11.5954Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_435">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">+92-300-1234567
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="administration" class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 
+    transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);" data-category="Admin">
+                                <div class="grid place-items-center pt-6">
+                                    <div class="py-6 px-6 mb-5 rounded-full"
+                                        style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49"
+                                            viewBox="0 0 49 49" fill="none">
+                                            <path
+                                                d="M38.6625 42.6V38.6C38.6625 36.4782 37.8196 34.4434 36.3193 32.9431C34.819 31.4428 32.7842 30.6 30.6625 30.6H18.6625C16.5407 30.6 14.5059 31.4428 13.0056 32.9431C11.5053 34.4434 10.6625 36.4782 10.6625 38.6V42.6"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M24.6625 22.6C29.0808 22.6 32.6625 19.0183 32.6625 14.6C32.6625 10.1817 29.0808 6.59998 24.6625 6.59998C20.2442 6.59998 16.6625 10.1817 16.6625 14.6C16.6625 19.0183 20.2442 22.6 24.6625 22.6Z"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-2 place-items-center">
+                                        <h3 class="text-[#1C398E] text-base font-normal">Mrs. Fatima Ali</h3>
+                                        <p class="text-base font-normal text-[#155DFC]">Vice Principal</p>
+                                        <span
+                                            class="py-1 rounded-xl bg-[#ECEEF2] px-2 text-[#030213] font-normal text-xs">Administration</span>
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-6 grid gap-4">
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8] ">Qualification</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">M.A. English, B.Ed.</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <p class="
+                                        text-sm font-normal text-[#193CB8] ">Subjects</p>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">
+                                                English Literature</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Academic
+                                                Coordination</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Experience</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">20 years</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Achievements</span>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Best Teacher Award 2021</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="border-t grid gap-2 border-gray-300 pt-4">
+                                        <a href="mailto:vp@ghschakifaiq.edu.pk" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_429)">
+                                                    <path
+                                                        d="M15.4667 5.21667L9.47266 9.03468C9.26926 9.15282 9.03822 9.21504 8.803 9.21504C8.56777 9.21504 8.33673 9.15282 8.13333 9.03468L2.13333 5.21667"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14.1333 3.21667H3.46666C2.73028 3.21667 2.13333 3.81363 2.13333 4.55001V12.55C2.13333 13.2864 2.73028 13.8833 3.46666 13.8833H14.1333C14.8697 13.8833 15.4667 13.2864 15.4667 12.55V4.55001C15.4667 3.81363 14.8697 3.21667 14.1333 3.21667Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_429">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">vp@ghschakifaiq.edu.pk
+                                            </p>
+                                        </a>
+                                        <a href="tel:+92-300-2345678" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_435)">
+                                                    <path
+                                                        d="M10.0213 11.5954C10.159 11.6587 10.3141 11.6731 10.4611 11.6364C10.6081 11.5997 10.7382 11.514 10.83 11.3934L11.0667 11.0834C11.1909 10.9178 11.3519 10.7834 11.537 10.6909C11.7222 10.5983 11.9263 10.5501 12.1333 10.5501H14.1333C14.487 10.5501 14.8261 10.6906 15.0761 10.9406C15.3262 11.1907 15.4667 11.5298 15.4667 11.8834V13.8834C15.4667 14.237 15.3262 14.5762 15.0761 14.8262C14.8261 15.0763 14.487 15.2168 14.1333 15.2168C10.9507 15.2168 7.89849 13.9525 5.64805 11.702C3.39761 9.4516 2.13333 6.39935 2.13333 3.21676C2.13333 2.86313 2.27381 2.524 2.52386 2.27395C2.7739 2.0239 3.11304 1.88342 3.46666 1.88342H5.46666C5.82029 1.88342 6.15942 2.0239 6.40947 2.27395C6.65952 2.524 6.8 2.86313 6.8 3.21676V5.21676C6.8 5.42375 6.7518 5.6279 6.65923 5.81304C6.56666 5.99818 6.43226 6.15923 6.26666 6.28342L5.95466 6.51742C5.83228 6.61087 5.74601 6.74381 5.71052 6.89366C5.67504 7.0435 5.69252 7.20101 5.76 7.33942C6.67112 9.19 8.16961 10.6866 10.0213 11.5954Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_435">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">+92-300-2345678
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="science" class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 
+    transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid place-items-center pt-6">
+                                    <div class="py-6 px-6 mb-5 rounded-full"
+                                        style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49"
+                                            viewBox="0 0 49 49" fill="none">
+                                            <path
+                                                d="M38.6625 42.6V38.6C38.6625 36.4782 37.8196 34.4434 36.3193 32.9431C34.819 31.4428 32.7842 30.6 30.6625 30.6H18.6625C16.5407 30.6 14.5059 31.4428 13.0056 32.9431C11.5053 34.4434 10.6625 36.4782 10.6625 38.6V42.6"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M24.6625 22.6C29.0808 22.6 32.6625 19.0183 32.6625 14.6C32.6625 10.1817 29.0808 6.59998 24.6625 6.59998C20.2442 6.59998 16.6625 10.1817 16.6625 14.6C16.6625 19.0183 20.2442 22.6 24.6625 22.6Z"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-2 place-items-center">
+                                        <h3 class="text-[#1C398E] text-base font-normal">Dr. Muhammad Hassan</h3>
+                                        <p class="text-base font-normal text-[#155DFC]">Head of Science Department</p>
+                                        <span
+                                            class="py-1 rounded-xl bg-[#ECEEF2] px-2 text-[#030213] font-normal text-xs">Science</span>
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-6 grid gap-4">
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8] ">Qualification</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">Ph.D. Physics, M.Sc. Physics</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <p class="
+                                        text-sm font-normal text-[#193CB8] ">Subjects</p>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Physics</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Applied
+                                                Sciences</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Experience</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">18 years</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Achievements</span>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Research Excellence Award</p>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Science Fair Coordinator
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="border-t grid gap-2 border-gray-300 pt-4">
+                                        <a href="mailto:hassan@ghschakifaiq.edu.pk" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_429)">
+                                                    <path
+                                                        d="M15.4667 5.21667L9.47266 9.03468C9.26926 9.15282 9.03822 9.21504 8.803 9.21504C8.56777 9.21504 8.33673 9.15282 8.13333 9.03468L2.13333 5.21667"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14.1333 3.21667H3.46666C2.73028 3.21667 2.13333 3.81363 2.13333 4.55001V12.55C2.13333 13.2864 2.73028 13.8833 3.46666 13.8833H14.1333C14.8697 13.8833 15.4667 13.2864 15.4667 12.55V4.55001C15.4667 3.81363 14.8697 3.21667 14.1333 3.21667Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_429">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">hassan@ghschakifaiq.edu.pk
+                                            </p>
+                                        </a>
+                                        <a href="tel:+92-300-3456789" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_435)">
+                                                    <path
+                                                        d="M10.0213 11.5954C10.159 11.6587 10.3141 11.6731 10.4611 11.6364C10.6081 11.5997 10.7382 11.514 10.83 11.3934L11.0667 11.0834C11.1909 10.9178 11.3519 10.7834 11.537 10.6909C11.7222 10.5983 11.9263 10.5501 12.1333 10.5501H14.1333C14.487 10.5501 14.8261 10.6906 15.0761 10.9406C15.3262 11.1907 15.4667 11.5298 15.4667 11.8834V13.8834C15.4667 14.237 15.3262 14.5762 15.0761 14.8262C14.8261 15.0763 14.487 15.2168 14.1333 15.2168C10.9507 15.2168 7.89849 13.9525 5.64805 11.702C3.39761 9.4516 2.13333 6.39935 2.13333 3.21676C2.13333 2.86313 2.27381 2.524 2.52386 2.27395C2.7739 2.0239 3.11304 1.88342 3.46666 1.88342H5.46666C5.82029 1.88342 6.15942 2.0239 6.40947 2.27395C6.65952 2.524 6.8 2.86313 6.8 3.21676V5.21676C6.8 5.42375 6.7518 5.6279 6.65923 5.81304C6.56666 5.99818 6.43226 6.15923 6.26666 6.28342L5.95466 6.51742C5.83228 6.61087 5.74601 6.74381 5.71052 6.89366C5.67504 7.0435 5.69252 7.20101 5.76 7.33942C6.67112 9.19 8.16961 10.6866 10.0213 11.5954Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_435">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">+92-300-3456789
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="science" class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 
+    transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid place-items-center pt-6">
+                                    <div class="py-6 px-6 mb-5 rounded-full"
+                                        style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49"
+                                            viewBox="0 0 49 49" fill="none">
+                                            <path
+                                                d="M38.6625 42.6V38.6C38.6625 36.4782 37.8196 34.4434 36.3193 32.9431C34.819 31.4428 32.7842 30.6 30.6625 30.6H18.6625C16.5407 30.6 14.5059 31.4428 13.0056 32.9431C11.5053 34.4434 10.6625 36.4782 10.6625 38.6V42.6"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M24.6625 22.6C29.0808 22.6 32.6625 19.0183 32.6625 14.6C32.6625 10.1817 29.0808 6.59998 24.6625 6.59998C20.2442 6.59998 16.6625 10.1817 16.6625 14.6C16.6625 19.0183 20.2442 22.6 24.6625 22.6Z"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-2 place-items-center">
+                                        <h3 class="text-[#1C398E] text-base font-normal">Ms. Ayesha Ahmed</h3>
+                                        <p class="text-base font-normal text-[#155DFC]">Chemistry Teacher</p>
+                                        <span
+                                            class="py-1 rounded-xl bg-[#ECEEF2] px-2 text-[#030213] font-normal text-xs">Science</span>
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-6 grid gap-4">
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8] ">Qualification</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">M.Sc. Chemistry, B.Ed.</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <p class="
+                                        text-sm font-normal text-[#193CB8] ">Subjects</p>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Chemistry</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Laboratory
+                                                Sciences</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Experience</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">12 years</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Achievements</span>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Best Lab Instructor 2023
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="border-t grid gap-2 border-gray-300 pt-4">
+                                        <a href="mailto:ayesha@ghschakifaiq.edu.pk" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_429)">
+                                                    <path
+                                                        d="M15.4667 5.21667L9.47266 9.03468C9.26926 9.15282 9.03822 9.21504 8.803 9.21504C8.56777 9.21504 8.33673 9.15282 8.13333 9.03468L2.13333 5.21667"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14.1333 3.21667H3.46666C2.73028 3.21667 2.13333 3.81363 2.13333 4.55001V12.55C2.13333 13.2864 2.73028 13.8833 3.46666 13.8833H14.1333C14.8697 13.8833 15.4667 13.2864 15.4667 12.55V4.55001C15.4667 3.81363 14.8697 3.21667 14.1333 3.21667Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_429">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">ayesha@ghschakifaiq.edu.pk
+                                            </p>
+                                        </a>
+                                        <a href="tell:+92-300-4567890" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_435)">
+                                                    <path
+                                                        d="M10.0213 11.5954C10.159 11.6587 10.3141 11.6731 10.4611 11.6364C10.6081 11.5997 10.7382 11.514 10.83 11.3934L11.0667 11.0834C11.1909 10.9178 11.3519 10.7834 11.537 10.6909C11.7222 10.5983 11.9263 10.5501 12.1333 10.5501H14.1333C14.487 10.5501 14.8261 10.6906 15.0761 10.9406C15.3262 11.1907 15.4667 11.5298 15.4667 11.8834V13.8834C15.4667 14.237 15.3262 14.5762 15.0761 14.8262C14.8261 15.0763 14.487 15.2168 14.1333 15.2168C10.9507 15.2168 7.89849 13.9525 5.64805 11.702C3.39761 9.4516 2.13333 6.39935 2.13333 3.21676C2.13333 2.86313 2.27381 2.524 2.52386 2.27395C2.7739 2.0239 3.11304 1.88342 3.46666 1.88342H5.46666C5.82029 1.88342 6.15942 2.0239 6.40947 2.27395C6.65952 2.524 6.8 2.86313 6.8 3.21676V5.21676C6.8 5.42375 6.7518 5.6279 6.65923 5.81304C6.56666 5.99818 6.43226 6.15923 6.26666 6.28342L5.95466 6.51742C5.83228 6.61087 5.74601 6.74381 5.71052 6.89366C5.67504 7.0435 5.69252 7.20101 5.76 7.33942C6.67112 9.19 8.16961 10.6866 10.0213 11.5954Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_435">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">+92-300-4567890
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="science" class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 
+    transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid place-items-center pt-6">
+                                    <div class="py-6 px-6 mb-5 rounded-full"
+                                        style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49"
+                                            viewBox="0 0 49 49" fill="none">
+                                            <path
+                                                d="M38.6625 42.6V38.6C38.6625 36.4782 37.8196 34.4434 36.3193 32.9431C34.819 31.4428 32.7842 30.6 30.6625 30.6H18.6625C16.5407 30.6 14.5059 31.4428 13.0056 32.9431C11.5053 34.4434 10.6625 36.4782 10.6625 38.6V42.6"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M24.6625 22.6C29.0808 22.6 32.6625 19.0183 32.6625 14.6C32.6625 10.1817 29.0808 6.59998 24.6625 6.59998C20.2442 6.59998 16.6625 10.1817 16.6625 14.6C16.6625 19.0183 20.2442 22.6 24.6625 22.6Z"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-2 place-items-center">
+                                        <h3 class="text-[#1C398E] text-base font-normal">Mr. Omar Rashid</h3>
+                                        <p class="text-base font-normal text-[#155DFC]">Biology Teacher</p>
+                                        <span
+                                            class="py-1 rounded-xl bg-[#ECEEF2] px-2 text-[#030213] font-normal text-xs">Science</span>
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-6 grid gap-4">
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8] ">Qualification</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">M.Sc. Biology, B.Ed.</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <p class="
+                                        text-sm font-normal text-[#193CB8] ">Subjects</p>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Biology</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Environmental
+                                                Science</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Experience</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">15 years</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Achievements</span>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Environmental Awareness
+                                                Campaign Lead
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="border-t grid gap-2 border-gray-300 pt-4">
+                                        <a href="mailto:omar@ghschakifaiq.edu.pk" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_429)">
+                                                    <path
+                                                        d="M15.4667 5.21667L9.47266 9.03468C9.26926 9.15282 9.03822 9.21504 8.803 9.21504C8.56777 9.21504 8.33673 9.15282 8.13333 9.03468L2.13333 5.21667"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14.1333 3.21667H3.46666C2.73028 3.21667 2.13333 3.81363 2.13333 4.55001V12.55C2.13333 13.2864 2.73028 13.8833 3.46666 13.8833H14.1333C14.8697 13.8833 15.4667 13.2864 15.4667 12.55V4.55001C15.4667 3.81363 14.8697 3.21667 14.1333 3.21667Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_429">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">omar@ghschakifaiq.edu.pk
+                                            </p>
+                                        </a>
+                                        <a href="tel:+92-300-5678901" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_435)">
+                                                    <path
+                                                        d="M10.0213 11.5954C10.159 11.6587 10.3141 11.6731 10.4611 11.6364C10.6081 11.5997 10.7382 11.514 10.83 11.3934L11.0667 11.0834C11.1909 10.9178 11.3519 10.7834 11.537 10.6909C11.7222 10.5983 11.9263 10.5501 12.1333 10.5501H14.1333C14.487 10.5501 14.8261 10.6906 15.0761 10.9406C15.3262 11.1907 15.4667 11.5298 15.4667 11.8834V13.8834C15.4667 14.237 15.3262 14.5762 15.0761 14.8262C14.8261 15.0763 14.487 15.2168 14.1333 15.2168C10.9507 15.2168 7.89849 13.9525 5.64805 11.702C3.39761 9.4516 2.13333 6.39935 2.13333 3.21676C2.13333 2.86313 2.27381 2.524 2.52386 2.27395C2.7739 2.0239 3.11304 1.88342 3.46666 1.88342H5.46666C5.82029 1.88342 6.15942 2.0239 6.40947 2.27395C6.65952 2.524 6.8 2.86313 6.8 3.21676V5.21676C6.8 5.42375 6.7518 5.6279 6.65923 5.81304C6.56666 5.99818 6.43226 6.15923 6.26666 6.28342L5.95466 6.51742C5.83228 6.61087 5.74601 6.74381 5.71052 6.89366C5.67504 7.0435 5.69252 7.20101 5.76 7.33942C6.67112 9.19 8.16961 10.6866 10.0213 11.5954Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_435">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">+92-300-5678901
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="mathematics" class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 
+    transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid place-items-center pt-6">
+                                    <div class="py-6 px-6 mb-5 rounded-full"
+                                        style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49"
+                                            viewBox="0 0 49 49" fill="none">
+                                            <path
+                                                d="M38.6625 42.6V38.6C38.6625 36.4782 37.8196 34.4434 36.3193 32.9431C34.819 31.4428 32.7842 30.6 30.6625 30.6H18.6625C16.5407 30.6 14.5059 31.4428 13.0056 32.9431C11.5053 34.4434 10.6625 36.4782 10.6625 38.6V42.6"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M24.6625 22.6C29.0808 22.6 32.6625 19.0183 32.6625 14.6C32.6625 10.1817 29.0808 6.59998 24.6625 6.59998C20.2442 6.59998 16.6625 10.1817 16.6625 14.6C16.6625 19.0183 20.2442 22.6 24.6625 22.6Z"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-2 place-items-center">
+                                        <h3 class="text-[#1C398E] text-base font-normal">Mrs. Zainab Khan</h3>
+                                        <p class="text-base font-normal text-[#155DFC]">Mathematics Department Head</p>
+                                        <span
+                                            class="py-1 rounded-xl bg-[#ECEEF2] px-2 text-[#030213] font-normal text-xs">Mathematics</span>
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-6 grid gap-4">
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8] ">Qualification</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">M.Sc. Mathematics, B.Ed.</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <p class="
+                                        text-sm font-normal text-[#193CB8] ">Subjects</p>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Mathematics</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Statistics</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Experience</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">16 years</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Achievements</span>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Math Olympiad Coach</p>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Best Mathematics Teacher 2022
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="border-t grid gap-2 border-gray-300 pt-4">
+                                        <a href="mailto:zainab@ghschakifaiq.edu.pk" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_429)">
+                                                    <path
+                                                        d="M15.4667 5.21667L9.47266 9.03468C9.26926 9.15282 9.03822 9.21504 8.803 9.21504C8.56777 9.21504 8.33673 9.15282 8.13333 9.03468L2.13333 5.21667"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14.1333 3.21667H3.46666C2.73028 3.21667 2.13333 3.81363 2.13333 4.55001V12.55C2.13333 13.2864 2.73028 13.8833 3.46666 13.8833H14.1333C14.8697 13.8833 15.4667 13.2864 15.4667 12.55V4.55001C15.4667 3.81363 14.8697 3.21667 14.1333 3.21667Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_429">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">zainab@ghschakifaiq.edu.pk
+                                            </p>
+                                        </a>
+                                        <a href="tel:+92-300-6789012" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_435)">
+                                                    <path
+                                                        d="M10.0213 11.5954C10.159 11.6587 10.3141 11.6731 10.4611 11.6364C10.6081 11.5997 10.7382 11.514 10.83 11.3934L11.0667 11.0834C11.1909 10.9178 11.3519 10.7834 11.537 10.6909C11.7222 10.5983 11.9263 10.5501 12.1333 10.5501H14.1333C14.487 10.5501 14.8261 10.6906 15.0761 10.9406C15.3262 11.1907 15.4667 11.5298 15.4667 11.8834V13.8834C15.4667 14.237 15.3262 14.5762 15.0761 14.8262C14.8261 15.0763 14.487 15.2168 14.1333 15.2168C10.9507 15.2168 7.89849 13.9525 5.64805 11.702C3.39761 9.4516 2.13333 6.39935 2.13333 3.21676C2.13333 2.86313 2.27381 2.524 2.52386 2.27395C2.7739 2.0239 3.11304 1.88342 3.46666 1.88342H5.46666C5.82029 1.88342 6.15942 2.0239 6.40947 2.27395C6.65952 2.524 6.8 2.86313 6.8 3.21676V5.21676C6.8 5.42375 6.7518 5.6279 6.65923 5.81304C6.56666 5.99818 6.43226 6.15923 6.26666 6.28342L5.95466 6.51742C5.83228 6.61087 5.74601 6.74381 5.71052 6.89366C5.67504 7.0435 5.69252 7.20101 5.76 7.33942C6.67112 9.19 8.16961 10.6866 10.0213 11.5954Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_435">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">+92-300-6789012
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="mathematics" class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 
+    transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid place-items-center pt-6">
+                                    <div class="py-6 px-6 mb-5 rounded-full"
+                                        style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49"
+                                            viewBox="0 0 49 49" fill="none">
+                                            <path
+                                                d="M38.6625 42.6V38.6C38.6625 36.4782 37.8196 34.4434 36.3193 32.9431C34.819 31.4428 32.7842 30.6 30.6625 30.6H18.6625C16.5407 30.6 14.5059 31.4428 13.0056 32.9431C11.5053 34.4434 10.6625 36.4782 10.6625 38.6V42.6"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M24.6625 22.6C29.0808 22.6 32.6625 19.0183 32.6625 14.6C32.6625 10.1817 29.0808 6.59998 24.6625 6.59998C20.2442 6.59998 16.6625 10.1817 16.6625 14.6C16.6625 19.0183 20.2442 22.6 24.6625 22.6Z"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-2 place-items-center">
+                                        <h3 class="text-[#1C398E] text-base font-normal">Mr. Ali Raza</h3>
+                                        <p class="text-base font-normal text-[#155DFC]">Mathematics Teacher</p>
+                                        <span
+                                            class="py-1 rounded-xl bg-[#ECEEF2] px-2 text-[#030213] font-normal text-xs">Mathematics</span>
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-6 grid gap-4">
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8] ">Qualification</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">M.Sc. Mathematics, B.Ed.</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <p class="
+                                        text-sm font-normal text-[#193CB8] ">Subjects</p>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Algebra</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Geometry</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Trigonometry</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Experience</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">10 years</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Achievements</span>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Student Achievement Excellence
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="border-t grid gap-2 border-gray-300 pt-4">
+                                        <a href="mailto:ali@ghschakifaiq.edu.pk" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_429)">
+                                                    <path
+                                                        d="M15.4667 5.21667L9.47266 9.03468C9.26926 9.15282 9.03822 9.21504 8.803 9.21504C8.56777 9.21504 8.33673 9.15282 8.13333 9.03468L2.13333 5.21667"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14.1333 3.21667H3.46666C2.73028 3.21667 2.13333 3.81363 2.13333 4.55001V12.55C2.13333 13.2864 2.73028 13.8833 3.46666 13.8833H14.1333C14.8697 13.8833 15.4667 13.2864 15.4667 12.55V4.55001C15.4667 3.81363 14.8697 3.21667 14.1333 3.21667Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_429">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">ali@ghschakifaiq.edu.pk
+                                            </p>
+                                        </a>
+                                        <a href="tel:+92-300-7890123" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_435)">
+                                                    <path
+                                                        d="M10.0213 11.5954C10.159 11.6587 10.3141 11.6731 10.4611 11.6364C10.6081 11.5997 10.7382 11.514 10.83 11.3934L11.0667 11.0834C11.1909 10.9178 11.3519 10.7834 11.537 10.6909C11.7222 10.5983 11.9263 10.5501 12.1333 10.5501H14.1333C14.487 10.5501 14.8261 10.6906 15.0761 10.9406C15.3262 11.1907 15.4667 11.5298 15.4667 11.8834V13.8834C15.4667 14.237 15.3262 14.5762 15.0761 14.8262C14.8261 15.0763 14.487 15.2168 14.1333 15.2168C10.9507 15.2168 7.89849 13.9525 5.64805 11.702C3.39761 9.4516 2.13333 6.39935 2.13333 3.21676C2.13333 2.86313 2.27381 2.524 2.52386 2.27395C2.7739 2.0239 3.11304 1.88342 3.46666 1.88342H5.46666C5.82029 1.88342 6.15942 2.0239 6.40947 2.27395C6.65952 2.524 6.8 2.86313 6.8 3.21676V5.21676C6.8 5.42375 6.7518 5.6279 6.65923 5.81304C6.56666 5.99818 6.43226 6.15923 6.26666 6.28342L5.95466 6.51742C5.83228 6.61087 5.74601 6.74381 5.71052 6.89366C5.67504 7.0435 5.69252 7.20101 5.76 7.33942C6.67112 9.19 8.16961 10.6866 10.0213 11.5954Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_435">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">+92-300-7890123
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="languages" class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 
+    transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid place-items-center pt-6">
+                                    <div class="py-6 px-6 mb-5 rounded-full"
+                                        style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49"
+                                            viewBox="0 0 49 49" fill="none">
+                                            <path
+                                                d="M38.6625 42.6V38.6C38.6625 36.4782 37.8196 34.4434 36.3193 32.9431C34.819 31.4428 32.7842 30.6 30.6625 30.6H18.6625C16.5407 30.6 14.5059 31.4428 13.0056 32.9431C11.5053 34.4434 10.6625 36.4782 10.6625 38.6V42.6"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M24.6625 22.6C29.0808 22.6 32.6625 19.0183 32.6625 14.6C32.6625 10.1817 29.0808 6.59998 24.6625 6.59998C20.2442 6.59998 16.6625 10.1817 16.6625 14.6C16.6625 19.0183 20.2442 22.6 24.6625 22.6Z"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-2 place-items-center">
+                                        <h3 class="text-[#1C398E] text-base font-normal">Ms. Raheela Begum</h3>
+                                        <p class="text-base font-normal text-[#155DFC]">English Teacher</p>
+                                        <span
+                                            class="py-1 rounded-xl bg-[#ECEEF2] px-2 text-[#030213] font-normal text-xs">Languages</span>
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-6 grid gap-4">
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8] ">Qualification</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">M.A. English Literature, B.Ed.</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <p class="
+                                        text-sm font-normal text-[#193CB8] ">Subjects</p>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">English
+                                                Literature</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Grammar</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Composition</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Experience</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">14 years</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Achievements</span>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Debate Competition Coach</p>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Literary Society Advisor
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="border-t grid gap-2 border-gray-300 pt-4">
+                                        <a href="mailto:raheela@ghschakifaiq.edu.pk" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_429)">
+                                                    <path
+                                                        d="M15.4667 5.21667L9.47266 9.03468C9.26926 9.15282 9.03822 9.21504 8.803 9.21504C8.56777 9.21504 8.33673 9.15282 8.13333 9.03468L2.13333 5.21667"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14.1333 3.21667H3.46666C2.73028 3.21667 2.13333 3.81363 2.13333 4.55001V12.55C2.13333 13.2864 2.73028 13.8833 3.46666 13.8833H14.1333C14.8697 13.8833 15.4667 13.2864 15.4667 12.55V4.55001C15.4667 3.81363 14.8697 3.21667 14.1333 3.21667Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_429">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">raheela@ghschakifaiq.edu.pk
+                                            </p>
+                                        </a>
+                                        <a href="tel:+92-300-8901234" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_435)">
+                                                    <path
+                                                        d="M10.0213 11.5954C10.159 11.6587 10.3141 11.6731 10.4611 11.6364C10.6081 11.5997 10.7382 11.514 10.83 11.3934L11.0667 11.0834C11.1909 10.9178 11.3519 10.7834 11.537 10.6909C11.7222 10.5983 11.9263 10.5501 12.1333 10.5501H14.1333C14.487 10.5501 14.8261 10.6906 15.0761 10.9406C15.3262 11.1907 15.4667 11.5298 15.4667 11.8834V13.8834C15.4667 14.237 15.3262 14.5762 15.0761 14.8262C14.8261 15.0763 14.487 15.2168 14.1333 15.2168C10.9507 15.2168 7.89849 13.9525 5.64805 11.702C3.39761 9.4516 2.13333 6.39935 2.13333 3.21676C2.13333 2.86313 2.27381 2.524 2.52386 2.27395C2.7739 2.0239 3.11304 1.88342 3.46666 1.88342H5.46666C5.82029 1.88342 6.15942 2.0239 6.40947 2.27395C6.65952 2.524 6.8 2.86313 6.8 3.21676V5.21676C6.8 5.42375 6.7518 5.6279 6.65923 5.81304C6.56666 5.99818 6.43226 6.15923 6.26666 6.28342L5.95466 6.51742C5.83228 6.61087 5.74601 6.74381 5.71052 6.89366C5.67504 7.0435 5.69252 7.20101 5.76 7.33942C6.67112 9.19 8.16961 10.6866 10.0213 11.5954Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_435">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">+92-300-8901234
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="languages" class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 
+    transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid place-items-center pt-6">
+                                    <div class="py-6 px-6 mb-5 rounded-full"
+                                        style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49"
+                                            viewBox="0 0 49 49" fill="none">
+                                            <path
+                                                d="M38.6625 42.6V38.6C38.6625 36.4782 37.8196 34.4434 36.3193 32.9431C34.819 31.4428 32.7842 30.6 30.6625 30.6H18.6625C16.5407 30.6 14.5059 31.4428 13.0056 32.9431C11.5053 34.4434 10.6625 36.4782 10.6625 38.6V42.6"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M24.6625 22.6C29.0808 22.6 32.6625 19.0183 32.6625 14.6C32.6625 10.1817 29.0808 6.59998 24.6625 6.59998C20.2442 6.59998 16.6625 10.1817 16.6625 14.6C16.6625 19.0183 20.2442 22.6 24.6625 22.6Z"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-2 place-items-center">
+                                        <h3 class="text-[#1C398E] text-base font-normal">Mr. Tariq Mahmood</h3>
+                                        <p class="text-base font-normal text-[#155DFC]">Urdu Teacher</p>
+                                        <span
+                                            class="py-1 rounded-xl bg-[#ECEEF2] px-2 text-[#030213] font-normal text-xs">Languages</span>
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-6 grid gap-4">
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8] ">Qualification</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">M.A. Urdu, B.Ed.</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <p class="
+                                        text-sm font-normal text-[#193CB8] ">Subjects</p>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Urdu
+                                                Literature</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Islamic
+                                                Studies</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Experience</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">22 years</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Achievements</span>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Cultural Program Director</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="border-t grid gap-2 border-gray-300 pt-4">
+                                        <a href="mailto:tariq@ghschakifaiq.edu.pk" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_429)">
+                                                    <path
+                                                        d="M15.4667 5.21667L9.47266 9.03468C9.26926 9.15282 9.03822 9.21504 8.803 9.21504C8.56777 9.21504 8.33673 9.15282 8.13333 9.03468L2.13333 5.21667"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14.1333 3.21667H3.46666C2.73028 3.21667 2.13333 3.81363 2.13333 4.55001V12.55C2.13333 13.2864 2.73028 13.8833 3.46666 13.8833H14.1333C14.8697 13.8833 15.4667 13.2864 15.4667 12.55V4.55001C15.4667 3.81363 14.8697 3.21667 14.1333 3.21667Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_429">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">tariq@ghschakifaiq.edu.pk
+                                            </p>
+                                        </a>
+                                        <a href="tel:+92-300-9012345" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_435)">
+                                                    <path
+                                                        d="M10.0213 11.5954C10.159 11.6587 10.3141 11.6731 10.4611 11.6364C10.6081 11.5997 10.7382 11.514 10.83 11.3934L11.0667 11.0834C11.1909 10.9178 11.3519 10.7834 11.537 10.6909C11.7222 10.5983 11.9263 10.5501 12.1333 10.5501H14.1333C14.487 10.5501 14.8261 10.6906 15.0761 10.9406C15.3262 11.1907 15.4667 11.5298 15.4667 11.8834V13.8834C15.4667 14.237 15.3262 14.5762 15.0761 14.8262C14.8261 15.0763 14.487 15.2168 14.1333 15.2168C10.9507 15.2168 7.89849 13.9525 5.64805 11.702C3.39761 9.4516 2.13333 6.39935 2.13333 3.21676C2.13333 2.86313 2.27381 2.524 2.52386 2.27395C2.7739 2.0239 3.11304 1.88342 3.46666 1.88342H5.46666C5.82029 1.88342 6.15942 2.0239 6.40947 2.27395C6.65952 2.524 6.8 2.86313 6.8 3.21676V5.21676C6.8 5.42375 6.7518 5.6279 6.65923 5.81304C6.56666 5.99818 6.43226 6.15923 6.26666 6.28342L5.95466 6.51742C5.83228 6.61087 5.74601 6.74381 5.71052 6.89366C5.67504 7.0435 5.69252 7.20101 5.76 7.33942C6.67112 9.19 8.16961 10.6866 10.0213 11.5954Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_435">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">+92-300-9012345
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-category="social" class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 
+    transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="grid place-items-center pt-6">
+                                    <div class="py-6 px-6 mb-5 rounded-full"
+                                        style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49"
+                                            viewBox="0 0 49 49" fill="none">
+                                            <path
+                                                d="M38.6625 42.6V38.6C38.6625 36.4782 37.8196 34.4434 36.3193 32.9431C34.819 31.4428 32.7842 30.6 30.6625 30.6H18.6625C16.5407 30.6 14.5059 31.4428 13.0056 32.9431C11.5053 34.4434 10.6625 36.4782 10.6625 38.6V42.6"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M24.6625 22.6C29.0808 22.6 32.6625 19.0183 32.6625 14.6C32.6625 10.1817 29.0808 6.59998 24.6625 6.59998C20.2442 6.59998 16.6625 10.1817 16.6625 14.6C16.6625 19.0183 20.2442 22.6 24.6625 22.6Z"
+                                                stroke="#155DFC" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-2 place-items-center">
+                                        <h3 class="text-[#1C398E] text-base font-normal">Mrs. Sadia Malik</h3>
+                                        <p class="text-base font-normal text-[#155DFC]">Social Studies Teacher</p>
+                                        <span
+                                            class="py-1 rounded-xl bg-[#ECEEF2] px-2 text-[#030213] font-normal text-xs">Social
+                                            Studies</span>
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-6 grid gap-4">
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8] ">Qualification</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">M.A. History, B.Ed.</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <p class="
+                                        text-sm font-normal text-[#193CB8] ">Subjects</p>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Pakistan
+                                                Studies</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">History</span>
+                                            <span
+                                                class="py-1 rounded-xl bg-white border px-2 text-[#0A0A0A] font-normal text-xs">Geography</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Experience</span>
+                                        <p class="text-sm text-[#4A5565] font-normal">13 years</p>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <span class="
+                                        text-sm font-normal text-[#193CB8]">Achievements</span>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                viewBox="0 0 13 13" fill="none">
+                                                <g clip-path="url(#clip0_2001_416)">
+                                                    <path
+                                                        d="M8.53849 7.21997L9.29599 11.483C9.30447 11.5332 9.29743 11.5848 9.2758 11.6308C9.25417 11.6769 9.21898 11.7153 9.17495 11.7409C9.13092 11.7664 9.08013 11.7779 9.02939 11.7738C8.97864 11.7697 8.93036 11.7502 8.89099 11.718L7.10099 10.3745C7.01457 10.3099 6.9096 10.275 6.80174 10.275C6.69387 10.275 6.5889 10.3099 6.50249 10.3745L4.70949 11.7175C4.67015 11.7497 4.62192 11.7691 4.57123 11.7732C4.52055 11.7773 4.46982 11.7659 4.42582 11.7404C4.38181 11.7149 4.34662 11.6766 4.32494 11.6306C4.30327 11.5846 4.29613 11.5331 4.30449 11.483L5.06149 7.21997"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79999 7.7749C8.45684 7.7749 9.79999 6.43176 9.79999 4.7749C9.79999 3.11805 8.45684 1.7749 6.79999 1.7749C5.14313 1.7749 3.79999 3.11805 3.79999 4.7749C3.79999 6.43176 5.14313 7.7749 6.79999 7.7749Z"
+                                                        stroke="#F0B100" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_416">
+                                                        <rect width="12" height="12" fill="white"
+                                                            transform="translate(0.799988 0.774902)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">Heritage Project Coordinator
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="border-t grid gap-2 border-gray-300 pt-4">
+                                        <a href="mailto:sadia@ghschakifaiq.edu.pk" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_429)">
+                                                    <path
+                                                        d="M15.4667 5.21667L9.47266 9.03468C9.26926 9.15282 9.03822 9.21504 8.803 9.21504C8.56777 9.21504 8.33673 9.15282 8.13333 9.03468L2.13333 5.21667"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14.1333 3.21667H3.46666C2.73028 3.21667 2.13333 3.81363 2.13333 4.55001V12.55C2.13333 13.2864 2.73028 13.8833 3.46666 13.8833H14.1333C14.8697 13.8833 15.4667 13.2864 15.4667 12.55V4.55001C15.4667 3.81363 14.8697 3.21667 14.1333 3.21667Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_429">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">sadia@ghschakifaiq.edu.pk
+                                            </p>
+                                        </a>
+                                        <a href="tel:+92-300-0123456" class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_435)">
+                                                    <path
+                                                        d="M10.0213 11.5954C10.159 11.6587 10.3141 11.6731 10.4611 11.6364C10.6081 11.5997 10.7382 11.514 10.83 11.3934L11.0667 11.0834C11.1909 10.9178 11.3519 10.7834 11.537 10.6909C11.7222 10.5983 11.9263 10.5501 12.1333 10.5501H14.1333C14.487 10.5501 14.8261 10.6906 15.0761 10.9406C15.3262 11.1907 15.4667 11.5298 15.4667 11.8834V13.8834C15.4667 14.237 15.3262 14.5762 15.0761 14.8262C14.8261 15.0763 14.487 15.2168 14.1333 15.2168C10.9507 15.2168 7.89849 13.9525 5.64805 11.702C3.39761 9.4516 2.13333 6.39935 2.13333 3.21676C2.13333 2.86313 2.27381 2.524 2.52386 2.27395C2.7739 2.0239 3.11304 1.88342 3.46666 1.88342H5.46666C5.82029 1.88342 6.15942 2.0239 6.40947 2.27395C6.65952 2.524 6.8 2.86313 6.8 3.21676V5.21676C6.8 5.42375 6.7518 5.6279 6.65923 5.81304C6.56666 5.99818 6.43226 6.15923 6.26666 6.28342L5.95466 6.51742C5.83228 6.61087 5.74601 6.74381 5.71052 6.89366C5.67504 7.0435 5.69252 7.20101 5.76 7.33942C6.67112 9.19 8.16961 10.6866 10.0213 11.5954Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_435">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.799988 0.550049)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-sm text-[#4A5565] font-normal">+92-300-0123456
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const buttons = document.querySelectorAll(".open-card-btn");
+                        const cards = document.querySelectorAll(".card");
+
+                        buttons.forEach(button => {
+
+                            button.addEventListener("mouseenter", () => {
+                                if (!button.classList.contains("active")) {
+                                    button.classList.add("bg-gray-100");
+                                }
+                            });
+
+                            button.addEventListener("mouseleave", () => {
+                                if (!button.classList.contains("active")) {
+                                    button.classList.remove("bg-gray-100");
+                                }
+                            });
+
+                            button.addEventListener("click", () => {
+                                const target = button.dataset.target;
+
+                                buttons.forEach(btn => {
+                                    btn.classList.remove("bg-blue-600", "text-white", "active", "bg-gray-100");
+                                    btn.classList.add("bg-white", "text-black");
+                                });
+
+                                button.classList.remove("bg-white", "text-black", "bg-gray-100");
+                                button.classList.add("bg-blue-600", "text-white", "active");
+
+                                cards.forEach(card => {
+                                    const category = card.dataset.category;
+                                    if (target === "all" || category === target) {
+                                        card.classList.remove("hidden");
+                                    } else {
+                                        card.classList.add("hidden");
+                                    }
+                                });
+                            });
+                        });
+                    });
+                </script>
+        </section>
+
+        <section class="pb-16">
+            <div class="container">
+                <div class="bg-[#EFF6FF] rounded-[10px] py-8 px-8">
+                    <div class="flex justify-center ">
+                        <div class="max-w-[685px] pb-6">
+                            <h2 class="text-xl sm:text-3xl pb-4 font-normal text-[#1C398E] text-center">Join Our Team
+                            </h2>
+                            <p class="sm:text-base text-sm leading-[24px] font-normal text-[#4A5565] text-center">We are
+                                always
+                                looking for passionate educators who
+                                share our commitment to excellence in education. If you have the qualifications and
+                                dedication
+                                to inspire young minds, we'd love to hear from you.</p>
+                        </div>
+                    </div>
+                    <div class="flex sm:flex-row flex-col gap-8 sm:gap-20 justify-center">
+                        <div>
+                            <h3 class="text-base text-[#193CB8] text-center font-normal pb-2">Requirements</h3>
+                            <ul class="grid text-center gap-1">
+                                <li class="text-sm text-[#4A5565] font-normal ">
+                                    • Masters Degree
+                                </li>
+                                <li class="text-sm text-[#4A5565] font-normal ">
+                                    • B.Ed. Certification
+                                </li>
+                                <li class="text-sm text-[#4A5565] font-normal ">
+                                    • Teaching Experience
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-base text-[#193CB8] text-center font-normal pb-2">Benefits</h3>
+                            <ul class="grid text-center gap-1">
+                                <li class="text-sm text-[#4A5565] font-normal ">
+                                    • Competitive Salary
+                                </li>
+                                <li class="text-sm text-[#4A5565] font-normal ">
+                                    • Professional Development
+                                </li>
+                                <li class="text-sm text-[#4A5565] font-normal ">
+                                    • Health Benefits
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-base text-center text-[#193CB8] font-normal pb-2">Growth</h3>
+                            <ul class="grid text-center gap-1">
+                                <li class="text-sm text-[#4A5565] font-normal ">
+                                    • Career Advancement
+                                </li>
+                                <li class="text-sm text-[#4A5565] font-normal ">
+                                    • Training Programs
+                                </li>
+                                <li class="text-sm text-[#4A5565] font-normal ">
+                                    • Research Opportunities
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid justify-center pt-4">
+                        <button
+                            class="text-[#FFF] text-sm font-normal flex gap-4 items-center  px-4 py-3 rounded-xl bg-[#155DFC]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                fill="none">
+                                <g clip-path="url(#clip0_2001_972)">
+                                    <path
+                                        d="M15.3667 4.67944L9.37268 8.49744C9.16927 8.61559 8.93824 8.67781 8.70301 8.67781C8.46779 8.67781 8.23675 8.61559 8.03334 8.49744L2.03335 4.67944"
+                                        stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M14.0333 2.67944H3.36668C2.6303 2.67944 2.03335 3.2764 2.03335 4.01278V12.0128C2.03335 12.7492 2.6303 13.3461 3.36668 13.3461H14.0333C14.7697 13.3461 15.3667 12.7492 15.3667 12.0128V4.01278C15.3667 3.2764 14.7697 2.67944 14.0333 2.67944Z"
+                                        stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2001_972">
+                                        <rect width="16" height="16" fill="white"
+                                            transform="translate(0.700012 0.0126953)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Apply Now
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class=" bg-[#101828]">
+    <div class="container">
+      <nav>
+        <div class="py-12 grid justify-center">
+          <div class="bg-[#155DFC] px-35 w-[530px] sm:w-[869px] h-[192px]">
+            <h2 class="sm:text-4xl text-2xl font-normal text-center text-white pb-6">Ready to Join Our School?</h2>
+            <div class="flex justify-center">
+              <p
+                class="sm:text-xl text-base font-normal max-w-[450px] sm:max-w-[610px] text-center text-[#DBEAFE] pb-7">
+                Take the first step towards
+                excellence in
+                education. Apply now for the upcoming academic year.</p>
+            </div>
+            <div class="flex justify-center">
+              <button class="px-8 py-2 rounded-lg bg-white">
+                <a href="/" class="text-lg font-normal text-[#155DFC]">Apply for Admission</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="py-16 grid grid-cols-1 sm:grid-cols-3 gap-12">
+          <ul class="grid gap-6">
+            <li class="flex gap-3">
+              <a class="logo" href="\"><img src="assets/images/logo.png" alt="logo" width="56" height="56"></a>
+              <div>
+                <p class="text-xl text-white font-normal">Government High School</p>
+                <span class="text-base text-[#99A1AF] font-normal">Chaki Faiq</span>
+              </div>
+            </li>
+            <li>
+              <p class="text-base text-[#99A1AF] font-normal">Committed to providing quality education and character
+                development, nurturing future leaders with excellence in academics and moral values.</p>
+            </li>
+            <li class="grid gap-3">
+              <a href="https://www.google.com/maps?q=Main+Road,+Chaki+Faiq,+Pakistan" target="_blank" class="flex gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path
+                    d="M16.6666 8.73356C16.6666 12.8944 12.0508 17.2277 10.5008 18.5661C10.3564 18.6746 10.1806 18.7334 9.99992 18.7334C9.81925 18.7334 9.64348 18.6746 9.49909 18.5661C7.94909 17.2277 3.33325 12.8944 3.33325 8.73356C3.33325 6.96545 4.03563 5.26976 5.28587 4.01952C6.53612 2.76927 8.23181 2.06689 9.99992 2.06689C11.768 2.06689 13.4637 2.76927 14.714 4.01952C15.9642 5.26976 16.6666 6.96545 16.6666 8.73356Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M10 11.2334C11.3807 11.2334 12.5 10.1141 12.5 8.7334C12.5 7.35269 11.3807 6.2334 10 6.2334C8.61929 6.2334 7.5 7.35269 7.5 8.7334C7.5 10.1141 8.61929 11.2334 10 11.2334Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="text-base font-normal text-[#99A1AF]">Main Road, Chaki Faiq, Pakistan</p>
+              </a>
+              <a href="tel:+92-XXX-XXXXXXX" class="flex gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path
+                    d="M11.5267 14.2069C11.6989 14.2859 11.8927 14.304 12.0765 14.2581C12.2602 14.2122 12.4229 14.1051 12.5376 13.9544L12.8334 13.5669C12.9887 13.3599 13.19 13.1919 13.4214 13.0762C13.6528 12.9605 13.908 12.9002 14.1667 12.9002H16.6667C17.1088 12.9002 17.5327 13.0758 17.8453 13.3884C18.1578 13.7009 18.3334 14.1249 18.3334 14.5669V17.0669C18.3334 17.5089 18.1578 17.9328 17.8453 18.2454C17.5327 18.558 17.1088 18.7336 16.6667 18.7336C12.6885 18.7336 8.87319 17.1532 6.06015 14.3402C3.2471 11.5271 1.66675 7.71181 1.66675 3.73356C1.66675 3.29153 1.84234 2.86761 2.1549 2.55505C2.46746 2.24249 2.89139 2.06689 3.33341 2.06689H5.83341C6.27544 2.06689 6.69936 2.24249 7.01193 2.55505C7.32449 2.86761 7.50008 3.29153 7.50008 3.73356V6.23356C7.50008 6.4923 7.43984 6.74749 7.32413 6.97892C7.20841 7.21034 7.04041 7.41165 6.83341 7.56689L6.44341 7.85939C6.29043 7.97621 6.1826 8.14238 6.13824 8.32969C6.09388 8.51699 6.11573 8.71387 6.20008 8.88689C7.33898 11.2001 9.2121 13.0709 11.5267 14.2069Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="text-base font-normal text-[#99A1AF]">+92-XXX-XXXXXXX</p>
+              </a>
+              <a href="mailto:info@ghschakifaiq.edu.pk" class="flex gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path
+                    d="M18.3334 6.2334L10.8409 11.0059C10.5867 11.1536 10.2979 11.2314 10.0038 11.2314C9.7098 11.2314 9.421 11.1536 9.16675 11.0059L1.66675 6.2334"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M16.6667 3.7334H3.33341C2.41294 3.7334 1.66675 4.47959 1.66675 5.40007V15.4001C1.66675 16.3205 2.41294 17.0667 3.33341 17.0667H16.6667C17.5872 17.0667 18.3334 16.3205 18.3334 15.4001V5.40007C18.3334 4.47959 17.5872 3.7334 16.6667 3.7334Z"
+                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="text-base font-normal text-[#99A1AF]">info@ghschakifaiq.edu.pk</p>
+              </a>
+            </li>
+          </ul>
+          <div>
+            <h3 class="text-xl font-normal text-white pb-6">Quick Links</h3>
+            <ul class="grid gap-3">
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">About Us</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Academics</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Admissions</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Faculty</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Gallery</a>
+              </li>
+              <li>
+                <a href="/" class="text-base text-[#99A1AF] font-normal">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-normal text-white pb-6">School Hours</h3>
+            <ul class="grid gap-4">
+              <li class="grid gap-1">
+                <h4 class="text-base font-normal text-white">Morning Session (Classes 6-8)</h4>
+                <time class="text-base text-[#99A1AF] font-normal">8:00 AM - 12:15 PM</time>
+              </li>
+              <li class="grid gap-1">
+                <h4 class="text-base font-normal text-white">Afternoon Session (Classes 9-10)</h4>
+                <time class="text-base text-[#99A1AF] font-normal">1:00 PM - 5:15 PM</time>
+              </li>
+              <li class="grid gap-1">
+                <h4 class="text-base font-normal text-white">Office Hours</h4>
+                <time class="text-base text-[#99A1AF] font-normal">Monday - Friday: 8:00 AM - 3:00 PM</time>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="py-8 flex flex-col gap-6 sm:flex-row justify-between" style="border-top: 0.8px solid #1E2939;">
+          <p class="text-sm text-[#99A1AF] font-normal">© 2024 Government High School Chaki Faiq. All rights reserved.
+          </p>
+          <span class="text-sm text-[#99A1AF] font-normal">Established 1999 • 25+ Years of Excellence</span>
+        </div>
+      </nav>
+    </div>
+  </footer>
+</body>
+
+</html>

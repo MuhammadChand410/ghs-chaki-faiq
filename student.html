@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Chakki Faiq</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        dropdownButtons.forEach(btn => {
+            const dropdown = btn.nextElementSibling;
+            const arrow = btn.querySelector('svg');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-180');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+            document.querySelectorAll('.dropdown-btn svg').forEach(a => a.classList.remove('rotate-180'));
+        });
+    });
+</script>
+
+<body>
+    <header class="py-4 sticky top-0 bg-white shadow z-50">
+        <div class="container">
+            <nav class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <a href="/">
+                        <img src="assets/images/logo.png" alt="logo" width="56" height="56">
+                    </a>
+                    <div>
+                        <p class="text-2xl text-[#101828] font-normal">Government High School</p>
+                        <span class="text-sm text-[#155DFC] font-normal">Chaki Faiq</span>
+                    </div>
+                </div>
+
+                <button id="nav-toggle" class="block md:hidden text-[#155DFC] focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <ul id="nav-menu"
+                    class="hidden flex-col md:flex md:flex-row md:items-center gap-4 md:gap-8 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none p-5 md:p-0 transition-all duration-300">
+                    <li>
+                        <a href="/"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Home</a>
+                    </li>
+
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            About
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</a>
+                            <a href="faculity.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Faculty</a>
+                            <a href="achievements.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Achievements</a>
+                            <a href="student.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Student
+                                Life</a>
+                        </div>
+                    </li>
+
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            Academics
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="academic.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Curriculum</a>
+                            <a href="download.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Downloads</a>
+                            <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Gallery</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="admission.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Admissions</a>
+                    </li>
+                    <li>
+                        <a href="contact-us.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/"
+                            class="px-6 py-2 rounded-lg bg-[#155DFC] text-white text-sm font-normal inline-block hover:bg-[#0D4ED8]">Apply
+                            Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="flex justify-center pt-16">
+                    <div class="max-w-[750px] grid gap-6">
+                        <h2 class="text-center text-4xl sm:text-6xl text-[#1C398E] font-normal">Student Life
+                        </h2>
+                        <p class="sm:text-xl text-base font-normal text-center text-[#4A5565]">Beyond academics, we
+                            offer a vibrant campus life filled with clubs, societies, events, and leadership
+                            opportunities that help students develop their talents and interests.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 my-16 gap-12 sm:gap-6 sm:grid-cols-4">
+                    <div class="grid place-items-center gap-4">
+                        <div class="px-4 py-4 bg-[#DBEAFE] rounded-full h-[64px] w-[64px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                fill="none">
+                                <path
+                                    d="M21.3334 28.8V26.1334C21.3334 24.7189 20.7715 23.3623 19.7713 22.3621C18.7711 21.3619 17.4146 20.8 16.0001 20.8H8.00008C6.58559 20.8 5.22904 21.3619 4.22885 22.3621C3.22865 23.3623 2.66675 24.7189 2.66675 26.1334V28.8"
+                                    stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M21.3333 4.97067C22.4769 5.26717 23.4898 5.93502 24.2128 6.86942C24.9359 7.80382 25.3282 8.95186 25.3282 10.1333C25.3282 11.3148 24.9359 12.4629 24.2128 13.3973C23.4898 14.3317 22.4769 14.9995 21.3333 15.296"
+                                    stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M29.3333 28.8V26.1334C29.3324 24.9517 28.9391 23.8037 28.2151 22.8698C27.4911 21.9358 26.4774 21.2688 25.3333 20.9734"
+                                    stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M12.0001 15.4667C14.9456 15.4667 17.3334 13.0789 17.3334 10.1334C17.3334 7.18783 14.9456 4.80002 12.0001 4.80002C9.05456 4.80002 6.66675 7.18783 6.66675 10.1334C6.66675 13.0789 9.05456 15.4667 12.0001 15.4667Z"
+                                    stroke="#155DFC" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="grid gap-2 text-center">
+                            <h3 class="text-2xl font-normal text-[#1C398E]">15+</h3>
+                            <p class="text-base font-normal text-[#4A5565]">Active Clubs</p>
+                        </div>
+                    </div>
+                    <div class="grid place-items-center gap-4">
+                        <div class="px-4 py-4 bg-[#DCFCE7] rounded-full h-[64px] w-[64px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                fill="none">
+                                <path d="M10.6667 3.46667V8.80001" stroke="#00A63E" stroke-width="2.66667"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M21.3333 3.46667V8.80001" stroke="#00A63E" stroke-width="2.66667"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M25.3333 6.13336H6.66667C5.19391 6.13336 4 7.32727 4 8.80003V27.4667C4 28.9395 5.19391 30.1334 6.66667 30.1334H25.3333C26.8061 30.1334 28 28.9395 28 27.4667V8.80003C28 7.32727 26.8061 6.13336 25.3333 6.13336Z"
+                                    stroke="#00A63E" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M4 14.1334H28" stroke="#00A63E" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="grid gap-2 text-center">
+                            <span class="text-2xl font-normal text-[#1C398E]">50+</span>
+                            <p class="text-base font-normal text-[#4A5565]">Annual Events</p>
+                        </div>
+                    </div>
+                    <div class="grid place-items-center gap-4">
+                        <div class="px-4 py-4 bg-[#FEF9C2] rounded-full h-[64px] w-[64px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                fill="none">
+                                <path
+                                    d="M13.3333 20.3467V22.5147C13.3282 22.9715 13.2059 23.4194 12.978 23.8154C12.7502 24.2113 12.4244 24.5421 12.0319 24.776C11.1988 25.3931 10.521 26.196 10.0526 27.1209C9.58409 28.0458 9.3378 29.0672 9.33325 30.104"
+                                    stroke="#D08700" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M18.6667 20.3467V22.5147C18.6718 22.9715 18.7941 23.4194 19.022 23.8154C19.2498 24.2113 19.5756 24.5421 19.9681 24.776C20.8012 25.3931 21.479 26.196 21.9474 27.1209C22.4159 28.0458 22.6622 29.0672 22.6667 30.104"
+                                    stroke="#D08700" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M24 12.8H26C26.8841 12.8 27.7319 12.4488 28.357 11.8237C28.9821 11.1986 29.3333 10.3507 29.3333 9.46669C29.3333 8.58264 28.9821 7.73479 28.357 7.10967C27.7319 6.48455 26.8841 6.13336 26 6.13336H24"
+                                    stroke="#D08700" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M5.33325 30.1334H26.6666" stroke="#D08700" stroke-width="2.66667"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M8 12.8C8 14.9217 8.84286 16.9566 10.3431 18.4569C11.8434 19.9572 13.8783 20.8 16 20.8C18.1217 20.8 20.1566 19.9572 21.6569 18.4569C23.1571 16.9566 24 14.9217 24 12.8V4.80001C24 4.44639 23.8595 4.10725 23.6095 3.8572C23.3594 3.60715 23.0203 3.46667 22.6667 3.46667H9.33333C8.97971 3.46667 8.64057 3.60715 8.39052 3.8572C8.14048 4.10725 8 4.44639 8 4.80001V12.8Z"
+                                    stroke="#D08700" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M8.00008 12.8H6.00008C5.11603 12.8 4.26818 12.4488 3.64306 11.8237C3.01794 11.1986 2.66675 10.3507 2.66675 9.46669C2.66675 8.58264 3.01794 7.73479 3.64306 7.10967C4.26818 6.48455 5.11603 6.13336 6.00008 6.13336H8.00008"
+                                    stroke="#D08700" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="grid gap-2 text-center">
+                            <span class="text-2xl font-normal text-[#1C398E]">25+</span>
+                            <p class="text-base font-normal text-[#4A5565]">Competitions</p>
+                        </div>
+                    </div>
+                    <div class="grid place-items-center gap-4">
+                        <div class="px-4 py-4 bg-[#F3E8FF] rounded-full h-[64px] w-[64px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
+                                fill="none">
+                                <path
+                                    d="M2.6665 13.4667C2.66653 11.983 3.11663 10.5341 3.95735 9.31157C4.79807 8.08901 5.98986 7.15023 7.37532 6.61922C8.76077 6.08821 10.2747 5.98995 11.7172 6.33741C13.1597 6.68488 14.4628 7.46173 15.4545 8.56535C15.5244 8.64004 15.6088 8.69958 15.7026 8.74029C15.7964 8.78099 15.8976 8.802 15.9998 8.802C16.1021 8.802 16.2033 8.78099 16.2971 8.74029C16.3909 8.69958 16.4753 8.64004 16.5452 8.56535C17.5338 7.45455 18.8372 6.67118 20.282 6.31949C21.7268 5.9678 23.2445 6.06448 24.633 6.59667C26.0215 7.12885 27.215 8.07129 28.0547 9.29856C28.8943 10.5258 29.3403 11.9797 29.3332 13.4667C29.3332 16.52 27.3332 18.8 25.3332 20.8L18.0105 27.884C17.7621 28.1694 17.4557 28.3986 17.1119 28.5564C16.7681 28.7143 16.3946 28.7972 16.0162 28.7995C15.6379 28.8019 15.2634 28.7238 14.9176 28.5703C14.5717 28.4168 14.2625 28.1915 14.0105 27.9094L6.6665 20.8C4.6665 18.8 2.6665 16.5334 2.6665 13.4667Z"
+                                    stroke="#9810FA" stroke-width="2.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="grid gap-2 text-center">
+                            <span class="text-2xl font-normal text-[#1C398E]">80%</span>
+                            <p class="text-base font-normal text-[#4A5565]">Participation Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div>
+                    <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center pb-8">Clubs & Societies</h2>
+                    <div class="grid sm:grid-cols-3 gap-8 grid-cols-1">
+                        <div class="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl px-6 py-6 bg-[#FFF] rounded-[14px]"
+                            style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                            <div class="grid gap-12">
+                                <div class="flex items-center gap-3">
+                                    <div class="px-3 py-3 rounded-full bg-[#DBEAFE] w-[48px] h-[48px] ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            viewBox="0 0 25 25" fill="none">
+                                            <path
+                                                d="M14.8 2.60004V8.60004C14.7999 8.93552 14.8841 9.26565 15.045 9.56004L20.555 19.64C20.7217 19.9446 20.8062 20.2874 20.8002 20.6346C20.7942 20.9817 20.6979 21.3214 20.5208 21.62C20.3437 21.9187 20.092 22.1661 19.7902 22.338C19.4885 22.5098 19.1472 22.6001 18.8 22.6H6.80002C6.4528 22.6001 6.11154 22.5098 5.80981 22.338C5.50809 22.1661 5.2563 21.9187 5.07921 21.62C4.90213 21.3214 4.80585 20.9817 4.79986 20.6346C4.79386 20.2874 4.87836 19.9446 5.04502 19.64L10.555 9.56004C10.7159 9.26565 10.8002 8.93552 10.8 8.60004V2.60004"
+                                                stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M7.25293 15.6H18.3469" stroke="#155DFC" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9.30005 2.60004H16.3" stroke="#155DFC" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <h3 class="text-[#1C398E] text-sm sm:text-base font-normal">Science Club</h3>
+                                        <span
+                                            class="text-[#0A0A0A] text-xs font-normal rounded-xl px-2 py-1 border border-gray-200 w-fit">45
+                                            members</span>
+                                    </div>
+                                </div>
+                                <div class="grid gap-4 pb-6">
+                                    <p class="text-[#4A5565] text-sm sm:text-base font-normal leading-[24px]">Explore
+                                        the wonders
+                                        of science through experiments, projects, and competitions</p>
+                                    <div class="w-[300px] grid gap-2">
+                                        <p class="text-[#193CB8] text-sm font-normal pb-1">Activities:</p>
+                                        <div class="flex flex-wrap gap-1">
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Science
+                                                Fair</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Lab
+                                                Experiments</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Research
+                                                Projects</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Field
+                                                Trips</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-2">
+                                        <div class="flex items-center gap-2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_1853)">
+                                                    <path d="M6.1333 2.10834V4.775" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M11.4668 2.10834V4.775" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M13.4667 3.44171H4.13338C3.397 3.44171 2.80005 4.03867 2.80005 4.77504V14.1084C2.80005 14.8448 3.397 15.4417 4.13338 15.4417H13.4667C14.2031 15.4417 14.8 14.8448 14.8 14.1084V4.77504C14.8 4.03867 14.2031 3.44171 13.4667 3.44171Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M2.80005 7.44171H14.8" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_1853">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.800049 0.775024)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-[#4A5565] text-xs sm:text-sm font-normal">Thursdays 3:30 PM
+                                            </p>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_1861)">
+                                                    <path
+                                                        d="M11.4666 14.775V13.4417C11.4666 12.7344 11.1857 12.0562 10.6856 11.5561C10.1855 11.056 9.50721 10.775 8.79997 10.775H4.79997C4.09272 10.775 3.41445 11.056 2.91435 11.5561C2.41425 12.0562 2.1333 12.7344 2.1333 13.4417V14.775"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M11.4668 2.86035C12.0386 3.0086 12.5451 3.34253 12.9066 3.80973C13.2681 4.27693 13.4643 4.85094 13.4643 5.44168C13.4643 6.03243 13.2681 6.60644 12.9066 7.07364C12.5451 7.54084 12.0386 7.87477 11.4668 8.02302"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M15.4668 14.775V13.4417C15.4664 12.8508 15.2697 12.2769 14.9077 11.8099C14.5457 11.3429 14.0389 11.0094 13.4668 10.8617"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79997 8.10836C8.27273 8.10836 9.46663 6.91445 9.46663 5.44169C9.46663 3.96893 8.27273 2.77502 6.79997 2.77502C5.32721 2.77502 4.1333 3.96893 4.1333 5.44169C4.1333 6.91445 5.32721 8.10836 6.79997 8.10836Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_1861">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.800049 0.775024)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-[#4A5565] text-xs sm:text-sm font-normal">Coordinator: Dr.
+                                                Muhammad Hassan</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button
+                                            class="px-8 py-2 w-full bg-[#FFF] rounded-xl border border-gray-200 text-[#0A0A0A] text-sm font-medium">
+                                            Join Club
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl px-6 py-6 bg-[#FFF] rounded-[14px]"
+                            style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                            <div class="grid gap-12">
+                                <div class="flex items-center gap-3">
+                                    <div class="px-3 py-3 rounded-full bg-[#DBEAFE] w-[48px] h-[48px] ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            viewBox="0 0 25 25" fill="none">
+                                            <path d="M12.125 19.6V22.6" stroke="#155DFC" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M19.125 10.6V12.6C19.125 14.4566 18.3875 16.237 17.0747 17.5498C15.762 18.8625 13.9815 19.6 12.125 19.6C10.2685 19.6 8.48801 18.8625 7.17525 17.5498C5.8625 16.237 5.125 14.4566 5.125 12.6V10.6"
+                                                stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M15.125 5.60004C15.125 3.94318 13.7819 2.60004 12.125 2.60004C10.4681 2.60004 9.125 3.94318 9.125 5.60004V12.6C9.125 14.2569 10.4681 15.6 12.125 15.6C13.7819 15.6 15.125 14.2569 15.125 12.6V5.60004Z"
+                                                stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <h3 class="text-[#1C398E] text-sm sm:text-base font-normal">Debate Society</h3>
+                                        <span
+                                            class="text-[#0A0A0A] text-xs font-normal rounded-xl px-2 py-1 border border-gray-200 w-fit">32
+                                            members</span>
+                                    </div>
+                                </div>
+                                <div class="grid gap-4 pb-6">
+                                    <p class="text-[#4A5565] text-sm sm:text-base font-normal leading-[24px]">Develop
+                                        critical thinking and public speaking skills through structured debates</p>
+                                    <div class="w-[300px] grid gap-2">
+                                        <p class="text-[#193CB8] text-sm font-normal pb-1">Activities:</p>
+                                        <div class="flex flex-wrap gap-1">
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Inter-school
+                                                Debates</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Public
+                                                Speaking</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Model
+                                                UN</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Speech
+                                                Competitions</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-2">
+                                        <div class="flex items-center gap-2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_1853)">
+                                                    <path d="M6.1333 2.10834V4.775" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M11.4668 2.10834V4.775" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M13.4667 3.44171H4.13338C3.397 3.44171 2.80005 4.03867 2.80005 4.77504V14.1084C2.80005 14.8448 3.397 15.4417 4.13338 15.4417H13.4667C14.2031 15.4417 14.8 14.8448 14.8 14.1084V4.77504C14.8 4.03867 14.2031 3.44171 13.4667 3.44171Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M2.80005 7.44171H14.8" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_1853">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.800049 0.775024)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-[#4A5565] text-xs sm:text-sm font-normal">Tuesdays 4:00 PM
+                                            </p>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_1861)">
+                                                    <path
+                                                        d="M11.4666 14.775V13.4417C11.4666 12.7344 11.1857 12.0562 10.6856 11.5561C10.1855 11.056 9.50721 10.775 8.79997 10.775H4.79997C4.09272 10.775 3.41445 11.056 2.91435 11.5561C2.41425 12.0562 2.1333 12.7344 2.1333 13.4417V14.775"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M11.4668 2.86035C12.0386 3.0086 12.5451 3.34253 12.9066 3.80973C13.2681 4.27693 13.4643 4.85094 13.4643 5.44168C13.4643 6.03243 13.2681 6.60644 12.9066 7.07364C12.5451 7.54084 12.0386 7.87477 11.4668 8.02302"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M15.4668 14.775V13.4417C15.4664 12.8508 15.2697 12.2769 14.9077 11.8099C14.5457 11.3429 14.0389 11.0094 13.4668 10.8617"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79997 8.10836C8.27273 8.10836 9.46663 6.91445 9.46663 5.44169C9.46663 3.96893 8.27273 2.77502 6.79997 2.77502C5.32721 2.77502 4.1333 3.96893 4.1333 5.44169C4.1333 6.91445 5.32721 8.10836 6.79997 8.10836Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_1861">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.800049 0.775024)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-[#4A5565] text-xs sm:text-sm font-normal">Coordinator: Ms.
+                                                Raheela Begum</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button
+                                            class="px-8 py-2 w-full bg-[#FFF] rounded-xl border border-gray-200 text-[#0A0A0A] text-sm font-medium">
+                                            Join Club
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl px-6 py-6 bg-[#FFF] rounded-[14px]"
+                            style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                            <div class="grid gap-12">
+                                <div class="flex items-center gap-3">
+                                    <div class="px-3 py-3 rounded-full bg-[#DBEAFE] w-[48px] h-[48px] ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            viewBox="0 0 25 25" fill="none">
+                                            <path d="M12.4626 7.60004V21.6" stroke="#155DFC" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M3.46265 18.6C3.19743 18.6 2.94308 18.4947 2.75554 18.3071C2.568 18.1196 2.46265 17.8653 2.46265 17.6V4.60004C2.46265 4.33482 2.568 4.08047 2.75554 3.89293C2.94308 3.70539 3.19743 3.60004 3.46265 3.60004H8.46265C9.52351 3.60004 10.5409 4.02146 11.2911 4.77161C12.0412 5.52175 12.4626 6.53917 12.4626 7.60004C12.4626 6.53917 12.8841 5.52175 13.6342 4.77161C14.3844 4.02146 15.4018 3.60004 16.4626 3.60004H21.4626C21.7279 3.60004 21.9822 3.70539 22.1698 3.89293C22.3573 4.08047 22.4626 4.33482 22.4626 4.60004V17.6C22.4626 17.8653 22.3573 18.1196 22.1698 18.3071C21.9822 18.4947 21.7279 18.6 21.4626 18.6H15.4626C14.667 18.6 13.9039 18.9161 13.3413 19.4787C12.7787 20.0413 12.4626 20.8044 12.4626 21.6C12.4626 20.8044 12.1466 20.0413 11.584 19.4787C11.0214 18.9161 10.2583 18.6 9.46265 18.6H3.46265Z"
+                                                stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <h3 class="text-[#1C398E] text-sm sm:text-base font-normal">Literary Club</h3>
+                                        <span
+                                            class="text-[#0A0A0A] text-xs font-normal rounded-xl px-2 py-1 border border-gray-200 w-fit">28
+                                            members</span>
+                                    </div>
+                                </div>
+                                <div class="grid gap-4 pb-6">
+                                    <p class="text-[#4A5565] text-sm sm:text-base font-normal leading-[24px]">Celebrate
+                                        literature, poetry, and creative writing in multiple languages</p>
+                                    <div class="w-[300px] grid gap-2">
+                                        <p class="text-[#193CB8] text-sm font-normal pb-1">Activities:</p>
+                                        <div class="flex flex-wrap gap-1">
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Poetry
+                                                Recitation</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Story
+                                                Writing</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Book
+                                                Clubs</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Literary
+                                                Magazine</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-2">
+                                        <div class="flex items-center gap-2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_1853)">
+                                                    <path d="M6.1333 2.10834V4.775" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M11.4668 2.10834V4.775" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M13.4667 3.44171H4.13338C3.397 3.44171 2.80005 4.03867 2.80005 4.77504V14.1084C2.80005 14.8448 3.397 15.4417 4.13338 15.4417H13.4667C14.2031 15.4417 14.8 14.8448 14.8 14.1084V4.77504C14.8 4.03867 14.2031 3.44171 13.4667 3.44171Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M2.80005 7.44171H14.8" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_1853">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.800049 0.775024)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-[#4A5565] text-xs sm:text-sm font-normal">Mondays 3:30 PM
+                                            </p>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_1861)">
+                                                    <path
+                                                        d="M11.4666 14.775V13.4417C11.4666 12.7344 11.1857 12.0562 10.6856 11.5561C10.1855 11.056 9.50721 10.775 8.79997 10.775H4.79997C4.09272 10.775 3.41445 11.056 2.91435 11.5561C2.41425 12.0562 2.1333 12.7344 2.1333 13.4417V14.775"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M11.4668 2.86035C12.0386 3.0086 12.5451 3.34253 12.9066 3.80973C13.2681 4.27693 13.4643 4.85094 13.4643 5.44168C13.4643 6.03243 13.2681 6.60644 12.9066 7.07364C12.5451 7.54084 12.0386 7.87477 11.4668 8.02302"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M15.4668 14.775V13.4417C15.4664 12.8508 15.2697 12.2769 14.9077 11.8099C14.5457 11.3429 14.0389 11.0094 13.4668 10.8617"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79997 8.10836C8.27273 8.10836 9.46663 6.91445 9.46663 5.44169C9.46663 3.96893 8.27273 2.77502 6.79997 2.77502C5.32721 2.77502 4.1333 3.96893 4.1333 5.44169C4.1333 6.91445 5.32721 8.10836 6.79997 8.10836Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_1861">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.800049 0.775024)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-[#4A5565] text-xs sm:text-sm font-normal">Coordinator: Mr.
+                                                Tariq Mahmood</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button
+                                            class="px-8 py-2 w-full bg-[#FFF] rounded-xl border border-gray-200 text-[#0A0A0A] text-sm font-medium">
+                                            Join Club
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl px-6 py-6 bg-[#FFF] rounded-[14px]"
+                            style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                            <div class="grid gap-12">
+                                <div class="flex items-center gap-3">
+                                    <div class="px-3 py-3 rounded-full bg-[#DBEAFE] w-[48px] h-[48px] ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            viewBox="0 0 25 25" fill="none">
+                                            <path
+                                                d="M12.8 22.375C10.1479 22.375 7.60434 21.3214 5.72898 19.4461C3.85362 17.5707 2.80005 15.0272 2.80005 12.375C2.80005 9.72284 3.85362 7.1793 5.72898 5.30393C7.60434 3.42857 10.1479 2.375 12.8 2.375C15.4522 2.375 17.9958 3.32321 19.8711 5.01104C21.7465 6.69887 22.8 8.98805 22.8 11.375C22.8 12.7011 22.2733 13.9729 21.3356 14.9105C20.3979 15.8482 19.1261 16.375 17.8 16.375H15.55C15.2251 16.375 14.9065 16.4655 14.63 16.6364C14.3536 16.8072 14.1301 17.0517 13.9848 17.3424C13.8395 17.6331 13.7779 17.9585 13.8071 18.2822C13.8363 18.6058 13.9551 18.915 14.15 19.175L14.45 19.575C14.645 19.835 14.7638 20.1442 14.793 20.4678C14.8222 20.7915 14.7606 21.1169 14.6153 21.4076C14.47 21.6983 14.2465 21.9428 13.9701 22.1136C13.6936 22.2845 13.375 22.375 13.05 22.375H12.8Z"
+                                                stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M14.3 7.375C14.5762 7.375 14.8 7.15114 14.8 6.875C14.8 6.59886 14.5762 6.375 14.3 6.375C14.0239 6.375 13.8 6.59886 13.8 6.875C13.8 7.15114 14.0239 7.375 14.3 7.375Z"
+                                                fill="#155DFC" stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M18.3 11.375C18.5762 11.375 18.8 11.1511 18.8 10.875C18.8 10.5989 18.5762 10.375 18.3 10.375C18.0239 10.375 17.8 10.5989 17.8 10.875C17.8 11.1511 18.0239 11.375 18.3 11.375Z"
+                                                fill="#155DFC" stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M7.30005 13.375C7.57619 13.375 7.80005 13.1511 7.80005 12.875C7.80005 12.5989 7.57619 12.375 7.30005 12.375C7.02391 12.375 6.80005 12.5989 6.80005 12.875C6.80005 13.1511 7.02391 13.375 7.30005 13.375Z"
+                                                fill="#155DFC" stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M9.30005 8.375C9.57619 8.375 9.80005 8.15114 9.80005 7.875C9.80005 7.59886 9.57619 7.375 9.30005 7.375C9.02391 7.375 8.80005 7.59886 8.80005 7.875C8.80005 8.15114 9.02391 8.375 9.30005 8.375Z"
+                                                fill="#155DFC" stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <h3 class="text-[#1C398E] text-sm sm:text-base font-normal">Arts & Crafts</h3>
+                                        <span
+                                            class="text-[#0A0A0A] text-xs font-normal rounded-xl px-2 py-1 border border-gray-200 w-fit">38
+                                            members</span>
+                                    </div>
+                                </div>
+                                <div class="grid gap-4 pb-6">
+                                    <p class="text-[#4A5565] text-sm sm:text-base font-normal leading-[24px]">Express
+                                        creativity through various art forms and craft projects</p>
+                                    <div class="w-[300px] grid gap-2">
+                                        <p class="text-[#193CB8] text-sm font-normal pb-1">Activities:</p>
+                                        <div class="flex flex-wrap gap-1">
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Painting</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Calligraphy</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Handicrafts</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Art
+                                                Exhibitions</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-2">
+                                        <div class="flex items-center gap-2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_1853)">
+                                                    <path d="M6.1333 2.10834V4.775" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M11.4668 2.10834V4.775" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M13.4667 3.44171H4.13338C3.397 3.44171 2.80005 4.03867 2.80005 4.77504V14.1084C2.80005 14.8448 3.397 15.4417 4.13338 15.4417H13.4667C14.2031 15.4417 14.8 14.8448 14.8 14.1084V4.77504C14.8 4.03867 14.2031 3.44171 13.4667 3.44171Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M2.80005 7.44171H14.8" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_1853">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.800049 0.775024)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-[#4A5565] text-xs sm:text-sm font-normal">Wednesdays 3:45 PM
+                                            </p>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_1861)">
+                                                    <path
+                                                        d="M11.4666 14.775V13.4417C11.4666 12.7344 11.1857 12.0562 10.6856 11.5561C10.1855 11.056 9.50721 10.775 8.79997 10.775H4.79997C4.09272 10.775 3.41445 11.056 2.91435 11.5561C2.41425 12.0562 2.1333 12.7344 2.1333 13.4417V14.775"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M11.4668 2.86035C12.0386 3.0086 12.5451 3.34253 12.9066 3.80973C13.2681 4.27693 13.4643 4.85094 13.4643 5.44168C13.4643 6.03243 13.2681 6.60644 12.9066 7.07364C12.5451 7.54084 12.0386 7.87477 11.4668 8.02302"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M15.4668 14.775V13.4417C15.4664 12.8508 15.2697 12.2769 14.9077 11.8099C14.5457 11.3429 14.0389 11.0094 13.4668 10.8617"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79997 8.10836C8.27273 8.10836 9.46663 6.91445 9.46663 5.44169C9.46663 3.96893 8.27273 2.77502 6.79997 2.77502C5.32721 2.77502 4.1333 3.96893 4.1333 5.44169C4.1333 6.91445 5.32721 8.10836 6.79997 8.10836Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_1861">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.800049 0.775024)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-[#4A5565] text-xs sm:text-sm font-normal">Coordinator: Ms.
+                                                Ayesha Ahmed</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button
+                                            class="px-8 py-2 w-full bg-[#FFF] rounded-xl border border-gray-200 text-[#0A0A0A] text-sm font-medium">
+                                            Join Club
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl px-6 py-6 bg-[#FFF] rounded-[14px]"
+                            style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                            <div class="grid gap-12">
+                                <div class="flex items-center gap-3">
+                                    <div class="px-3 py-3 rounded-full bg-[#DBEAFE] w-[48px] h-[48px] ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            viewBox="0 0 25 25" fill="none">
+                                            <path
+                                                d="M16.125 21.375V19.375C16.125 18.3141 15.7036 17.2967 14.9534 16.5466C14.2033 15.7964 13.1859 15.375 12.125 15.375H6.125C5.06413 15.375 4.04672 15.7964 3.29657 16.5466C2.54643 17.2967 2.125 18.3141 2.125 19.375V21.375"
+                                                stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M16.125 3.50305C16.9828 3.72542 17.7424 4.22632 18.2847 4.92711C18.827 5.62791 19.1212 6.48894 19.1212 7.37505C19.1212 8.26116 18.827 9.12219 18.2847 9.82299C17.7424 10.5238 16.9828 11.0247 16.125 11.2471"
+                                                stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M22.125 21.375V19.375C22.1243 18.4887 21.8294 17.6278 21.2864 16.9273C20.7434 16.2269 19.9831 15.7266 19.125 15.505"
+                                                stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M9.125 11.375C11.3341 11.375 13.125 9.58414 13.125 7.375C13.125 5.16586 11.3341 3.375 9.125 3.375C6.91586 3.375 5.125 5.16586 5.125 7.375C5.125 9.58414 6.91586 11.375 9.125 11.375Z"
+                                                stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <h3 class="text-[#1C398E] text-sm sm:text-base font-normal">Mathematics Society
+                                        </h3>
+                                        <span
+                                            class="text-[#0A0A0A] text-xs font-normal rounded-xl px-2 py-1 border border-gray-200 w-fit">25
+                                            members</span>
+                                    </div>
+                                </div>
+                                <div class="grid gap-4 pb-6">
+                                    <p class="text-[#4A5565] text-sm sm:text-base font-normal leading-[24px]">Enhance
+                                        mathematical skills through problem-solving and competitions</p>
+                                    <div class="w-[300px] grid gap-2">
+                                        <p class="text-[#193CB8] text-sm font-normal pb-1">Activities:</p>
+                                        <div class="flex flex-wrap gap-1">
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Math
+                                                Olympiad</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Problem
+                                                Solving</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Math
+                                                Games</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Peer
+                                                Tutoring</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-2">
+                                        <div class="flex items-center gap-2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_1853)">
+                                                    <path d="M6.1333 2.10834V4.775" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M11.4668 2.10834V4.775" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M13.4667 3.44171H4.13338C3.397 3.44171 2.80005 4.03867 2.80005 4.77504V14.1084C2.80005 14.8448 3.397 15.4417 4.13338 15.4417H13.4667C14.2031 15.4417 14.8 14.8448 14.8 14.1084V4.77504C14.8 4.03867 14.2031 3.44171 13.4667 3.44171Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M2.80005 7.44171H14.8" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_1853">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.800049 0.775024)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-[#4A5565] text-xs sm:text-sm font-normal">Fridays 3:30 PM
+                                            </p>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_1861)">
+                                                    <path
+                                                        d="M11.4666 14.775V13.4417C11.4666 12.7344 11.1857 12.0562 10.6856 11.5561C10.1855 11.056 9.50721 10.775 8.79997 10.775H4.79997C4.09272 10.775 3.41445 11.056 2.91435 11.5561C2.41425 12.0562 2.1333 12.7344 2.1333 13.4417V14.775"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M11.4668 2.86035C12.0386 3.0086 12.5451 3.34253 12.9066 3.80973C13.2681 4.27693 13.4643 4.85094 13.4643 5.44168C13.4643 6.03243 13.2681 6.60644 12.9066 7.07364C12.5451 7.54084 12.0386 7.87477 11.4668 8.02302"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M15.4668 14.775V13.4417C15.4664 12.8508 15.2697 12.2769 14.9077 11.8099C14.5457 11.3429 14.0389 11.0094 13.4668 10.8617"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79997 8.10836C8.27273 8.10836 9.46663 6.91445 9.46663 5.44169C9.46663 3.96893 8.27273 2.77502 6.79997 2.77502C5.32721 2.77502 4.1333 3.96893 4.1333 5.44169C4.1333 6.91445 5.32721 8.10836 6.79997 8.10836Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_1861">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.800049 0.775024)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-[#4A5565] text-xs sm:text-sm font-normal">Coordinator: Mrs.
+                                                Zainab Khan</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button
+                                            class="px-8 py-2 w-full bg-[#FFF] rounded-xl border border-gray-200 text-[#0A0A0A] text-sm font-medium">
+                                            Join Club
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl px-6 py-6 bg-[#FFF] rounded-[14px]"
+                            style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                            <div class="grid gap-12">
+                                <div class="flex items-center gap-3">
+                                    <div class="px-3 py-3 rounded-full bg-[#DBEAFE] w-[48px] h-[48px] ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            viewBox="0 0 25 25" fill="none">
+                                            <path
+                                                d="M12.4626 22.375C17.9855 22.375 22.4626 17.8978 22.4626 12.375C22.4626 6.85215 17.9855 2.375 12.4626 2.375C6.9398 2.375 2.46265 6.85215 2.46265 12.375C2.46265 17.8978 6.9398 22.375 12.4626 22.375Z"
+                                                stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M12.4626 2.375C9.89488 5.07115 8.46265 8.65174 8.46265 12.375C8.46265 16.0983 9.89488 19.6788 12.4626 22.375C15.0304 19.6788 16.4626 16.0983 16.4626 12.375C16.4626 8.65174 15.0304 5.07115 12.4626 2.375Z"
+                                                stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M2.46265 12.375H22.4626" stroke="#155DFC" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="grid gap-1">
+                                        <h3 class="text-[#1C398E] text-sm sm:text-base font-normal">Environmental Club
+                                        </h3>
+                                        <span
+                                            class="text-[#0A0A0A] text-xs font-normal rounded-xl px-2 py-1 border border-gray-200 w-fit">42
+                                            members</span>
+                                    </div>
+                                </div>
+                                <div class="grid gap-4 pb-6">
+                                    <p class="text-[#4A5565] text-sm sm:text-base font-normal leading-[24px]">Promote
+                                        environmental awareness and sustainable practices</p>
+                                    <div class="w-[300px] grid gap-2">
+                                        <p class="text-[#193CB8] text-sm font-normal pb-1">Activities:</p>
+                                        <div class="flex flex-wrap gap-1">
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Tree
+                                                Plantation</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Clean-up
+                                                Drives</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Recycling
+                                                Projects</span>
+                                            <span
+                                                class="text-[#030213] text-xs font-normal bg-[#ECEEF2] rounded-xl px-2 py-1 border border-gray-200 w-fit">Awareness
+                                                Campaigns</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-2">
+                                        <div class="flex items-center gap-2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_1853)">
+                                                    <path d="M6.1333 2.10834V4.775" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M11.4668 2.10834V4.775" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M13.4667 3.44171H4.13338C3.397 3.44171 2.80005 4.03867 2.80005 4.77504V14.1084C2.80005 14.8448 3.397 15.4417 4.13338 15.4417H13.4667C14.2031 15.4417 14.8 14.8448 14.8 14.1084V4.77504C14.8 4.03867 14.2031 3.44171 13.4667 3.44171Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M2.80005 7.44171H14.8" stroke="#4A5565"
+                                                        stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_1853">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.800049 0.775024)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-[#4A5565] text-xs sm:text-sm font-normal">Saturdays 9:00 AM
+                                            </p>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                                viewBox="0 0 17 17" fill="none">
+                                                <g clip-path="url(#clip0_2001_1861)">
+                                                    <path
+                                                        d="M11.4666 14.775V13.4417C11.4666 12.7344 11.1857 12.0562 10.6856 11.5561C10.1855 11.056 9.50721 10.775 8.79997 10.775H4.79997C4.09272 10.775 3.41445 11.056 2.91435 11.5561C2.41425 12.0562 2.1333 12.7344 2.1333 13.4417V14.775"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M11.4668 2.86035C12.0386 3.0086 12.5451 3.34253 12.9066 3.80973C13.2681 4.27693 13.4643 4.85094 13.4643 5.44168C13.4643 6.03243 13.2681 6.60644 12.9066 7.07364C12.5451 7.54084 12.0386 7.87477 11.4668 8.02302"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M15.4668 14.775V13.4417C15.4664 12.8508 15.2697 12.2769 14.9077 11.8099C14.5457 11.3429 14.0389 11.0094 13.4668 10.8617"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M6.79997 8.10836C8.27273 8.10836 9.46663 6.91445 9.46663 5.44169C9.46663 3.96893 8.27273 2.77502 6.79997 2.77502C5.32721 2.77502 4.1333 3.96893 4.1333 5.44169C4.1333 6.91445 5.32721 8.10836 6.79997 8.10836Z"
+                                                        stroke="#4A5565" stroke-width="1.33333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_2001_1861">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.800049 0.775024)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <p class="text-[#4A5565] text-xs sm:text-sm font-normal">Coordinator: Mr.
+                                                Omar Rashid</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button
+                                            class="px-8 py-2 w-full bg-[#FFF] rounded-xl border border-gray-200 text-[#0A0A0A] text-sm font-medium">
+                                            Join Club
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-16">
+            <div class="container">
+                <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center pb-8">Upcoming Events</h2>
+                <div class="grid sm:grid-cols-2 grid-cols-1 gap-8">
+                    <div class="grid gap-6 border border-gray-200 rounded-[14px]">
+                        <div class="rounded-t-[14px] overflow-hidden">
+                            <img src="assets/images/events.jpeg" alt="events" class="w-full h-[192px] object-cover">
+                        </div>
+                        <div
+                            class="shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl grid gap-3 px-6 py-6 rounded-b-[14px]">
+                            <div class="flex gap-8 justify-between">
+                                <span
+                                    class="text-[#193CB8] bg-[#DBEAFE] px-2 py-1 rounded-xl text-xs font-normal border border-transparent"
+                                    style="border: 0.8px solid rgba(0, 0, 0, 0.00);">Sports</span>
+                                <p class="text-[#6A7282] text-sm font-normal">March 15, 2025</p>
+                            </div>
+                            <h3 class="text-[#1C398E] text-xl font-normal">Annual Sports Day</h3>
+                            <p class="text-[#4A5565] text-base font-normal pb-2">Inter-class and inter-house sports
+                                competitions
+                                featuring track and field events, team sports, and athletic competitions</p>
+                            <button class="px-3 w-fit py-2 bg-[#155DFC] rounded-xl text-white text-sm font-normal">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid gap-6 border border-gray-200 rounded-[14px] bg-white">
+                        <div class="rounded-t-[14px] overflow-hidden">
+                            <img src="assets/images/events-two.jpeg" alt="events"
+                                class="w-full h-[192px] object-cover" />
+                        </div>
+                        <div
+                            class="shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl grid gap-3 px-6 py-6 rounded-b-[14px] bg-white">
+                            <div class="flex gap-8 justify-between">
+                                <span
+                                    class="text-[#193CB8] bg-[#DBEAFE] px-2 py-1 rounded-xl text-xs font-normal border border-transparent">
+                                    Academic
+                                </span>
+                                <p class="text-[#6A7282] text-sm font-normal">March 20-22, 2025</p>
+                            </div>
+                            <h3 class="text-[#1C398E] text-xl font-normal">Science Exhibition</h3>
+                            <p class="text-[#4A5565] text-base font-normal pb-2">
+                                Students showcase innovative science projects and experiments in physics, chemistry, and
+                                biology
+                            </p>
+                            <button class="px-3 w-fit py-2 bg-[#155DFC] rounded-xl text-white text-sm font-normal">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid gap-6 border border-gray-200 rounded-[14px]">
+                        <div class="rounded-t-[14px] overflow-hidden">
+                            <img src="assets/images/events-three.jpeg" alt="events"
+                                class="w-full h-[192px] object-cover">
+                        </div>
+                        <div
+                            class="shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl grid gap-3 px-6 py-6 rounded-b-[14px]">
+                            <div class="flex gap-8 justify-between">
+                                <span
+                                    class="text-[#193CB8] bg-[#DBEAFE] px-2 py-1 rounded-xl text-xs font-normal border border-transparent"
+                                    style="border: 0.8px solid rgba(0, 0, 0, 0.00);">Cultural</span>
+                                <p class="text-[#6A7282] text-sm font-normal">April 10, 2025</p>
+                            </div>
+                            <h3 class="text-[#1C398E] text-xl font-normal">Cultural Night</h3>
+                            <p class="text-[#4A5565] text-base font-normal pb-2">Evening of music, dance, and cultural
+                                performances celebrating our diverse heritage</p>
+                            <button class="px-3 w-fit py-2 bg-[#155DFC] rounded-xl text-white text-sm font-normal">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid gap-6 border border-gray-200 rounded-[14px] bg-white">
+                        <div class="rounded-t-[14px] overflow-hidden">
+                            <img src="assets/images/events-three.jpeg" alt="events"
+                                class="w-full h-[192px] object-cover" />
+                        </div>
+                        <div
+                            class="shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl grid gap-3 px-6 py-6 rounded-b-[14px] bg-white">
+                            <div class="flex gap-8 justify-between">
+                                <span
+                                    class="text-[#193CB8] bg-[#DBEAFE] px-2 py-1 rounded-xl text-xs font-normal border border-transparent">
+                                    Competition
+                                </span>
+                                <p class="text-[#6A7282] text-sm font-normal">April 25, 2025</p>
+                            </div>
+                            <h3 class="text-[#1C398E] text-xl font-normal">Mathematics Olympiad</h3>
+                            <p class="text-[#4A5565] text-base font-normal pb-2">
+                                Inter-school mathematics competition testing problem-solving and analytical skills
+                            </p>
+                            <button class="px-3 w-fit py-2 bg-[#155DFC] rounded-xl text-white text-sm font-normal">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center pb-8">Student Council</h2>
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+                    <div
+                        class="shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl px-6 py-6 bg-white rounded-[14px] border">
+                        <div class="grid gap-6">
+                            <div class="grid gap-2 place-items-center">
+                                <div class="px-5 mb-5 py-5 rounded-full h-[80px] w-[80px]"
+                                    style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
+                                        fill="none">
+                                        <path
+                                            d="M26.9915 35.5251V32.1918C26.9915 30.4237 26.2892 28.728 25.0389 27.4778C23.7887 26.2275 22.093 25.5251 20.3249 25.5251H10.3249C8.55676 25.5251 6.86107 26.2275 5.61082 27.4778C4.36058 28.728 3.6582 30.4237 3.6582 32.1918V35.5251"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M26.9917 5.73828C28.4213 6.1089 29.6874 6.94372 30.5912 8.11172C31.495 9.27972 31.9854 10.7148 31.9854 12.1916C31.9854 13.6685 31.495 15.1035 30.5912 16.2715C29.6874 17.4395 28.4213 18.2743 26.9917 18.6449"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M36.9917 35.525V32.1917C36.9906 30.7146 36.499 29.2797 35.594 28.1122C34.689 26.9448 33.4219 26.111 31.9917 25.7417"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M15.3249 18.8585C19.0068 18.8585 21.9915 15.8737 21.9915 12.1918C21.9915 8.50991 19.0068 5.52515 15.3249 5.52515C11.643 5.52515 8.6582 8.50991 8.6582 12.1918C8.6582 15.8737 11.643 18.8585 15.3249 18.8585Z"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="text-center grid gap-2 place-items-center">
+                                    <h3 class="text-[#1C398E] text-base font-normal">Hassan Ahmed</h3>
+                                    <span
+                                        class="text-[#894B00] w-fit text-xs font-normal bg-[#FEF9C2] px-2 py-1 rounded-xl">Head
+                                        Boy</span>
+                                    <p class="text-[#155DFC] text-sm font-normal">10-A</p>
+                                </div>
+                            </div>
+                            <div class="grid justify-center ">
+                                <p class="text-[#4A5565] text-sm font-normal">Overall student leadership and
+                                    representation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl px-6 py-6 bg-white rounded-[14px] border">
+                        <div class="grid gap-6">
+                            <div class="grid gap-2 place-items-center">
+                                <div class="px-5 mb-5 py-5 rounded-full h-[80px] w-[80px]"
+                                    style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
+                                        fill="none">
+                                        <path
+                                            d="M26.9915 35.5251V32.1918C26.9915 30.4237 26.2892 28.728 25.0389 27.4778C23.7887 26.2275 22.093 25.5251 20.3249 25.5251H10.3249C8.55676 25.5251 6.86107 26.2275 5.61082 27.4778C4.36058 28.728 3.6582 30.4237 3.6582 32.1918V35.5251"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M26.9917 5.73828C28.4213 6.1089 29.6874 6.94372 30.5912 8.11172C31.495 9.27972 31.9854 10.7148 31.9854 12.1916C31.9854 13.6685 31.495 15.1035 30.5912 16.2715C29.6874 17.4395 28.4213 18.2743 26.9917 18.6449"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M36.9917 35.525V32.1917C36.9906 30.7146 36.499 29.2797 35.594 28.1122C34.689 26.9448 33.4219 26.111 31.9917 25.7417"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M15.3249 18.8585C19.0068 18.8585 21.9915 15.8737 21.9915 12.1918C21.9915 8.50991 19.0068 5.52515 15.3249 5.52515C11.643 5.52515 8.6582 8.50991 8.6582 12.1918C8.6582 15.8737 11.643 18.8585 15.3249 18.8585Z"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="text-center grid gap-2 place-items-center">
+                                    <h3 class="text-[#1C398E] text-base font-normal">Ayesha Malik</h3>
+                                    <span
+                                        class="text-[#894B00] w-fit text-xs font-normal bg-[#FEF9C2] px-2 py-1 rounded-xl">Head
+                                        Girl</span>
+                                    <p class="text-[#155DFC] text-sm font-normal">10-B</p>
+                                </div>
+                            </div>
+                            <div class="grid justify-center ">
+                                <p class="text-[#4A5565] text-sm font-normal">Student welfare and academic coordination
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl px-6 py-6 bg-white rounded-[14px] border">
+                        <div class="grid gap-6">
+                            <div class="grid gap-2 place-items-center">
+                                <div class="px-5 mb-5 py-5 rounded-full h-[80px] w-[80px]"
+                                    style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
+                                        fill="none">
+                                        <path
+                                            d="M26.9915 35.5251V32.1918C26.9915 30.4237 26.2892 28.728 25.0389 27.4778C23.7887 26.2275 22.093 25.5251 20.3249 25.5251H10.3249C8.55676 25.5251 6.86107 26.2275 5.61082 27.4778C4.36058 28.728 3.6582 30.4237 3.6582 32.1918V35.5251"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M26.9917 5.73828C28.4213 6.1089 29.6874 6.94372 30.5912 8.11172C31.495 9.27972 31.9854 10.7148 31.9854 12.1916C31.9854 13.6685 31.495 15.1035 30.5912 16.2715C29.6874 17.4395 28.4213 18.2743 26.9917 18.6449"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M36.9917 35.525V32.1917C36.9906 30.7146 36.499 29.2797 35.594 28.1122C34.689 26.9448 33.4219 26.111 31.9917 25.7417"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M15.3249 18.8585C19.0068 18.8585 21.9915 15.8737 21.9915 12.1918C21.9915 8.50991 19.0068 5.52515 15.3249 5.52515C11.643 5.52515 8.6582 8.50991 8.6582 12.1918C8.6582 15.8737 11.643 18.8585 15.3249 18.8585Z"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="text-center grid gap-2 place-items-center">
+                                    <h3 class="text-[#1C398E] text-base font-normal">Ali Raza</h3>
+                                    <span
+                                        class="text-[#894B00] w-fit text-xs font-normal bg-[#FEF9C2] px-2 py-1 rounded-xl">Sports
+                                        Captain</span>
+                                    <p class="text-[#155DFC] text-sm font-normal">10-A</p>
+                                </div>
+                            </div>
+                            <div class="grid justify-center ">
+                                <p class="text-[#4A5565] text-sm font-normal">Sports activities and team management</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl px-6 py-6 bg-white rounded-[14px] border">
+                        <div class="grid gap-6">
+                            <div class="grid gap-2 place-items-center">
+                                <div class="px-5 mb-5 py-5 rounded-full h-[80px] w-[80px]"
+                                    style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
+                                        fill="none">
+                                        <path
+                                            d="M26.9915 35.5251V32.1918C26.9915 30.4237 26.2892 28.728 25.0389 27.4778C23.7887 26.2275 22.093 25.5251 20.3249 25.5251H10.3249C8.55676 25.5251 6.86107 26.2275 5.61082 27.4778C4.36058 28.728 3.6582 30.4237 3.6582 32.1918V35.5251"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M26.9917 5.73828C28.4213 6.1089 29.6874 6.94372 30.5912 8.11172C31.495 9.27972 31.9854 10.7148 31.9854 12.1916C31.9854 13.6685 31.495 15.1035 30.5912 16.2715C29.6874 17.4395 28.4213 18.2743 26.9917 18.6449"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M36.9917 35.525V32.1917C36.9906 30.7146 36.499 29.2797 35.594 28.1122C34.689 26.9448 33.4219 26.111 31.9917 25.7417"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M15.3249 18.8585C19.0068 18.8585 21.9915 15.8737 21.9915 12.1918C21.9915 8.50991 19.0068 5.52515 15.3249 5.52515C11.643 5.52515 8.6582 8.50991 8.6582 12.1918C8.6582 15.8737 11.643 18.8585 15.3249 18.8585Z"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="text-center grid gap-2 place-items-center">
+                                    <h3 class="text-[#1C398E] text-base font-normal">Fatima Khan</h3>
+                                    <span
+                                        class="text-[#894B00] w-fit text-xs font-normal bg-[#FEF9C2] px-2 py-1 rounded-xl">Cultural
+                                        Secretary</span>
+                                    <p class="text-[#155DFC] text-sm font-normal">9-B</p>
+                                </div>
+                            </div>
+                            <div class="grid justify-center ">
+                                <p class="text-[#4A5565] text-sm font-normal">Cultural events and artistic programs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl px-6 py-6 bg-white rounded-[14px] border">
+                        <div class="grid gap-6">
+                            <div class="grid gap-2 place-items-center">
+                                <div class="px-5 mb-5 py-5 rounded-full h-[80px] w-[80px]"
+                                    style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
+                                        fill="none">
+                                        <path
+                                            d="M26.9915 35.5251V32.1918C26.9915 30.4237 26.2892 28.728 25.0389 27.4778C23.7887 26.2275 22.093 25.5251 20.3249 25.5251H10.3249C8.55676 25.5251 6.86107 26.2275 5.61082 27.4778C4.36058 28.728 3.6582 30.4237 3.6582 32.1918V35.5251"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M26.9917 5.73828C28.4213 6.1089 29.6874 6.94372 30.5912 8.11172C31.495 9.27972 31.9854 10.7148 31.9854 12.1916C31.9854 13.6685 31.495 15.1035 30.5912 16.2715C29.6874 17.4395 28.4213 18.2743 26.9917 18.6449"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M36.9917 35.525V32.1917C36.9906 30.7146 36.499 29.2797 35.594 28.1122C34.689 26.9448 33.4219 26.111 31.9917 25.7417"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M15.3249 18.8585C19.0068 18.8585 21.9915 15.8737 21.9915 12.1918C21.9915 8.50991 19.0068 5.52515 15.3249 5.52515C11.643 5.52515 8.6582 8.50991 8.6582 12.1918C8.6582 15.8737 11.643 18.8585 15.3249 18.8585Z"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="text-center grid gap-2 place-items-center">
+                                    <h3 class="text-[#1C398E] text-base font-normal">Omar Farooq</h3>
+                                    <span
+                                        class="text-[#894B00] w-fit text-xs font-normal bg-[#FEF9C2] px-2 py-1 rounded-xl">Academic
+                                        Prefect</span>
+                                    <p class="text-[#155DFC] text-sm font-normal">10-C</p>
+                                </div>
+                            </div>
+                            <div class="grid justify-center ">
+                                <p class="text-[#4A5565] text-sm font-normal">Academic support and peer tutoring</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="shadow-sm transition-all duration-300 hover:-translate-y hover:shadow-xl px-6 py-6 bg-white rounded-[14px] border">
+                        <div class="grid gap-6">
+                            <div class="grid gap-2 place-items-center">
+                                <div class="px-5 mb-5 py-5 rounded-full h-[80px] w-[80px]"
+                                    style="background: linear-gradient(135deg, #DBEAFE 0%, #BEDBFF 100%);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41"
+                                        fill="none">
+                                        <path
+                                            d="M26.9915 35.5251V32.1918C26.9915 30.4237 26.2892 28.728 25.0389 27.4778C23.7887 26.2275 22.093 25.5251 20.3249 25.5251H10.3249C8.55676 25.5251 6.86107 26.2275 5.61082 27.4778C4.36058 28.728 3.6582 30.4237 3.6582 32.1918V35.5251"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M26.9917 5.73828C28.4213 6.1089 29.6874 6.94372 30.5912 8.11172C31.495 9.27972 31.9854 10.7148 31.9854 12.1916C31.9854 13.6685 31.495 15.1035 30.5912 16.2715C29.6874 17.4395 28.4213 18.2743 26.9917 18.6449"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M36.9917 35.525V32.1917C36.9906 30.7146 36.499 29.2797 35.594 28.1122C34.689 26.9448 33.4219 26.111 31.9917 25.7417"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M15.3249 18.8585C19.0068 18.8585 21.9915 15.8737 21.9915 12.1918C21.9915 8.50991 19.0068 5.52515 15.3249 5.52515C11.643 5.52515 8.6582 8.50991 8.6582 12.1918C8.6582 15.8737 11.643 18.8585 15.3249 18.8585Z"
+                                            stroke="#155DFC" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="text-center grid gap-2 place-items-center">
+                                    <h3 class="text-[#1C398E] text-base font-normal">Zainab Ali</h3>
+                                    <span
+                                        class="text-[#894B00] w-fit text-xs font-normal bg-[#FEF9C2] px-2 py-1 rounded-xl">Discipline
+                                        Monitor</span>
+                                    <p class="text-[#155DFC] text-sm font-normal">9-A</p>
+                                </div>
+                            </div>
+                            <div class="grid justify-center ">
+                                <p class="text-[#4A5565] text-sm font-normal">Maintaining school discipline and order
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="my-16">
+            <div class="container">
+                <div class="px-8 py-8 bg-[#EFF6FF] rounded-[10px]">
+                    <h2 class="text-[#1C398E] text-2xl text-center font-normal pb-8 sm:text-3xl">Sports & Athletics</h2>
+                    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+                        <div class="grid gap-4">
+                            <h3 class="text-[#193CB8] text-2xl font-normal">Available Sports</h3>
+                            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 ">
+                                <ul class="grid gap-1">
+                                    <h4 class="text-[#1447E6] pb-1 text-base font-normal">Team Sports</h4>
+                                    <li class="text-[#4A5565] text-sm font-normal">
+                                        • Cricket
+                                    </li>
+                                    <li class="text-[#4A5565] text-sm font-normal">
+                                        • Football
+                                    </li>
+                                    <li class="text-[#4A5565] text-sm font-normal">
+                                        • Basketball
+                                    </li>
+                                    <li class="text-[#4A5565] text-sm font-normal">
+                                        • Volleyball
+                                    </li>
+                                </ul>
+                                <ul class="grid gap-1">
+                                    <h4 class="text-[#1447E6] pb-1 text-base font-normal">Individual Sports</h4>
+                                    <li class="text-[#4A5565] text-sm font-normal">
+                                        • Track & Field
+                                    </li>
+                                    <li class="text-[#4A5565] text-sm font-normal">
+                                        • Table Tennis
+                                    </li>
+                                    <li class="text-[#4A5565] text-sm font-normal">
+                                        • Badminton
+                                    </li>
+                                    <li class="text-[#4A5565] text-sm font-normal">
+                                        • Chess
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="grid gap-3">
+                                <div class="flex gap-3 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_2001_2296)">
+                                            <path
+                                                d="M8.33325 12.3042V13.6592C8.3301 13.9447 8.25366 14.2246 8.11124 14.4721C7.96882 14.7196 7.7652 14.9264 7.51992 15.0725C6.9992 15.4582 6.57562 15.96 6.28282 16.5381C5.99003 17.1162 5.83609 17.7545 5.83325 18.4025"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M11.6667 12.3042V13.6592C11.6699 13.9447 11.7463 14.2246 11.8888 14.4721C12.0312 14.7196 12.2348 14.9264 12.4801 15.0725C13.0008 15.4582 13.4244 15.96 13.7172 16.5381C14.01 17.1162 14.1639 17.7545 14.1667 18.4025"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M15 7.58757H16.25C16.8025 7.58757 17.3324 7.36807 17.7231 6.97737C18.1138 6.58667 18.3333 6.05677 18.3333 5.50423C18.3333 4.9517 18.1138 4.42179 17.7231 4.03109C17.3324 3.64039 16.8025 3.4209 16.25 3.4209H15"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M3.33325 18.4209H16.6666" stroke="#F0B100" stroke-width="1.66667"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M5 7.58773C5 8.91381 5.52678 10.1856 6.46447 11.1233C7.40215 12.0609 8.67392 12.5877 10 12.5877C11.3261 12.5877 12.5979 12.0609 13.5355 11.1233C14.4732 10.1856 15 8.91381 15 7.58773V2.58773C15 2.36671 14.9122 2.15475 14.7559 1.99847C14.5996 1.84219 14.3877 1.75439 14.1667 1.75439H5.83333C5.61232 1.75439 5.40036 1.84219 5.24408 1.99847C5.0878 2.15475 5 2.36671 5 2.58773V7.58773Z"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M5.00008 7.58757H3.75008C3.19755 7.58757 2.66764 7.36807 2.27694 6.97737C1.88624 6.58667 1.66675 6.05677 1.66675 5.50423C1.66675 4.9517 1.88624 4.42179 2.27694 4.03109C2.66764 3.64039 3.19755 3.4209 3.75008 3.4209H5.00008"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2001_2296">
+                                                <rect width="20" height="20" fill="white"
+                                                    transform="translate(0 0.0876465)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <p class="text-base text-[#364153] font-normal">District Cricket Champions 2024</p>
+                                </div>
+                                <div class="flex gap-3 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_2001_2296)">
+                                            <path
+                                                d="M8.33325 12.3042V13.6592C8.3301 13.9447 8.25366 14.2246 8.11124 14.4721C7.96882 14.7196 7.7652 14.9264 7.51992 15.0725C6.9992 15.4582 6.57562 15.96 6.28282 16.5381C5.99003 17.1162 5.83609 17.7545 5.83325 18.4025"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M11.6667 12.3042V13.6592C11.6699 13.9447 11.7463 14.2246 11.8888 14.4721C12.0312 14.7196 12.2348 14.9264 12.4801 15.0725C13.0008 15.4582 13.4244 15.96 13.7172 16.5381C14.01 17.1162 14.1639 17.7545 14.1667 18.4025"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M15 7.58757H16.25C16.8025 7.58757 17.3324 7.36807 17.7231 6.97737C18.1138 6.58667 18.3333 6.05677 18.3333 5.50423C18.3333 4.9517 18.1138 4.42179 17.7231 4.03109C17.3324 3.64039 16.8025 3.4209 16.25 3.4209H15"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M3.33325 18.4209H16.6666" stroke="#F0B100" stroke-width="1.66667"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M5 7.58773C5 8.91381 5.52678 10.1856 6.46447 11.1233C7.40215 12.0609 8.67392 12.5877 10 12.5877C11.3261 12.5877 12.5979 12.0609 13.5355 11.1233C14.4732 10.1856 15 8.91381 15 7.58773V2.58773C15 2.36671 14.9122 2.15475 14.7559 1.99847C14.5996 1.84219 14.3877 1.75439 14.1667 1.75439H5.83333C5.61232 1.75439 5.40036 1.84219 5.24408 1.99847C5.0878 2.15475 5 2.36671 5 2.58773V7.58773Z"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M5.00008 7.58757H3.75008C3.19755 7.58757 2.66764 7.36807 2.27694 6.97737C1.88624 6.58667 1.66675 6.05677 1.66675 5.50423C1.66675 4.9517 1.88624 4.42179 2.27694 4.03109C2.66764 3.64039 3.19755 3.4209 3.75008 3.4209H5.00008"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2001_2296">
+                                                <rect width="20" height="20" fill="white"
+                                                    transform="translate(0 0.0876465)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <p class="text-base text-[#364153] font-normal">Regional Basketball Runner-up 2024
+                                    </p>
+                                </div>
+                                <div class="flex gap-3 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_2001_2296)">
+                                            <path
+                                                d="M8.33325 12.3042V13.6592C8.3301 13.9447 8.25366 14.2246 8.11124 14.4721C7.96882 14.7196 7.7652 14.9264 7.51992 15.0725C6.9992 15.4582 6.57562 15.96 6.28282 16.5381C5.99003 17.1162 5.83609 17.7545 5.83325 18.4025"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M11.6667 12.3042V13.6592C11.6699 13.9447 11.7463 14.2246 11.8888 14.4721C12.0312 14.7196 12.2348 14.9264 12.4801 15.0725C13.0008 15.4582 13.4244 15.96 13.7172 16.5381C14.01 17.1162 14.1639 17.7545 14.1667 18.4025"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M15 7.58757H16.25C16.8025 7.58757 17.3324 7.36807 17.7231 6.97737C18.1138 6.58667 18.3333 6.05677 18.3333 5.50423C18.3333 4.9517 18.1138 4.42179 17.7231 4.03109C17.3324 3.64039 16.8025 3.4209 16.25 3.4209H15"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M3.33325 18.4209H16.6666" stroke="#F0B100" stroke-width="1.66667"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M5 7.58773C5 8.91381 5.52678 10.1856 6.46447 11.1233C7.40215 12.0609 8.67392 12.5877 10 12.5877C11.3261 12.5877 12.5979 12.0609 13.5355 11.1233C14.4732 10.1856 15 8.91381 15 7.58773V2.58773C15 2.36671 14.9122 2.15475 14.7559 1.99847C14.5996 1.84219 14.3877 1.75439 14.1667 1.75439H5.83333C5.61232 1.75439 5.40036 1.84219 5.24408 1.99847C5.0878 2.15475 5 2.36671 5 2.58773V7.58773Z"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M5.00008 7.58757H3.75008C3.19755 7.58757 2.66764 7.36807 2.27694 6.97737C1.88624 6.58667 1.66675 6.05677 1.66675 5.50423C1.66675 4.9517 1.88624 4.42179 2.27694 4.03109C2.66764 3.64039 3.19755 3.4209 3.75008 3.4209H5.00008"
+                                                stroke="#F0B100" stroke-width="1.66667" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_2001_2296">
+                                                <rect width="20" height="20" fill="white"
+                                                    transform="translate(0 0.0876465)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <p class="text-base text-[#364153] font-normal">Inter-school Athletics Medal Winners
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" flex items-center">
+                            <img src="assets/images/sports-image.jpeg" alt="sports-image"
+                                class="w-[496px] h-[256px] object-cover rounded-[10px]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="flex justify-center">
+                    <div class="max-w-[900px] grid gap-6">
+                        <h2 class="text-center text-2xl sm:text-3xl text-[#1C398E] font-normal">Community Service
+                        </h2>
+                        <p class="sm:text-lg text-base font-normal text-center text-[#4A5565]">Our students actively
+                            participate in community service projects, developing social responsibility and making
+                            positive contributions to society. Through various initiatives, we instill values of
+                            compassion, service, and civic engagement.</p>
+                    </div>
+                </div>
+                <div class="grid my-9 pb-7 justify-center">
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+                        <div class="px-6 py-6 bg-white rounded-[14px] border">
+                            <div class="grid gap-4 place-items-center">
+                                <div class="bg-[#DCFCE7] px-4 py-4 w-[64px] h-[64px] rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33"
+                                        fill="none">
+                                        <path
+                                            d="M16.325 30.2209C23.6888 30.2209 29.6584 24.2513 29.6584 16.8875C29.6584 9.52374 23.6888 3.5542 16.325 3.5542C8.96124 3.5542 2.9917 9.52374 2.9917 16.8875C2.9917 24.2513 8.96124 30.2209 16.325 30.2209Z"
+                                            stroke="#00A63E" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M16.325 3.5542C12.9013 7.14907 10.9917 11.9232 10.9917 16.8875C10.9917 21.8519 12.9013 26.626 16.325 30.2209C19.7487 26.626 21.6584 21.8519 21.6584 16.8875C21.6584 11.9232 19.7487 7.14907 16.325 3.5542Z"
+                                            stroke="#00A63E" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M2.9917 16.8875H29.6584" stroke="#00A63E" stroke-width="2.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 place-items-center">
+                                    <h2 class="text-[#1C398E] text-base font-normal">Environmental Projects</h2>
+                                    <p class="text-[#4A5565] max-w-[200px] text-center text-sm font-normal ">Tree
+                                        plantation drives and cleanliness
+                                        campaigns</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-6 bg-white rounded-[14px] border">
+                            <div class="grid gap-4 place-items-center">
+                                <div class="bg-[#F3E8FF] px-4 py-4 w-[64px] h-[64px] rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33"
+                                        fill="none">
+                                        <path d="M16.9875 10.2207V28.8874" stroke="#9810FA" stroke-width="2.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M4.98763 24.8875C4.63401 24.8875 4.29487 24.747 4.04482 24.4969C3.79477 24.2469 3.6543 23.9077 3.6543 23.5541V6.22078C3.6543 5.86716 3.79477 5.52802 4.04482 5.27798C4.29487 5.02793 4.63401 4.88745 4.98763 4.88745H11.6543C13.0688 4.88745 14.4253 5.44935 15.4255 6.44955C16.4257 7.44974 16.9876 8.8063 16.9876 10.2208C16.9876 8.8063 17.5495 7.44974 18.5497 6.44955C19.5499 5.44935 20.9065 4.88745 22.321 4.88745H28.9876C29.3413 4.88745 29.6804 5.02793 29.9304 5.27798C30.1805 5.52802 30.321 5.86716 30.321 6.22078V23.5541C30.321 23.9077 30.1805 24.2469 29.9304 24.4969C29.6804 24.747 29.3413 24.8875 28.9876 24.8875H20.9876C19.9268 24.8875 18.9093 25.3089 18.1592 26.059C17.4091 26.8092 16.9876 27.8266 16.9876 28.8875C16.9876 27.8266 16.5662 26.8092 15.8161 26.059C15.0659 25.3089 14.0485 24.8875 12.9876 24.8875H4.98763Z"
+                                            stroke="#9810FA" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 place-items-center">
+                                    <h2 class="text-[#1C398E] text-base font-normal">Literacy Programs</h2>
+                                    <p class="text-[#4A5565] max-w-[200px] text-center text-sm font-normal ">Teaching
+                                        basic literacy skills to community members</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-6 bg-white rounded-[14px] border">
+                            <div class="grid gap-4 place-items-center">
+                                <div class="bg-[#FFE2E2] px-4 py-4 w-[64px] h-[64px] rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33"
+                                        fill="none">
+                                        <path
+                                            d="M3.32935 13.5541C3.32937 12.0704 3.77947 10.6215 4.62019 9.39898C5.46091 8.17642 6.6527 7.23763 8.03816 6.70662C9.42361 6.17561 10.9376 6.07735 12.38 6.42482C13.8225 6.77228 15.1256 7.54913 16.1173 8.65276C16.1872 8.72744 16.2716 8.78698 16.3654 8.82769C16.4593 8.8684 16.5604 8.8894 16.6627 8.8894C16.7649 8.8894 16.8661 8.8684 16.9599 8.82769C17.0537 8.78698 17.1382 8.72744 17.208 8.65276C18.1966 7.54196 19.5 6.75858 20.9449 6.40689C22.3897 6.0552 23.9073 6.15189 25.2958 6.68407C26.6844 7.21625 27.8779 8.15869 28.7175 9.38596C29.5571 10.6132 30.0031 12.0671 29.996 13.5541C29.996 16.6074 27.996 18.8874 25.996 20.8874L18.6733 27.9714C18.4249 28.2568 18.1186 28.486 17.7747 28.6438C17.4309 28.8017 17.0574 28.8846 16.6791 28.8869C16.3007 28.8893 15.9262 28.8112 15.5804 28.6577C15.2346 28.5042 14.9254 28.2789 14.6733 27.9968L7.32935 20.8874C5.32935 18.8874 3.32935 16.6208 3.32935 13.5541Z"
+                                            stroke="#E7000B" stroke-width="2.66667" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 place-items-center">
+                                    <h2 class="text-[#1C398E] text-base font-normal">Social Welfare</h2>
+                                    <p class="text-[#4A5565] max-w-[200px] text-center text-sm font-normal ">Supporting
+                                        local charities and helping those in need</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class=" bg-[#101828]">
+        <div class="container">
+            <nav>
+                <div class="py-12 grid justify-center">
+                    <div class="bg-[#155DFC] px-35 w-[530px] sm:w-[869px] h-[192px]">
+                        <h2 class="sm:text-4xl text-2xl font-normal text-center text-white pb-6">Ready to Join Our
+                            School?</h2>
+                        <div class="flex justify-center">
+                            <p
+                                class="sm:text-xl text-base font-normal max-w-[450px] sm:max-w-[610px] text-center text-[#DBEAFE] pb-7">
+                                Take the first step towards
+                                excellence in
+                                education. Apply now for the upcoming academic year.</p>
+                        </div>
+                        <div class="flex justify-center">
+                            <button class="px-8 py-2 rounded-lg bg-white">
+                                <a href="/" class="text-lg font-normal text-[#155DFC]">Apply for Admission</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-16 grid grid-cols-1 sm:grid-cols-3 gap-12">
+                    <ul class="grid gap-6">
+                        <li class="flex gap-3">
+                            <a class="logo" href="\"><img src="assets/images/logo.png" alt="logo" width="56"
+                                    height="56"></a>
+                            <div>
+                                <p class="text-xl text-white font-normal">Government High School</p>
+                                <span class="text-base text-[#99A1AF] font-normal">Chaki Faiq</span>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="text-base text-[#99A1AF] font-normal">Committed to providing quality education and
+                                character
+                                development, nurturing future leaders with excellence in academics and moral values.</p>
+                        </li>
+                        <li class="grid gap-3">
+                            <a href="https://www.google.com/maps?q=Main+Road,+Chaki+Faiq,+Pakistan" target="_blank"
+                                class="flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M16.6666 8.73356C16.6666 12.8944 12.0508 17.2277 10.5008 18.5661C10.3564 18.6746 10.1806 18.7334 9.99992 18.7334C9.81925 18.7334 9.64348 18.6746 9.49909 18.5661C7.94909 17.2277 3.33325 12.8944 3.33325 8.73356C3.33325 6.96545 4.03563 5.26976 5.28587 4.01952C6.53612 2.76927 8.23181 2.06689 9.99992 2.06689C11.768 2.06689 13.4637 2.76927 14.714 4.01952C15.9642 5.26976 16.6666 6.96545 16.6666 8.73356Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M10 11.2334C11.3807 11.2334 12.5 10.1141 12.5 8.7334C12.5 7.35269 11.3807 6.2334 10 6.2334C8.61929 6.2334 7.5 7.35269 7.5 8.7334C7.5 10.1141 8.61929 11.2334 10 11.2334Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p class="text-base font-normal text-[#99A1AF]">Main Road, Chaki Faiq, Pakistan</p>
+                            </a>
+                            <a href="tel:+92-XXX-XXXXXXX" class="flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M11.5267 14.2069C11.6989 14.2859 11.8927 14.304 12.0765 14.2581C12.2602 14.2122 12.4229 14.1051 12.5376 13.9544L12.8334 13.5669C12.9887 13.3599 13.19 13.1919 13.4214 13.0762C13.6528 12.9605 13.908 12.9002 14.1667 12.9002H16.6667C17.1088 12.9002 17.5327 13.0758 17.8453 13.3884C18.1578 13.7009 18.3334 14.1249 18.3334 14.5669V17.0669C18.3334 17.5089 18.1578 17.9328 17.8453 18.2454C17.5327 18.558 17.1088 18.7336 16.6667 18.7336C12.6885 18.7336 8.87319 17.1532 6.06015 14.3402C3.2471 11.5271 1.66675 7.71181 1.66675 3.73356C1.66675 3.29153 1.84234 2.86761 2.1549 2.55505C2.46746 2.24249 2.89139 2.06689 3.33341 2.06689H5.83341C6.27544 2.06689 6.69936 2.24249 7.01193 2.55505C7.32449 2.86761 7.50008 3.29153 7.50008 3.73356V6.23356C7.50008 6.4923 7.43984 6.74749 7.32413 6.97892C7.20841 7.21034 7.04041 7.41165 6.83341 7.56689L6.44341 7.85939C6.29043 7.97621 6.1826 8.14238 6.13824 8.32969C6.09388 8.51699 6.11573 8.71387 6.20008 8.88689C7.33898 11.2001 9.2121 13.0709 11.5267 14.2069Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p class="text-base font-normal text-[#99A1AF]">+92-XXX-XXXXXXX</p>
+                            </a>
+                            <a href="mailto:info@ghschakifaiq.edu.pk" class="flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M18.3334 6.2334L10.8409 11.0059C10.5867 11.1536 10.2979 11.2314 10.0038 11.2314C9.7098 11.2314 9.421 11.1536 9.16675 11.0059L1.66675 6.2334"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M16.6667 3.7334H3.33341C2.41294 3.7334 1.66675 4.47959 1.66675 5.40007V15.4001C1.66675 16.3205 2.41294 17.0667 3.33341 17.0667H16.6667C17.5872 17.0667 18.3334 16.3205 18.3334 15.4001V5.40007C18.3334 4.47959 17.5872 3.7334 16.6667 3.7334Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p class="text-base font-normal text-[#99A1AF]">info@ghschakifaiq.edu.pk</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div>
+                        <h3 class="text-xl font-normal text-white pb-6">Quick Links</h3>
+                        <ul class="grid gap-3">
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">About Us</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Academics</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Admissions</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Faculty</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Gallery</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-normal text-white pb-6">School Hours</h3>
+                        <ul class="grid gap-4">
+                            <li class="grid gap-1">
+                                <h4 class="text-base font-normal text-white">Morning Session (Classes 6-8)</h4>
+                                <time class="text-base text-[#99A1AF] font-normal">8:00 AM - 12:15 PM</time>
+                            </li>
+                            <li class="grid gap-1">
+                                <h4 class="text-base font-normal text-white">Afternoon Session (Classes 9-10)</h4>
+                                <time class="text-base text-[#99A1AF] font-normal">1:00 PM - 5:15 PM</time>
+                            </li>
+                            <li class="grid gap-1">
+                                <h4 class="text-base font-normal text-white">Office Hours</h4>
+                                <time class="text-base text-[#99A1AF] font-normal">Monday - Friday: 8:00 AM - 3:00
+                                    PM</time>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="py-8 flex flex-col gap-6 sm:flex-row justify-between"
+                    style="border-top: 0.8px solid #1E2939;">
+                    <p class="text-sm text-[#99A1AF] font-normal">© 2024 Government High School Chaki Faiq. All rights
+                        reserved.
+                    </p>
+                    <span class="text-sm text-[#99A1AF] font-normal">Established 1999 • 25+ Years of Excellence</span>
+                </div>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>

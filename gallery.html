@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Chakki Faiq</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        dropdownButtons.forEach(btn => {
+            const dropdown = btn.nextElementSibling;
+            const arrow = btn.querySelector('svg');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-180');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+            document.querySelectorAll('.dropdown-btn svg').forEach(a => a.classList.remove('rotate-180'));
+        });
+    });
+</script>
+
+<body>
+    <header class="py-4 sticky top-0 bg-white shadow z-50">
+        <div class="container">
+            <nav class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <a href="/">
+                        <img src="assets/images/logo.png" alt="logo" width="56" height="56">
+                    </a>
+                    <div>
+                        <p class="text-2xl text-[#101828] font-normal">Government High School</p>
+                        <span class="text-sm text-[#155DFC] font-normal">Chaki Faiq</span>
+                    </div>
+                </div>
+
+                <button id="nav-toggle" class="block md:hidden text-[#155DFC] focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <ul id="nav-menu"
+                    class="hidden flex-col md:flex md:flex-row md:items-center gap-4 md:gap-8 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none p-5 md:p-0 transition-all duration-300">
+                    <li>
+                        <a href="/"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Home</a>
+                    </li>
+
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            About
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</a>
+                            <a href="faculity.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Faculty</a>
+                            <a href="achievements.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Achievements</a>
+                            <a href="student.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Student
+                                Life</a>
+                        </div>
+                    </li>
+
+                    <li class="relative">
+                        <button type="button"
+                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
+                            Academics
+                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <a href="academic.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Curriculum</a>
+                            <a href="download.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Downloads</a>
+                            <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Gallery</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="admission.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Admissions</a>
+                    </li>
+                    <li>
+                        <a href="contact-us.html"
+                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/"
+                            class="px-6 py-2 rounded-lg bg-[#155DFC] text-white text-sm font-normal inline-block hover:bg-[#0D4ED8]">Apply
+                            Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="my-16">
+            <div class=" container">
+                <div class="flex justify-center">
+                    <div class="max-w-[780px] grid gap-6">
+                        <h2 class="text-center text-4xl sm:text-6xl text-[#1C398E] font-normal">Gallery
+                        </h2>
+                        <p class="sm:text-xl text-base font-normal text-center text-[#4A5565]">Explore the vibrant life
+                            at Government High School Chaki Faiq through our collection of photos and videos showcasing
+                            academic achievements, events, and daily activities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class=" container">
+                <div class="pb-16">
+                    <ul
+                        class="flex flex-wrap flex-row w-auto items-center sm:justify-center gap-8 sm:gap-3 mb-4 sm:mb-10">
+                        <li><button
+                                class="open-card-btn bg-white flex items-center gap-4 text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="all"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                    viewBox="0 0 17 17" fill="none">
+                                    <path
+                                        d="M9.95601 3.46667C10.1965 3.46667 10.4326 3.53173 10.6391 3.65497C10.8457 3.7782 11.0151 3.95501 11.1293 4.16667L11.4533 4.76667C11.5676 4.97834 11.737 5.15515 11.9435 5.27838C12.1501 5.40162 12.3861 5.46668 12.6267 5.46667H13.958C14.3116 5.46667 14.6508 5.60715 14.9008 5.8572C15.1509 6.10725 15.2913 6.44639 15.2913 6.80001V12.8C15.2913 13.1536 15.1509 13.4928 14.9008 13.7428C14.6508 13.9929 14.3116 14.1333 13.958 14.1333H3.29134C2.93772 14.1333 2.59858 13.9929 2.34853 13.7428C2.09848 13.4928 1.95801 13.1536 1.95801 12.8V6.80001C1.95801 6.44639 2.09848 6.10725 2.34853 5.8572C2.59858 5.60715 2.93772 5.46667 3.29134 5.46667H4.62267C4.86296 5.46669 5.09877 5.40177 5.30519 5.27879C5.51162 5.1558 5.68097 4.97932 5.79534 4.76801L6.12134 4.16534C6.23571 3.95403 6.40507 3.77755 6.61149 3.65456C6.81791 3.53158 7.05373 3.46666 7.29401 3.46667H9.95601Z"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M8.625 11.4667C9.72957 11.4667 10.625 10.5712 10.625 9.46667C10.625 8.36211 9.72957 7.46667 8.625 7.46667C7.52043 7.46667 6.625 8.36211 6.625 9.46667C6.625 10.5712 7.52043 11.4667 8.625 11.4667Z"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                All Media</button></li>
+                        <li><button
+                                class="open-card-btn flex items-center gap-4 bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="academic"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                    viewBox="0 0 17 17" fill="none">
+                                    <g clip-path="url(#clip0_2001_5178)">
+                                        <path d="M8.77441 5.46667V14.8" stroke="#0A0A0A" stroke-width="1.33333"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M2.77409 12.8C2.59728 12.8 2.42771 12.7298 2.30268 12.6048C2.17766 12.4797 2.10742 12.3102 2.10742 12.1334V3.46668C2.10742 3.28987 2.17766 3.1203 2.30268 2.99528C2.42771 2.87026 2.59728 2.80002 2.77409 2.80002H6.10742C6.81467 2.80002 7.49294 3.08097 7.99304 3.58107C8.49314 4.08116 8.77409 4.75944 8.77409 5.46669C8.77409 4.75944 9.05504 4.08116 9.55514 3.58107C10.0552 3.08097 10.7335 2.80002 11.4408 2.80002H14.7741C14.9509 2.80002 15.1205 2.87026 15.2455 2.99528C15.3705 3.1203 15.4408 3.28987 15.4408 3.46668V12.1334C15.4408 12.3102 15.3705 12.4797 15.2455 12.6048C15.1205 12.7298 14.9509 12.8 14.7741 12.8H10.7741C10.2437 12.8 9.73495 13.0107 9.35987 13.3858C8.9848 13.7609 8.77409 14.2696 8.77409 14.8C8.77409 14.2696 8.56337 13.7609 8.1883 13.3858C7.81323 13.0107 7.30452 12.8 6.77409 12.8H2.77409Z"
+                                            stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_2001_5178">
+                                            <rect width="16" height="16" fill="white"
+                                                transform="translate(0.774414 0.800018)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                Academic</button></li>
+                        <li><button
+                                class="open-card-btn flex items-center gap-4 bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="sports">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_2001_5184)">
+                                        <path
+                                            d="M6.85449 10.5734V11.6574C6.85197 11.8858 6.79082 12.1097 6.67688 12.3077C6.56294 12.5057 6.40005 12.6711 6.20383 12.788C5.78725 13.0966 5.44839 13.498 5.21415 13.9605C4.97991 14.4229 4.85677 14.9336 4.85449 15.452"
+                                            stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M9.52051 10.5734V11.6574C9.52303 11.8858 9.58418 12.1097 9.69812 12.3077C9.81206 12.5057 9.97495 12.6711 10.1712 12.788C10.5877 13.0966 10.9266 13.498 11.1609 13.9605C11.3951 14.4229 11.5182 14.9336 11.5205 15.452"
+                                            stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12.1875 6.80001H13.1875C13.6295 6.80001 14.0535 6.62441 14.366 6.31185C14.6786 5.99929 14.8542 5.57537 14.8542 5.13334C14.8542 4.69131 14.6786 4.26739 14.366 3.95483C14.0535 3.64227 13.6295 3.46667 13.1875 3.46667H12.1875"
+                                            stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M2.85449 15.4667H13.5212" stroke="#0A0A0A" stroke-width="1.33333"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M4.1875 6.80003C4.1875 7.86089 4.60893 8.87831 5.35907 9.62846C6.10922 10.3786 7.12663 10.8 8.1875 10.8C9.24837 10.8 10.2658 10.3786 11.0159 9.62846C11.7661 8.87831 12.1875 7.86089 12.1875 6.80003V2.80003C12.1875 2.62322 12.1173 2.45365 11.9922 2.32862C11.8672 2.2036 11.6976 2.13336 11.5208 2.13336H4.85417C4.67736 2.13336 4.50779 2.2036 4.38276 2.32862C4.25774 2.45365 4.1875 2.62322 4.1875 2.80003V6.80003Z"
+                                            stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M4.18717 6.80001H3.18717C2.74515 6.80001 2.32122 6.62441 2.00866 6.31185C1.6961 5.99929 1.52051 5.57537 1.52051 5.13334C1.52051 4.69131 1.6961 4.26739 2.00866 3.95483C2.32122 3.64227 2.74515 3.46667 3.18717 3.46667H4.18717"
+                                            stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_2001_5184">
+                                            <rect width="16" height="16" fill="white"
+                                                transform="translate(0.1875 0.800018)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                Sports</button></li>
+                        <li><button
+                                class="open-card-btn flex items-center gap-4 bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="events">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_2001_5194)">
+                                        <path d="M6.2207 2.13336V4.80003" stroke="#0A0A0A" stroke-width="1.33333"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M11.5547 2.13336V4.80003" stroke="#0A0A0A" stroke-width="1.33333"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M13.5544 3.46667H4.22103C3.48465 3.46667 2.8877 4.06363 2.8877 4.80001V14.1333C2.8877 14.8697 3.48465 15.4667 4.22103 15.4667H13.5544C14.2907 15.4667 14.8877 14.8697 14.8877 14.1333V4.80001C14.8877 4.06363 14.2907 3.46667 13.5544 3.46667Z"
+                                            stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M2.8877 7.46667H14.8877" stroke="#0A0A0A" stroke-width="1.33333"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_2001_5194">
+                                            <rect width="16" height="16" fill="white"
+                                                transform="translate(0.887695 0.800018)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                Events</button></li>
+                        <li><button
+                                class="open-card-btn flex items-center gap-4 bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="facilities">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                    fill="none">
+                                    <path
+                                        d="M11.1038 14.8V13.4667C11.1038 12.7594 10.8229 12.0812 10.3228 11.5811C9.8227 11.081 9.14442 10.8 8.43717 10.8H4.43717C3.72993 10.8 3.05165 11.081 2.55156 11.5811C2.05146 12.0812 1.77051 12.7594 1.77051 13.4667V14.8"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M11.1045 2.88535C11.6763 3.03359 12.1828 3.36752 12.5443 3.83472C12.9058 4.30192 13.102 4.87594 13.102 5.46668C13.102 6.05742 12.9058 6.63144 12.5443 7.09864C12.1828 7.56584 11.6763 7.89977 11.1045 8.04801"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M15.1045 14.8V13.4667C15.1041 12.8758 14.9074 12.3019 14.5454 11.8349C14.1834 11.3679 13.6766 11.0344 13.1045 10.8867"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M6.43717 8.13335C7.90993 8.13335 9.10384 6.93944 9.10384 5.46669C9.10384 3.99393 7.90993 2.80002 6.43717 2.80002C4.96442 2.80002 3.77051 3.99393 3.77051 5.46669C3.77051 6.93944 4.96442 8.13335 6.43717 8.13335Z"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                Facilities</button></li>
+                        <li><button
+                                class="open-card-btn flex items-center gap-4 bg-white text-[#0A0A0A] border border-gray-300 py-2 px-5 rounded-xl"
+                                data-target="videos">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                    fill="none">
+                                    <path
+                                        d="M11.3291 9.46669L14.8111 11.788C14.8613 11.8214 14.9196 11.8406 14.9798 11.8435C15.0401 11.8463 15.0999 11.8328 15.1531 11.8044C15.2063 11.7759 15.2507 11.7336 15.2817 11.6819C15.3127 11.6301 15.3291 11.571 15.3291 11.5107V6.04669C15.3291 5.98804 15.3137 5.93042 15.2843 5.87965C15.2549 5.82889 15.2127 5.78677 15.1618 5.75755C15.111 5.72834 15.0533 5.71306 14.9946 5.71326C14.936 5.71346 14.8784 5.72913 14.8278 5.75869L11.3291 7.80002"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M9.99512 4.80002H3.32845C2.59207 4.80002 1.99512 5.39697 1.99512 6.13335V11.4667C1.99512 12.2031 2.59207 12.8 3.32845 12.8H9.99512C10.7315 12.8 11.3285 12.2031 11.3285 11.4667V6.13335C11.3285 5.39697 10.7315 4.80002 9.99512 4.80002Z"
+                                        stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                Videos</button></li>
+                    </ul>
+                    <div>
+                        <div class="grid grid-cols-2 gap-12 sm:gap-6 py-10 sm:py-20 sm:grid-cols-4">
+                            <div class="grid place-items-center gap-4">
+                                <div
+                                    class="px-3 py-3 bg-[#DBEAFE] grid justify-center items-center rounded-full h-[64px] w-[64px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                                        fill="none">
+                                        <path
+                                            d="M13.997 4.79999C14.3578 4.79998 14.7119 4.89757 15.0217 5.08242C15.3316 5.26727 15.5856 5.5325 15.757 5.84999L16.243 6.74999C16.4144 7.06748 16.6684 7.3327 16.9783 7.51755C17.2881 7.7024 17.6422 7.79999 18.003 7.79999H20C20.5304 7.79999 21.0391 8.0107 21.4142 8.38577C21.7893 8.76085 22 9.26955 22 9.79999V18.8C22 19.3304 21.7893 19.8391 21.4142 20.2142C21.0391 20.5893 20.5304 20.8 20 20.8H4C3.46957 20.8 2.96086 20.5893 2.58579 20.2142C2.21071 19.8391 2 19.3304 2 18.8V9.79999C2 9.26955 2.21071 8.76085 2.58579 8.38577C2.96086 8.0107 3.46957 7.79999 4 7.79999H5.997C6.35742 7.80001 6.71115 7.70263 7.02078 7.51815C7.33041 7.33368 7.58444 7.06896 7.756 6.75199L8.245 5.84799C8.41656 5.53102 8.67059 5.2663 8.98022 5.08182C9.28985 4.89735 9.64358 4.79997 10.004 4.79999H13.997Z"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12 16.8C13.6569 16.8 15 15.4568 15 13.8C15 12.1431 13.6569 10.8 12 10.8C10.3431 10.8 9 12.1431 9 13.8C9 15.4568 10.3431 16.8 12 16.8Z"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 text-center">
+                                    <h3 class="text-2xl font-normal text-[#1C398E]">150+</h3>
+                                    <p class="text-base font-normal text-[#4A5565]">photos</p>
+                                </div>
+                            </div>
+                            <div class="grid place-items-center gap-4">
+                                <div
+                                    class="px-3 py-3 bg-[#DBEAFE] grid justify-center items-center rounded-full h-[64px] w-[64px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                                        fill="none">
+                                        <path
+                                            d="M16 13.8L21.223 17.282C21.2983 17.3321 21.3858 17.3608 21.4761 17.3651C21.5664 17.3695 21.6563 17.3492 21.736 17.3065C21.8157 17.2638 21.8824 17.2003 21.9289 17.1227C21.9754 17.0452 22 16.9564 22 16.866V8.66998C22 8.582 21.9768 8.49558 21.9328 8.41943C21.8887 8.34328 21.8253 8.2801 21.7491 8.23628C21.6728 8.19245 21.5863 8.16953 21.4983 8.16983C21.4103 8.17013 21.324 8.19364 21.248 8.23798L16 11.3"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M14 6.79999H4C2.89543 6.79999 2 7.69542 2 8.79999V16.8C2 17.9046 2.89543 18.8 4 18.8H14C15.1046 18.8 16 17.9046 16 16.8V8.79999C16 7.69542 15.1046 6.79999 14 6.79999Z"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 text-center">
+                                    <span class="text-2xl font-normal text-[#1C398E]">25+</span>
+                                    <p class="text-base font-normal text-[#4A5565]">Videos</p>
+                                </div>
+                            </div>
+                            <div class="grid place-items-center gap-4">
+                                <div
+                                    class="px-3 py-3 grid justify-center items-center bg-[#DBEAFE] rounded-full h-[64px] w-[64px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                                        fill="none">
+                                        <path d="M8 2.79999V6.79999" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M16 2.79999V6.79999" stroke="#155DFC" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M19 4.79999H5C3.89543 4.79999 3 5.69542 3 6.79999V20.8C3 21.9046 3.89543 22.8 5 22.8H19C20.1046 22.8 21 21.9046 21 20.8V6.79999C21 5.69542 20.1046 4.79999 19 4.79999Z"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M3 10.8H21" stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 text-center">
+                                    <span class="text-2xl font-normal text-[#1C398E]">50+</span>
+                                    <p class="text-base font-normal text-[#4A5565]">Events</p>
+                                </div>
+                            </div>
+                            <div class="grid place-items-center gap-4">
+                                <div
+                                    class="px-3 grid justify-center items-center py-3 bg-[#DBEAFE] rounded-full h-[64px] w-[64px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                                        fill="none">
+                                        <path
+                                            d="M10 15.46V17.086C9.99622 17.4286 9.90448 17.7645 9.73358 18.0615C9.56268 18.3585 9.31834 18.6066 9.024 18.782C8.39914 19.2448 7.89084 19.847 7.53948 20.5407C7.18813 21.2343 7.00341 22.0004 7 22.778"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M14 15.46V17.086C14.0038 17.4286 14.0955 17.7645 14.2664 18.0615C14.4373 18.3585 14.6817 18.6066 14.976 18.782C15.6009 19.2448 16.1092 19.847 16.4605 20.5407C16.8119 21.2343 16.9966 22.0004 17 22.778"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M18 9.79999H19.5C20.163 9.79999 20.7989 9.5366 21.2678 9.06775C21.7366 8.59891 22 7.96303 22 7.29999C22 6.63695 21.7366 6.00106 21.2678 5.53222C20.7989 5.06338 20.163 4.79999 19.5 4.79999H18"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M4 22.8H20" stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M6 9.79999C6 11.3913 6.63214 12.9174 7.75736 14.0426C8.88258 15.1678 10.4087 15.8 12 15.8C13.5913 15.8 15.1174 15.1678 16.2426 14.0426C17.3679 12.9174 18 11.3913 18 9.79999V3.79999C18 3.53477 17.8946 3.28042 17.7071 3.09288C17.5196 2.90534 17.2652 2.79999 17 2.79999H7C6.73478 2.79999 6.48043 2.90534 6.29289 3.09288C6.10536 3.28042 6 3.53477 6 3.79999V9.79999Z"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M6 9.79999H4.5C3.83696 9.79999 3.20107 9.5366 2.73223 9.06775C2.26339 8.59891 2 7.96303 2 7.29999C2 6.63695 2.26339 6.00106 2.73223 5.53222C3.20107 5.06338 3.83696 4.79999 4.5 4.79999H6"
+                                            stroke="#155DFC" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="grid gap-2 text-center">
+                                    <span class="text-2xl font-normal text-[#1C398E]">20+</span>
+                                    <p class="text-base font-normal text-[#4A5565]">Awards</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="card-container" class="grid sm:grid-cols-3 grid-cols-1  gap-8">
+                            <div data-category="facilities"
+                                class="card cursor-pointer flex flex-col gap-6 bg-white rounded-[14px]  transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);" data-category="Admin">
+                                <div class="relative ">
+                                    <img src="assets/images/gallery.jpeg" alt="Classroom"
+                                        class="w-full h-[192px] object-cover rounded-t-[14px]">
+                                    <span
+                                        class="absolute top-3 left-3 bg-[#FFF] text-[#1C398E] text-xs font-medium px-3 py-1 rounded-full">
+                                        Facilities
+                                    </span>
+                                </div>
+                                <div class="px-5 py-5 grid gap-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">Science Laboratory</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal pb-1">
+                                        Modern chemistry lab with latest equipment
+                                    </p>
+                                    <span class="text-[#6A7282] text-xs pb-5">15/02/2024</span>
+                                </div>
+                            </div>
+                            <div data-category="academic"
+                                class="card flex flex-col gap-6 bg-white rounded-xl  border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);" data-category="Admin">
+                                <div class="relative">
+                                    <img src="assets/images/why.jpeg" alt="Classroom"
+                                        class="w-full h-[192px] object-cover rounded-t-[14px]">
+                                    <span
+                                        class="absolute top-3 left-3 bg-[#FFF] text-[#1C398E] text-xs font-medium px-3 py-1 rounded-full">
+                                        Academic
+                                    </span>
+                                </div>
+                                <div class="px-5 py-5  grid gap-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">Classroom Learning</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal pb-1">
+                                        Students engaged in interactive learning session
+                                    </p>
+                                    <span class="text-[#6A7282] text-xs pb-5">2/10/2024</span>
+                                </div>
+                            </div>
+                            <div data-category="facilities"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="relative">
+                                    <img src="assets/images/library.jpeg" alt="Classroom"
+                                        class="w-full h-[192px] object-cover rounded-t-[14px]">
+                                    <span
+                                        class="absolute top-3 left-3 bg-[#FFF] text-[#1C398E] text-xs font-medium px-3 py-1 rounded-full">
+                                        Facilities
+                                    </span>
+                                </div>
+                                <div class="px-5 py-5  grid gap-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">School Library</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal pb-1">
+                                        Quiet study environment with extensive book collection
+                                    </p>
+                                    <span class="text-[#6A7282] text-xs pb-5">20/01/2024</span>
+                                </div>
+                            </div>
+                            <div data-category="sports"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="relative">
+                                    <img src="assets/images/sports-image.jpeg" alt="Classroom"
+                                        class="w-full h-[192px] object-cover rounded-t-[14px]">
+                                    <span
+                                        class="absolute top-3 left-3 bg-[#FFF] text-[#1C398E] text-xs font-medium px-3 py-1 rounded-full">
+                                        Sports
+                                    </span>
+                                </div>
+                                <div class="px-5 py-5  grid gap-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">Sports Ground</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal pb-1">
+                                        Students playing cricket during sports period
+                                    </p>
+                                    <span class="text-[#6A7282] text-xs pb-5">05/02/2024</span>
+                                </div>
+                            </div>
+                            <div data-category="videos"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="relative">
+                                    <img src="assets/images/about.jpeg" alt="Classroom"
+                                        class="w-full h-[192px] object-cover rounded-t-[14px]">
+                                    <span
+                                        class="absolute top-3 left-3 bg-[#FFF] text-[#1C398E] text-xs font-medium px-3 py-1 rounded-full">
+                                        Facilities
+                                    </span>
+                                </div>
+                                <div class="px-5 py-5  grid gap-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">School Building</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal pb-1">
+                                        Main school building exterior view
+                                    </p>
+                                    <span class="text-[#6A7282] text-xs pb-5">15/01/2024</span>
+                                </div>
+                            </div>
+                            <div data-category="events"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="relative">
+                                    <img src="assets/images/why.jpeg" alt="Classroom"
+                                        class="w-full h-[192px] object-cover rounded-t-[14px]">
+                                    <span
+                                        class="absolute top-3 left-3 bg-[#FFF] text-[#1C398E] text-xs font-medium px-3 py-1 rounded-full">
+                                        Events
+                                    </span>
+                                </div>
+                                <div class="px-5 py-5  grid gap-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">Classroom Learning</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal pb-1">
+                                        Students engaged in interactive learning session
+                                    </p>
+                                    <span class="text-[#6A7282] text-xs pb-5">2/10/2024</span>
+                                </div>
+                            </div>
+
+                            <!-- <div data-category="paper"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 transform transition-all duration-300 hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+
+                                
+                                <div class="relative group">
+                                    <video id="mainVideo" class="w-full h-[192px] object-cover rounded-t-xl"
+                                        controlslist="nodownload">
+                                        <source src="assets/images/video.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+
+                        
+                                    <button id="playBtn"
+                                        class="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/50 transition rounded-t-xl">
+                                        <div id="iconWrapper"
+                                            class="bg-white w-12 h-12 rounded-full flex items-center justify-center shadow-md">
+                                            
+                                            <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" fill="#1C398E"
+                                                viewBox="0 0 24 24" class="w-6 h-6">
+                                                <path d="M8 5v14l11-7z" />
+                                            </svg>
+                                    
+                                            <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" fill="#1C398E"
+                                                viewBox="0 0 24 24" class="w-6 h-6 hidden">
+                                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+
+                            
+                                <div id="progressContainer" class="px-5 pb-4 space-y-3 hidden">
+                                    <div class="flex justify-between text-xs text-[#6A7282]">
+                                        <span id="currentTime">0:00</span>
+                                        <span id="totalTime">--:--</span>
+                                    </div>
+
+                                    
+                                    <div class="w-full bg-gray-200 h-1 rounded-full overflow-hidden">
+                                        <div id="progressBar" class="bg-[#1C398E] h-full w-0"></div>
+                                    </div>
+                                </div>
+
+                        
+                                <div class="px-5 pb-5 space-y-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">Prize Distribution Ceremony</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal">
+                                        Recognizing outstanding student achievements
+                                    </p>
+
+                                    <div class="flex items-center justify-between text-xs text-[#6A7282]">
+                                        <span>2/20/2024</span>
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 10.5V6.75A2.25 2.25 0 0013.5 4.5h-9A2.25 2.25 0 002.25 6.75v10.5A2.25 2.25 0 004.5 19.5h9a2.25 2.25 0 002.25-2.25V13.5m3.75-3 3 3m0 0l-3 3m3-3H9" />
+                                            </svg>
+                                            Video
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                const video = document.getElementById("mainVideo");
+                                const playBtn = document.getElementById("playBtn");
+                                const playIcon = document.getElementById("playIcon");
+                                const pauseIcon = document.getElementById("pauseIcon");
+                                const progressContainer = document.getElementById("progressContainer");
+                                const progressBar = document.getElementById("progressBar");
+                                const currentTime = document.getElementById("currentTime");
+                                const totalTime = document.getElementById("totalTime");
+
+                                let isPlaying = false;
+                                let updateInterval;
+
+                                video.muted = false; 
+
+                                video.addEventListener("loadedmetadata", () => {
+                                    const totalSec = Math.floor(video.duration);
+                                    const min = Math.floor(totalSec / 60);
+                                    const sec = totalSec % 60;
+                                    totalTime.textContent = `${min}:${sec.toString().padStart(2, "0")}`;
+                                });
+
+                                function startProgress() {
+                                    progressContainer.classList.remove("hidden");
+                                    updateInterval = setInterval(() => {
+                                        const percent = (video.currentTime / video.duration) * 100;
+                                        progressBar.style.width = `${percent}%`;
+
+                                        const curSec = Math.floor(video.currentTime);
+                                        const min = Math.floor(curSec / 60);
+                                        const sec = curSec % 60;
+                                        currentTime.textContent = `${min}:${sec.toString().padStart(2, "0")}`;
+                                    }, 200);
+                                }
+
+                                function stopProgress() {
+                                    clearInterval(updateInterval);
+                                }
+
+                                playBtn.addEventListener("click", () => {
+                                    if (isPlaying) {
+                                        video.pause();
+                                        playIcon.classList.remove("hidden");
+                                        pauseIcon.classList.add("hidden");
+                                        stopProgress();
+                                    } else {
+                                        video.play();
+                                        playIcon.classList.add("hidden");
+                                        pauseIcon.classList.remove("hidden");
+                                        startProgress();
+                                    }
+                                    isPlaying = !isPlaying;
+                                });
+
+                                video.addEventListener("ended", () => {
+                                    isPlaying = false;
+                                    playIcon.classList.remove("hidden");
+                                    pauseIcon.classList.add("hidden");
+                                    progressBar.style.width = "0%";
+                                    currentTime.textContent = "0:00";
+                                    stopProgress();
+                                    progressContainer.classList.add("hidden"); 
+                                });
+                            </script> -->
+
+                            <div data-category="events"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="relative">
+                                    <img src="assets/images/gallery.jpeg" alt="Classroom"
+                                        class="w-full h-[192px] object-cover rounded-t-[14px]">
+                                    <span
+                                        class="absolute top-3 left-3 bg-[#FFF] text-[#1C398E] text-xs font-medium px-3 py-1 rounded-full">
+                                        Events
+                                    </span>
+                                </div>
+                                <div class="px-5 py-5  grid gap-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">Science Fair 2024</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal pb-1">
+                                        Students presenting their innovative science projects
+                                    </p>
+                                    <span class="text-[#6A7282] text-xs pb-5">30/01/2024</span>
+                                </div>
+                            </div>
+
+                            <div data-category="sports"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="relative">
+                                    <img src="assets/images/sports-image.jpeg" alt="Classroom"
+                                        class="w-full h-[192px] object-cover rounded-t-[14px]">
+                                    <span
+                                        class="absolute top-3 left-3 bg-[#FFF] text-[#1C398E] text-xs font-medium px-3 py-1 rounded-full">
+                                        Sports
+                                    </span>
+                                </div>
+                                <div class="px-5 py-5  grid gap-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">Sports Ground</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal pb-1">
+                                        Students playing cricket during sports period
+                                    </p>
+                                    <span class="text-[#6A7282] text-xs pb-5">05/02/2024</span>
+                                </div>
+                            </div>
+                            <div data-category="sports"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="relative">
+                                    <img src="assets/images/sports-image.jpeg" alt="Classroom"
+                                        class="w-full h-[192px] object-cover rounded-t-[14px]">
+                                    <span
+                                        class="absolute top-3 left-3 bg-[#FFF] text-[#1C398E] text-xs font-medium px-3 py-1 rounded-full">
+                                        Sports
+                                    </span>
+                                </div>
+                                <div class="px-5 py-5  grid gap-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">Inter-School Tournament</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal pb-1">
+                                        Our basketball team competing in district championship
+                                    </p>
+                                    <span class="text-[#6A7282] text-xs pb-5">12/02/2024</span>
+                                </div>
+                            </div>
+                            <div data-category="events"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);">
+                                <div class="relative">
+                                    <img src="assets/images/why.jpeg" alt="Classroom"
+                                        class="w-full h-[192px] object-cover rounded-t-[14px]">
+                                    <span
+                                        class="absolute top-3 left-3 bg-[#FFF] text-[#1C398E] text-xs font-medium px-3 py-1 rounded-full">
+                                        Events
+                                    </span>
+                                </div>
+                                <div class="px-5 py-5  grid gap-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">Parent-Teacher Meeting</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal pb-1">
+                                        Parents and teachers discussing student progress
+                                    </p>
+                                    <span class="text-[#6A7282] text-xs pb-5">18/02/2024</span>
+                                </div>
+                            </div>
+                            <div data-category="academic"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);" data-category="Admin">
+                                <div class="relative">
+                                    <img src="assets/images/why.jpeg" alt="Classroom"
+                                        class="w-full h-[192px] object-cover rounded-t-[14px]">
+                                    <span
+                                        class="absolute top-3 left-3 bg-[#FFF] text-[#1C398E] text-xs font-medium px-3 py-1 rounded-full">
+                                        Academic
+                                    </span>
+                                </div>
+                                <div class="px-5 py-5  grid gap-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">Parent-Teacher Meeting</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal pb-1">
+                                        Parents and teachers discussing student progress
+                                    </p>
+                                    <span class="text-[#6A7282] text-xs pb-5">18/02/2024</span>
+                                </div>
+                            </div>
+                            <div data-category="academic"
+                                class="card flex flex-col gap-6 bg-white rounded-xl border border-black/10 transform transition-all duration-300 hover:-translate-y hover:shadow-lg"
+                                style="border: 0.8px solid rgba(0, 0, 0, 0.10);" data-category="Admin">
+                                <div class="relative">
+                                    <img src="assets/images/why.jpeg" alt="Classroom"
+                                        class="w-full h-[192px] object-cover rounded-t-[14px]">
+                                    <span
+                                        class="absolute top-3 left-3 bg-[#FFF] text-[#1C398E] text-xs font-medium px-3 py-1 rounded-full">
+                                        Academic
+                                    </span>
+                                </div>
+                                <div class="px-5 py-5  grid gap-2">
+                                    <h3 class="text-[#1C398E] text-base font-semibold">Parent-Teacher Meeting</h3>
+                                    <p class="text-[#4A5565] text-sm font-normal pb-1">
+                                        Parents and teachers discussing student progress
+                                    </p>
+                                    <span class="text-[#6A7282] text-xs pb-5">18/02/2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const buttons = document.querySelectorAll(".open-card-btn");
+                        const cards = document.querySelectorAll(".card");
+
+                        buttons.forEach(button => {
+
+                            button.addEventListener("mouseenter", () => {
+                                if (!button.classList.contains("active")) {
+                                    button.classList.add("bg-gray-100");
+                                }
+                            });
+
+                            button.addEventListener("mouseleave", () => {
+                                if (!button.classList.contains("active")) {
+                                    button.classList.remove("bg-gray-100");
+                                }
+                            });
+
+                            button.addEventListener("click", () => {
+                                const target = button.dataset.target;
+
+                                buttons.forEach(btn => {
+                                    btn.classList.remove("bg-blue-600", "text-white", "active", "bg-gray-100");
+                                    btn.classList.add("bg-white", "text-black");
+                                });
+
+                                button.classList.remove("bg-white", "text-black", "bg-gray-100");
+                                button.classList.add("bg-blue-600", "text-white", "active");
+
+                                cards.forEach(card => {
+                                    const category = card.dataset.category;
+                                    if (target === "all" || category === target) {
+                                        card.classList.remove("hidden");
+                                    } else {
+                                        card.classList.add("hidden");
+                                    }
+                                });
+                            });
+                        });
+                    });
+                </script>
+        </section>
+    </main>
+    <footer class=" bg-[#101828]">
+        <div class="container">
+            <nav>
+                <div class="py-12 grid justify-center">
+                    <div class="bg-[#155DFC] px-35 w-[530px] sm:w-[869px] h-[192px]">
+                        <h2 class="sm:text-4xl text-2xl font-normal text-center text-white pb-6">Ready to Join Our
+                            School?</h2>
+                        <div class="flex justify-center">
+                            <p
+                                class="sm:text-xl text-base font-normal max-w-[450px] sm:max-w-[610px] text-center text-[#DBEAFE] pb-7">
+                                Take the first step towards
+                                excellence in
+                                education. Apply now for the upcoming academic year.</p>
+                        </div>
+                        <div class="flex justify-center">
+                            <button class="px-8 py-2 rounded-lg bg-white">
+                                <a href="/" class="text-lg font-normal text-[#155DFC]">Apply for Admission</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-16 grid grid-cols-1 sm:grid-cols-3 gap-12">
+                    <ul class="grid gap-6">
+                        <li class="flex gap-3">
+                            <a class="logo" href="\"><img src="assets/images/logo.png" alt="logo" width="56"
+                                    height="56"></a>
+                            <div>
+                                <p class="text-xl text-white font-normal">Government High School</p>
+                                <span class="text-base text-[#99A1AF] font-normal">Chaki Faiq</span>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="text-base text-[#99A1AF] font-normal">Committed to providing quality education and
+                                character
+                                development, nurturing future leaders with excellence in academics and moral values.</p>
+                        </li>
+                        <li class="grid gap-3">
+                            <a href="https://www.google.com/maps?q=Main+Road,+Chaki+Faiq,+Pakistan" target="_blank"
+                                class="flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M16.6666 8.73356C16.6666 12.8944 12.0508 17.2277 10.5008 18.5661C10.3564 18.6746 10.1806 18.7334 9.99992 18.7334C9.81925 18.7334 9.64348 18.6746 9.49909 18.5661C7.94909 17.2277 3.33325 12.8944 3.33325 8.73356C3.33325 6.96545 4.03563 5.26976 5.28587 4.01952C6.53612 2.76927 8.23181 2.06689 9.99992 2.06689C11.768 2.06689 13.4637 2.76927 14.714 4.01952C15.9642 5.26976 16.6666 6.96545 16.6666 8.73356Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M10 11.2334C11.3807 11.2334 12.5 10.1141 12.5 8.7334C12.5 7.35269 11.3807 6.2334 10 6.2334C8.61929 6.2334 7.5 7.35269 7.5 8.7334C7.5 10.1141 8.61929 11.2334 10 11.2334Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p class="text-base font-normal text-[#99A1AF]">Main Road, Chaki Faiq, Pakistan</p>
+                            </a>
+                            <a href="tel:+92-XXX-XXXXXXX" class="flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M11.5267 14.2069C11.6989 14.2859 11.8927 14.304 12.0765 14.2581C12.2602 14.2122 12.4229 14.1051 12.5376 13.9544L12.8334 13.5669C12.9887 13.3599 13.19 13.1919 13.4214 13.0762C13.6528 12.9605 13.908 12.9002 14.1667 12.9002H16.6667C17.1088 12.9002 17.5327 13.0758 17.8453 13.3884C18.1578 13.7009 18.3334 14.1249 18.3334 14.5669V17.0669C18.3334 17.5089 18.1578 17.9328 17.8453 18.2454C17.5327 18.558 17.1088 18.7336 16.6667 18.7336C12.6885 18.7336 8.87319 17.1532 6.06015 14.3402C3.2471 11.5271 1.66675 7.71181 1.66675 3.73356C1.66675 3.29153 1.84234 2.86761 2.1549 2.55505C2.46746 2.24249 2.89139 2.06689 3.33341 2.06689H5.83341C6.27544 2.06689 6.69936 2.24249 7.01193 2.55505C7.32449 2.86761 7.50008 3.29153 7.50008 3.73356V6.23356C7.50008 6.4923 7.43984 6.74749 7.32413 6.97892C7.20841 7.21034 7.04041 7.41165 6.83341 7.56689L6.44341 7.85939C6.29043 7.97621 6.1826 8.14238 6.13824 8.32969C6.09388 8.51699 6.11573 8.71387 6.20008 8.88689C7.33898 11.2001 9.2121 13.0709 11.5267 14.2069Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p class="text-base font-normal text-[#99A1AF]">+92-XXX-XXXXXXX</p>
+                            </a>
+                            <a href="mailto:info@ghschakifaiq.edu.pk" class="flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M18.3334 6.2334L10.8409 11.0059C10.5867 11.1536 10.2979 11.2314 10.0038 11.2314C9.7098 11.2314 9.421 11.1536 9.16675 11.0059L1.66675 6.2334"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M16.6667 3.7334H3.33341C2.41294 3.7334 1.66675 4.47959 1.66675 5.40007V15.4001C1.66675 16.3205 2.41294 17.0667 3.33341 17.0667H16.6667C17.5872 17.0667 18.3334 16.3205 18.3334 15.4001V5.40007C18.3334 4.47959 17.5872 3.7334 16.6667 3.7334Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p class="text-base font-normal text-[#99A1AF]">info@ghschakifaiq.edu.pk</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div>
+                        <h3 class="text-xl font-normal text-white pb-6">Quick Links</h3>
+                        <ul class="grid gap-3">
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">About Us</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Academics</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Admissions</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Faculty</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Gallery</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-normal text-white pb-6">School Hours</h3>
+                        <ul class="grid gap-4">
+                            <li class="grid gap-1">
+                                <h4 class="text-base font-normal text-white">Morning Session (Classes 6-8)</h4>
+                                <time class="text-base text-[#99A1AF] font-normal">8:00 AM - 12:15 PM</time>
+                            </li>
+                            <li class="grid gap-1">
+                                <h4 class="text-base font-normal text-white">Afternoon Session (Classes 9-10)</h4>
+                                <time class="text-base text-[#99A1AF] font-normal">1:00 PM - 5:15 PM</time>
+                            </li>
+                            <li class="grid gap-1">
+                                <h4 class="text-base font-normal text-white">Office Hours</h4>
+                                <time class="text-base text-[#99A1AF] font-normal">Monday - Friday: 8:00 AM - 3:00
+                                    PM</time>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="py-8 flex flex-col gap-6 sm:flex-row justify-between"
+                    style="border-top: 0.8px solid #1E2939;">
+                    <p class="text-sm text-[#99A1AF] font-normal">© 2024 Government High School Chaki Faiq. All rights
+                        reserved.
+                    </p>
+                    <span class="text-sm text-[#99A1AF] font-normal">Established 1999 • 25+ Years of Excellence</span>
+                </div>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>
