@@ -8,121 +8,134 @@
     <title>Chakki Faiq</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<script>
+
+     <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
-
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('hidden');
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      const menuIcon = document.getElementById('menuIcon');
+      const closeIcon = document.getElementById('closeIcon');
+      const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+  
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+  
+      dropdownButtons.forEach(btn => {
+        const dropdown = btn.nextElementSibling;
+        const arrow = btn.querySelector('svg');
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          dropdown.classList.toggle('hidden');
+          arrow.classList.toggle('rotate-180');
         });
-
-        dropdownButtons.forEach(btn => {
-            const dropdown = btn.nextElementSibling;
-            const arrow = btn.querySelector('svg');
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                dropdown.classList.toggle('hidden');
-                arrow.classList.toggle('rotate-180');
-            });
-        });
-
-        document.addEventListener('click', () => {
-            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
-            document.querySelectorAll('.dropdown-btn svg').forEach(a => a.classList.remove('rotate-180'));
-        });
+      });
+  
+      document.addEventListener('click', () => {
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+        document.querySelectorAll('.dropdown-btn svg').forEach(a => a.classList.remove('rotate-180'));
+      });
     });
-</script>
-
+  </script>
 <body>
-    <header class="py-4 sticky top-0 bg-white shadow z-50">
-        <div class="container">
-            <nav class="flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                    <a href="/">
-                        <img src="assets/images/logo.png" alt="logo" width="56" height="56">
-                    </a>
-                    <div>
-                        <p class="text-2xl text-[#101828] font-normal">Government High School</p>
-                        <span class="text-sm text-[#155DFC] font-normal">Chaki Faiq</span>
-                    </div>
-                </div>
 
-                <button id="nav-toggle" class="block md:hidden text-[#155DFC] focus:outline-none">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-
-                <ul id="nav-menu"
-                    class="hidden flex-col md:flex md:flex-row md:items-center gap-4 md:gap-8 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none p-5 md:p-0 transition-all duration-300">
-                    <li>
-                        <a href="/"
-                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Home</a>
-                    </li>
-
-                    <li class="relative">
-                        <button type="button"
-                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
-                            About
-                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div
-                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</a>
-                            <a href="faculity.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Faculty</a>
-                            <a href="achievements.html"
-                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Achievements</a>
-                            <a href="student.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Student
-                                Life</a>
-                        </div>
-                    </li>
-
-                    <li class="relative">
-                        <button type="button"
-                            class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">
-                            Academics
-                            <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div
-                            class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                            <a href="academic.html"
-                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Curriculum</a>
-                            <a href="download.html"
-                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Downloads</a>
-                            <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Gallery</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <a href="admission.html"
-                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Admissions</a>
-                    </li>
-                    <li>
-                        <a href="contact-us.html"
-                            class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Contact</a>
-                    </li>
-                    <li>
-                        <a href="admission.html"
-                            class="px-6 py-2 rounded-lg bg-[#155DFC] text-white text-sm font-normal inline-block hover:bg-[#0D4ED8]">Apply
-                            Now</a>
-                    </li>
-                </ul>
-            </nav>
+  <header class="py-4 sticky top-0 bg-white shadow z-50">
+    <div class="container">
+      <nav class="flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <a href="/">
+            <img src="assets/images/logo.png" alt="logo" width="56" height="56">
+          </a>
+          <div>
+            <p class="text-2xl text-[#101828] font-normal">Government High School</p>
+            <span class="text-sm text-[#155DFC] font-normal">Chaki Faiq</span>
+          </div>
         </div>
-    </header>
+        <button id="nav-toggle" class="block md:hidden text-[#155DFC] focus:outline-none">
+          <svg id="menuIcon" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <ul id="nav-menu"
+          class="hidden flex-col flex md:flex md:flex-row place-items-center md:items-center gap-4 md:gap-8 absolute md:static top-0 h-[100vh] sm:h-[0vh] right-0 max-w-[300px] sm:max-w-[1400px] left-auto  w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none p-5 md:p-0 transition-all duration-300">
+<button id="nav-toggle" class="block md:hidden text-[#155DFC] focus:outline-none">
+            <svg id="closeIcon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <script>
+            const closeIcon = document.getElementById('closeIcon');
+            const menuIcon = document.getElementById('menuIcon');
+            const navMenu = document.getElementById('nav-menu');
+            closeIcon.addEventListener('click', () => {
+              navMenu.classList.add('hidden');
+              closeIcon.classList.add('hidden');
+              menuIcon.classList.remove('hidden');
+            });
+          </script>
+
+          <li>
+            <a href="/"
+              class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Home</a>
+          </li>
+
+          <li class="relative">
+            <button type="button"
+              class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC] hover:text-[#155DFC] group">
+              About
+              <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform group-hover:text-[#155DFC]"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div
+              class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+              <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</a>
+              <a href="faculity.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Faculty</a>
+              <a href="achievements.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Achievements</a>
+              <a href="student.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Student Life</a>
+            </div>
+          </li>
+
+          <li class="relative">
+            <button type="button"
+              class="dropdown-btn flex items-center justify-between w-full md:w-auto text-left text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC] hover:text-[#155DFC] group">
+              Academics
+              <svg class="ml-2 h-5 w-5 text-gray-500 transition-transform group-hover:text-[#155DFC]"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div
+              class="dropdown-menu hidden md:absolute md:left-0 md:mt-2 w-full md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+              <a href="academic.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Curriculum</a>
+              <a href="download.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Downloads</a>
+              <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Gallery</a>
+            </div>
+          </li>
+
+          <li>
+            <a href="admission.html"
+              class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Admissions</a>
+          </li>
+          <li>
+            <a href="contact-us.html"
+              class="text-[#364153] text-lg font-normal px-3 py-2 rounded-md hover:bg-[#EFF6FF] hover:text-[#155DFC]">Contact</a>
+          </li>
+          <li>
+            <a href="admission.html"
+              class="px-6 py-2 rounded-lg bg-[#155DFC] text-white text-sm font-normal inline-block hover:bg-[#0D4ED8]">Apply
+              Now</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
     <main>
         <section>
             <div class="container">
