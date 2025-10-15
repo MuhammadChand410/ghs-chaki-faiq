@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Your website short description here" />
-  <meta name="keywords" content="HTML, CSS, JavaScript, Tailwind, Web Development" />
-  <meta name="author" content="Your Name" />
-  <meta property="og:title" content="Chakki Faiq" />
-  <meta property="og:description" content="Government High School Chakki Faiq Minchinabad" />
-  <meta property="og:image" content="https://ghs-chaki-faiq-mibad.vercel.app/assets/images/computer.jpeg" />
-  <meta property="og:url" content="https://ghs-chaki-faiq-mibad.vercel.app" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-  <link rel="stylesheet" href="assets/css/style.css">
-  <title>Government High School Chakki Faiq Minchinabad</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your website short description here" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Tailwind, Web Development" />
+    <meta name="author" content="Your Name" />
+    <meta property="og:title" content="Chakki Faiq" />
+    <meta property="og:description" content="Government High School Chakki Faiq Minchinabad" />
+    <meta property="og:image" content="https://ghs-chaki-faiq-mibad.vercel.app/assets/images/computer.jpeg" />
+    <meta property="og:url" content="https://ghs-chaki-faiq-mibad.vercel.app" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Government High School Chakki Faiq Minchinabad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <script>
@@ -54,15 +54,13 @@
     <header class="py-4 sticky top-0 bg-white shadow z-50">
         <div class="container">
             <nav class="flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                    <a href="/">
-                        <img src="assets/images/logo.png" alt="logo" width="56" height="56">
-                    </a>
+                <a href="/" class="flex items-center gap-3">
+                    <img src="assets/images/logo.png" alt="logo" width="56" height="56">
                     <div>
                         <p class="text-base sm:text-2xl text-[#101828] font-normal">Government High School</p>
                         <span class="text-sm text-[#155DFC] font-normal">Chaki Faiq</span>
                     </div>
-                </div>
+                </a>
                 <button id="nav-toggle" class="block md:hidden text-[#155DFC] focus:outline-none">
                     <svg id="menuIcon" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2"
                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -157,8 +155,8 @@
     <main>
         <section>
             <div class="container">
-                <div class="flex justify-center pt-16">
-                    <div class="max-w-[780px] grid gap-6">
+                <div class="flex justify-center pt-8 sm:pt-16">
+                    <div class="max-w-[780px] grid gap-4 sm:gap-6">
                         <h2 class="text-center text-4xl sm:text-6xl text-[#1C398E] font-normal">Contact Us
                         </h2>
                         <p class="sm:text-xl text-base font-normal text-center text-[#4A5565]">We're here to help! Get
@@ -166,7 +164,7 @@
                             Chaki Faiq. Our team is ready to assist you.</p>
                     </div>
                 </div>
-                <div class="grid sm:grid-cols-4 grid-cols-1 my-16 gap-6">
+                <div class="grid sm:grid-cols-4 grid-cols-1 my-8 sm:my-16 gap-6">
                     <div
                         class="px-6 py-6 bg-white border rounded-[14px] transform transition-all duration-300 hover:-translate-y hover:shadow-xl">
                         <div class="grid place-items-center gap-6">
@@ -299,7 +297,7 @@
 
         <section>
             <div class="container">
-                <div class="grid sm:grid-cols-2 grid-cols-1 gap-12">
+                <div class="grid sm:grid-cols-2 grid-cols-1 gap-6 sm:gap-12">
                     <div id="successPopup"
                         class="hidden fixed inset-0 flex h-[200px] justify-center   z-50 transition-opacity duration-300">
                         <div
@@ -582,12 +580,12 @@
             </div>
         </section>
 
-        <section class="my-16">
+        <section class="my-8 sm:my-16">
             <div class="container">
                 <div class="bg-[#F9FAFB] px-8 py-8 rounded-[10px]">
                     <h2 class="text-[#1C398E] text-2xl sm:text-3xl font-normal text-center pb-8">Frequently Asked
                         Questions</h2>
-                    <div class=" grid gap-8">
+                    <div class=" grid gap-4 sm:gap-8">
                         <div class=" grid sm:grid-cols-2 grid-cols-1 gap-6">
                             <div class=" grid gap-4">
                                 <div class="grid gap-2">
@@ -651,125 +649,140 @@
             </div>
         </section>
     </main>
-   <footer class=" bg-[#101828]">
-    <div class="container">
-      <nav>
-        <div class="py-6 sm:py-12">
-          <div class="bg-[#155DFC] px-35 max-w-[869px] !w-full mx-auto">
-            <h2 class="sm:text-4xl text-2xl font-normal text-center text-white pb-2 sm:pb-6">Ready to Join Our School?
-            </h2>
-            <div class="flex justify-center">
-              <p
-                class="sm:text-xl text-base font-normal max-w-[450px] sm:max-w-[610px] text-center text-[#DBEAFE] pb-2 sm:pb-7">
-                Take the first step towards
-                excellence in
-                education. Apply now for the upcoming academic year.</p>
-            </div>
-            <div class="flex justify-center">
-              <button class="px-8 py-2 rounded-lg bg-white">
-                <a href="admission.html" class="text-lg font-normal text-[#155DFC]">Apply for Admission</a>
-              </button>
-            </div>
-          </div>
+    <footer class=" bg-[#101828]">
+        <div class="container">
+            <nav>
+                <div class="py-6 sm:py-12">
+                    <div class="bg-[#155DFC] px-35 max-w-[869px] !w-full mx-auto">
+                        <h2 class="sm:text-4xl text-2xl font-normal text-center text-white pb-2 sm:pb-6">Ready to Join
+                            Our School?
+                        </h2>
+                        <div class="flex justify-center">
+                            <p
+                                class="sm:text-xl text-base font-normal max-w-[450px] sm:max-w-[610px] text-center text-[#DBEAFE] pb-2 sm:pb-7">
+                                Take the first step towards
+                                excellence in
+                                education. Apply now for the upcoming academic year.</p>
+                        </div>
+                        <div class="flex justify-center">
+                            <button class="px-8 py-2 rounded-lg bg-white">
+                                <a href="admission.html" class="text-lg font-normal text-[#155DFC]">Apply for
+                                    Admission</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-8 sm:py-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-12">
+                    <ul class="grid gap-6">
+                        <li class="flex gap-3">
+                            <a class="logo" href="\"><img src="assets/images/logo.png" alt="logo" width="56"
+                                    height="56"></a>
+                            <div>
+                                <p class="text-xl text-white font-normal">Government High School</p>
+                                <span class="text-base text-[#99A1AF] font-normal">Chaki Faiq</span>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="text-base text-[#99A1AF] font-normal">Committed to providing quality education and
+                                character
+                                development, nurturing future leaders with excellence in academics and moral values.</p>
+                        </li>
+                        <li class="grid gap-3">
+                            <a href="https://www.google.com/maps?q=Main+Road,+Chaki+Faiq,+Pakistan" target="_blank"
+                                class="flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M16.6666 8.73356C16.6666 12.8944 12.0508 17.2277 10.5008 18.5661C10.3564 18.6746 10.1806 18.7334 9.99992 18.7334C9.81925 18.7334 9.64348 18.6746 9.49909 18.5661C7.94909 17.2277 3.33325 12.8944 3.33325 8.73356C3.33325 6.96545 4.03563 5.26976 5.28587 4.01952C6.53612 2.76927 8.23181 2.06689 9.99992 2.06689C11.768 2.06689 13.4637 2.76927 14.714 4.01952C15.9642 5.26976 16.6666 6.96545 16.6666 8.73356Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M10 11.2334C11.3807 11.2334 12.5 10.1141 12.5 8.7334C12.5 7.35269 11.3807 6.2334 10 6.2334C8.61929 6.2334 7.5 7.35269 7.5 8.7334C7.5 10.1141 8.61929 11.2334 10 11.2334Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p class="text-base font-normal text-[#99A1AF]">Main Road, Chaki Faiq, Pakistan</p>
+                            </a>
+                            <a href="tel:+92-XXX-XXXXXXX" class="flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M11.5267 14.2069C11.6989 14.2859 11.8927 14.304 12.0765 14.2581C12.2602 14.2122 12.4229 14.1051 12.5376 13.9544L12.8334 13.5669C12.9887 13.3599 13.19 13.1919 13.4214 13.0762C13.6528 12.9605 13.908 12.9002 14.1667 12.9002H16.6667C17.1088 12.9002 17.5327 13.0758 17.8453 13.3884C18.1578 13.7009 18.3334 14.1249 18.3334 14.5669V17.0669C18.3334 17.5089 18.1578 17.9328 17.8453 18.2454C17.5327 18.558 17.1088 18.7336 16.6667 18.7336C12.6885 18.7336 8.87319 17.1532 6.06015 14.3402C3.2471 11.5271 1.66675 7.71181 1.66675 3.73356C1.66675 3.29153 1.84234 2.86761 2.1549 2.55505C2.46746 2.24249 2.89139 2.06689 3.33341 2.06689H5.83341C6.27544 2.06689 6.69936 2.24249 7.01193 2.55505C7.32449 2.86761 7.50008 3.29153 7.50008 3.73356V6.23356C7.50008 6.4923 7.43984 6.74749 7.32413 6.97892C7.20841 7.21034 7.04041 7.41165 6.83341 7.56689L6.44341 7.85939C6.29043 7.97621 6.1826 8.14238 6.13824 8.32969C6.09388 8.51699 6.11573 8.71387 6.20008 8.88689C7.33898 11.2001 9.2121 13.0709 11.5267 14.2069Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p class="text-base font-normal text-[#99A1AF]">+92-XXX-XXXXXXX</p>
+                            </a>
+                            <a href="mailto:info@ghschakifaiq.edu.pk" class="flex gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path
+                                        d="M18.3334 6.2334L10.8409 11.0059C10.5867 11.1536 10.2979 11.2314 10.0038 11.2314C9.7098 11.2314 9.421 11.1536 9.16675 11.0059L1.66675 6.2334"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M16.6667 3.7334H3.33341C2.41294 3.7334 1.66675 4.47959 1.66675 5.40007V15.4001C1.66675 16.3205 2.41294 17.0667 3.33341 17.0667H16.6667C17.5872 17.0667 18.3334 16.3205 18.3334 15.4001V5.40007C18.3334 4.47959 17.5872 3.7334 16.6667 3.7334Z"
+                                        stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p class="text-base font-normal text-[#99A1AF]">info@ghschakifaiq.edu.pk</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div>
+                        <h3 class="text-xl font-normal text-white pb-6">Quick Links</h3>
+                        <ul class="grid gap-3">
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">About Us</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Academics</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Admissions</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Faculty</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Gallery</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-base text-[#99A1AF] font-normal">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-normal text-white pb-6">School Hours</h3>
+                        <ul class="grid gap-4">
+                            <li class="grid gap-1">
+                                <h4 class="text-base font-normal text-white">Morning Session (Classes 6-8)</h4>
+                                <time class="text-base text-[#99A1AF] font-normal">8:00 AM - 12:15 PM</time>
+                            </li>
+                            <li class="grid gap-1">
+                                <h4 class="text-base font-normal text-white">Afternoon Session (Classes 9-10)</h4>
+                                <time class="text-base text-[#99A1AF] font-normal">1:00 PM - 5:15 PM</time>
+                            </li>
+                            <li class="grid gap-1">
+                                <h4 class="text-base font-normal text-white">Office Hours</h4>
+                                <time class="text-base text-[#99A1AF] font-normal">Monday - Friday: 8:00 AM - 3:00
+                                    PM</time>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="py-4 sm:py-8 flex flex-col gap-2 sm:gap-6 sm:flex-row justify-between"
+                    style="border-top: 0.8px solid #1E2939;">
+                    <p class="text-sm text-[#99A1AF] text-center font-normal">© 2024 Government High School Chaki Faiq.
+                        All rights
+                        reserved.
+                    </p>
+                    <span class="text-sm text-[#99A1AF] text-center font-normal">Established 1999 • 25+ Years of
+                        Excellence</span>
+                </div>
+            </nav>
         </div>
-        <div class="py-8 sm:py-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-12">
-          <ul class="grid gap-6">
-            <li class="flex gap-3">
-              <a class="logo" href="\"><img src="assets/images/logo.png" alt="logo" width="56" height="56"></a>
-              <div>
-                <p class="text-xl text-white font-normal">Government High School</p>
-                <span class="text-base text-[#99A1AF] font-normal">Chaki Faiq</span>
-              </div>
-            </li>
-            <li>
-              <p class="text-base text-[#99A1AF] font-normal">Committed to providing quality education and character
-                development, nurturing future leaders with excellence in academics and moral values.</p>
-            </li>
-            <li class="grid gap-3">
-              <a href="https://www.google.com/maps?q=Main+Road,+Chaki+Faiq,+Pakistan" target="_blank"
-                class="flex gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                  <path
-                    d="M16.6666 8.73356C16.6666 12.8944 12.0508 17.2277 10.5008 18.5661C10.3564 18.6746 10.1806 18.7334 9.99992 18.7334C9.81925 18.7334 9.64348 18.6746 9.49909 18.5661C7.94909 17.2277 3.33325 12.8944 3.33325 8.73356C3.33325 6.96545 4.03563 5.26976 5.28587 4.01952C6.53612 2.76927 8.23181 2.06689 9.99992 2.06689C11.768 2.06689 13.4637 2.76927 14.714 4.01952C15.9642 5.26976 16.6666 6.96545 16.6666 8.73356Z"
-                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M10 11.2334C11.3807 11.2334 12.5 10.1141 12.5 8.7334C12.5 7.35269 11.3807 6.2334 10 6.2334C8.61929 6.2334 7.5 7.35269 7.5 8.7334C7.5 10.1141 8.61929 11.2334 10 11.2334Z"
-                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <p class="text-base font-normal text-[#99A1AF]">Main Road, Chaki Faiq, Pakistan</p>
-              </a>
-              <a href="tel:+92-XXX-XXXXXXX" class="flex gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                  <path
-                    d="M11.5267 14.2069C11.6989 14.2859 11.8927 14.304 12.0765 14.2581C12.2602 14.2122 12.4229 14.1051 12.5376 13.9544L12.8334 13.5669C12.9887 13.3599 13.19 13.1919 13.4214 13.0762C13.6528 12.9605 13.908 12.9002 14.1667 12.9002H16.6667C17.1088 12.9002 17.5327 13.0758 17.8453 13.3884C18.1578 13.7009 18.3334 14.1249 18.3334 14.5669V17.0669C18.3334 17.5089 18.1578 17.9328 17.8453 18.2454C17.5327 18.558 17.1088 18.7336 16.6667 18.7336C12.6885 18.7336 8.87319 17.1532 6.06015 14.3402C3.2471 11.5271 1.66675 7.71181 1.66675 3.73356C1.66675 3.29153 1.84234 2.86761 2.1549 2.55505C2.46746 2.24249 2.89139 2.06689 3.33341 2.06689H5.83341C6.27544 2.06689 6.69936 2.24249 7.01193 2.55505C7.32449 2.86761 7.50008 3.29153 7.50008 3.73356V6.23356C7.50008 6.4923 7.43984 6.74749 7.32413 6.97892C7.20841 7.21034 7.04041 7.41165 6.83341 7.56689L6.44341 7.85939C6.29043 7.97621 6.1826 8.14238 6.13824 8.32969C6.09388 8.51699 6.11573 8.71387 6.20008 8.88689C7.33898 11.2001 9.2121 13.0709 11.5267 14.2069Z"
-                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <p class="text-base font-normal text-[#99A1AF]">+92-XXX-XXXXXXX</p>
-              </a>
-              <a href="mailto:info@ghschakifaiq.edu.pk" class="flex gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                  <path
-                    d="M18.3334 6.2334L10.8409 11.0059C10.5867 11.1536 10.2979 11.2314 10.0038 11.2314C9.7098 11.2314 9.421 11.1536 9.16675 11.0059L1.66675 6.2334"
-                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M16.6667 3.7334H3.33341C2.41294 3.7334 1.66675 4.47959 1.66675 5.40007V15.4001C1.66675 16.3205 2.41294 17.0667 3.33341 17.0667H16.6667C17.5872 17.0667 18.3334 16.3205 18.3334 15.4001V5.40007C18.3334 4.47959 17.5872 3.7334 16.6667 3.7334Z"
-                    stroke="#51A2FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <p class="text-base font-normal text-[#99A1AF]">info@ghschakifaiq.edu.pk</p>
-              </a>
-            </li>
-          </ul>
-          <div>
-            <h3 class="text-xl font-normal text-white pb-6">Quick Links</h3>
-            <ul class="grid gap-3">
-              <li>
-                <a href="/" class="text-base text-[#99A1AF] font-normal">About Us</a>
-              </li>
-              <li>
-                <a href="/" class="text-base text-[#99A1AF] font-normal">Academics</a>
-              </li>
-              <li>
-                <a href="/" class="text-base text-[#99A1AF] font-normal">Admissions</a>
-              </li>
-              <li>
-                <a href="/" class="text-base text-[#99A1AF] font-normal">Faculty</a>
-              </li>
-              <li>
-                <a href="/" class="text-base text-[#99A1AF] font-normal">Gallery</a>
-              </li>
-              <li>
-                <a href="/" class="text-base text-[#99A1AF] font-normal">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="text-xl font-normal text-white pb-6">School Hours</h3>
-            <ul class="grid gap-4">
-              <li class="grid gap-1">
-                <h4 class="text-base font-normal text-white">Morning Session (Classes 6-8)</h4>
-                <time class="text-base text-[#99A1AF] font-normal">8:00 AM - 12:15 PM</time>
-              </li>
-              <li class="grid gap-1">
-                <h4 class="text-base font-normal text-white">Afternoon Session (Classes 9-10)</h4>
-                <time class="text-base text-[#99A1AF] font-normal">1:00 PM - 5:15 PM</time>
-              </li>
-              <li class="grid gap-1">
-                <h4 class="text-base font-normal text-white">Office Hours</h4>
-                <time class="text-base text-[#99A1AF] font-normal">Monday - Friday: 8:00 AM - 3:00 PM</time>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="py-4 sm:py-8 flex flex-col gap-2 sm:gap-6 sm:flex-row justify-between"
-          style="border-top: 0.8px solid #1E2939;">
-          <p class="text-sm text-[#99A1AF] text-center font-normal">© 2024 Government High School Chaki Faiq. All rights
-            reserved.
-          </p>
-          <span class="text-sm text-[#99A1AF] text-center font-normal">Established 1999 • 25+ Years of Excellence</span>
-        </div>
-      </nav>
-    </div>
-  </footer>
+    </footer>
 </body>
 
 </html>
